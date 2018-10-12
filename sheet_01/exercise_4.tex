@@ -1,1 +1,139 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+\label{ideals in matrix rings}
+
+
+We give two solutions.
+
+
+
+\subsubsection{First Solution}
+
+
+\begin{lemma}
+  Let~$R$ be a ring and let~$n \geq 1$.
+  Then the map
+  \[
+            \{ \text{{\twosided} ideals~$I \subseteq I$} \}
+    \longto \{ \text{{\twosided} ideals~$J \subseteq \mat{n}{R}$} \} \,,
+    \quad   I
+    \mapsto \mat{n}{I}
+  \]
+  is a {\welldef} bijection.
+\end{lemma}
+
+
+\begin{proof}
+  If~$I \subseteq R$ is a {\twosided} ideal then the canonical projection~$\pi \colon R \to R/I$ is a ring homomorphism with~$\ker(\pi) = I$.
+  The kernel of the induced ring homomorphism~$\pi_* \colon \mat{n}{R} \to \mat{n}{R/I}$ is given by~$\ker(\pi_*) = \mat{n}{I}$, which shows that~$\mat{n}{I}$ is a {\twosided} ideal in~$\mat{n}{R}$.
+  This shows that the proposed map is {\welldef}.
+  The map is injective because one can retrieve~$I$ from~$\mat{n}{I}$ as the set of all possible entries of matrices in~$\mat{n}{I}$.
+  
+  To show the surjectivity let~$J \subseteq \mat{n}{R}$ be a {\twosided} ideal.
+  For all~$i,j = 1, \dotsc, n$ let
+  \[
+      I_{ij}
+    = \{
+        a \in R
+      \suchthat
+        \text{there exists a matrix~$A \in J$ whose~$(i,j)$-th entry is~$a$}
+      \} \,.
+  \]
+  If~$\pi_{ij} \colon \mat{n}{R} \to R$ denotes the projection onto the~$(i,j)$-th component then~$\pi_{ij}$ is a homomorphism of both left~$R${\dashmods} and of right~$R${\dashmods}.
+  It follows that~$I_{ij} = \pi_{ij}(I)$ is both a left~$R${\dashsmod} of~$R$ and a right~$R${\dashsmod} of~$R$, and therefore a {\twosided} ideal in~$R$.
+  
+  For~$A \in J$ and~$i, j = 1, \dotsc, n$ we can multiply~$A$ from the left and from the right with permuation matrices to move the~$(i,j)$-th entry of~$A$ to any other position.
+  We don’t leave~$J$ when doing so because it is a {\twosided} ideal.
+  This shows that the {\twosided} does not depend on the choice of position~$(i,j)$, i.e.\ that there exists a unique {\twosided} ideal~$I \subseteq R$ with~$\pi_{ij}(J) = I$ for all~$i,j$.
+  It follows from the construction of~$I$ that~$J = \mat{n}{I}$.
+\end{proof}
+
+
+We now get the statement from the exercise for free:
+If~$n = 0$ then~$\mat{n}{k} = 0$ and there exist no nonzero {\twosided} ideals.
+If~$n \geq 1$ then the~{\twosided} ideals in~$\mat{n}{k}$ correspond bijectively to the {\twosided} ideals in~$k$, of which there are only two.
+It then follows from~$\mat{n}{k} \neq 0$ that~$\mat{n}{k}$ contains no proper nonzero ideal.
+
+
+
+\subsubsection{Second Solution}
+
+Let~$I \subseteq \mat{n}{k}$ be a nonzero ideal.
+There then exists some matrix~$A \in I$ whose~$(i,j)$-th entry is nonzero for suitable~$i,j$.
+It follows with~$c \defined A_{ij} \neq 0$ that
+\[
+      E_{ij}
+  =   \frac{1}{c} E_{ii} A E_{jj}
+  \in I \,.
+\]
+By multiplying~$E_{ij}$ from both sides with permutation matrices it then follows that~$I$ contains the standard basis of~$\mat{n}{k}$.
+This shows that~$I = \mat{n}{k}$ because~$I$ is a~$k${\dashsmod} of~$\mat{n}{k}$.
+
+
+
+
+
+\subsection{}
+
+We give three solutions.
+
+
+
+\subsubsection{First Solution}
+
+Let~$M$ be a nonzero~{\Amod} and let~$\varphi \colon A \to  \End_k(M)$ be the associated {\kalg} homomorphism.
+The homomorphism~$\varphi$ is nonzero since its image contains the identity~$\id_M$.
+This shows that the kernel~$\ker(\varphi)$, which is a {\twosided} ideal in~$A$, is a proper ideal.
+It follows from part~\ref{ideals in matrix rings} of the exercise that~$\ker(\varphi) = 0$ and therefore that~$\varphi$ is injective.
+It follows that
+\[
+        \dim_k  \End_k(V)
+  \geq  \dim_k  A
+  =             n^2
+\]
+and therefore that~$\dim_k M \geq n$.
+
+
+
+\subsubsection{Second Solutions}
+
+Recall from algebra the~{\kalg}~$A$ is semisimple, and that~$k^n$ is up to isomorpism the only simple~{\Amod}.
+It follows that every~{\Amod}~$M$ is of the form~$M = (k^n)^{\oplus I}$ for some index set~$I$, and thus in particular that~$\dim_k M \geq \dim_k k^n = n$ if~$M$ is nonzero.
+
+
+
+\subsubsection{Third Solution}
+
+We can also give a more ad hoc version of the above argument:
+For every~$i = 1, \dotsc, n$ let~$C_i = A E_{ii}$, which is the left ideal of~$A$ which consist of all matrices for which all columns except for the~$i$-th one vanish.
+It then holds that~$A = C_1 \oplus \dotsb \oplus C_n$.
+It holds for every~$i$ that~$C_i \cong k^n$ as~{\Amod}, and~$k^n$ is simple as an~{\Amod} (because every nonzero element~$x \in k^n$ generates~$k^n$ as an~{\Amod}).
+
+Let~$M$ be a nonzero~{\Amod} and let~$m \in M$ be a nonzero element.
+The map
+\[
+          \varphi
+  \colon  A
+  \to     M \,,
+  \quad   a
+  \mapsto am
+\]
+is then a nonzero homomorphism of~{\Amod}
+It follows from~$A = C_1 + \dotsb + C_n$ that the kernel~$\ker(\varphi)$ does not contain on of the~$C_i$.
+It then follows that~$C_i \cap \ker(\varphi)$ is a proper {\Asmod} of~$C_i$, and therefore that~$C_i \cap \ker(\varphi) = 0$.
+This shows that the restriction~$\restrict{\varphi}{C_i} \colon C_i \to M$ is injective, from which it follows that
+\[
+        \dim_k M
+  \geq  \dim_k C_i
+  =     \dim_k k^n
+  =     n \,.
+\]
+
+
+
+

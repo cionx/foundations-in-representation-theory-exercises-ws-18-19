@@ -17,6 +17,7 @@
 
 
 % redefine how counters are printed
+\setcounter{secnumdepth}{2}
 \renewcommand{\thesection}{Exercise \arabic{section}.}
 \renewcommand{\thesubsection}{(\roman{subsection})}
 
@@ -28,11 +29,25 @@
 
 % text shortcuts
 \newcommand{\dash}[2]{#1\nobreakdash-#2}
-\newcommand{\kalg}{k\nobreakdash-algebra}
-\newcommand{\kalgs}{k\nobreakdash-algebras}
-\newcommand{\klin}{k\nobreakdash-linear}
-\newcommand{\kmod}{k\nobreakdash-module}
-\newcommand{\kmods}{k\nobreakdash-modules}
+\newcommand{\dashmod}{\nobreakdash-module}
+\newcommand{\dashmods}{\nobreakdash-modules}
+\newcommand{\dashsmod}{\nobreakdash-submodule}
+\newcommand{\dashsmods}{\nobreakdash-submodules}
+\newcommand{\Amod}{$A$\nobreakdash-module}
+\newcommand{\Amods}{$A$\nobreakdash-modules}
+\newcommand{\Asmod}{$A$\nobreakdash-submodule}
+\newcommand{\Asmods}{$A$\nobreakdash-submodules}
+\newcommand{\kalg}{$k$\nobreakdash-algebra}
+\newcommand{\kalgs}{$k$\nobreakdash-algebras}
+\newcommand{\klin}{$k$\nobreakdash-linear}
+\newcommand{\kmod}{$k$\nobreakdash-module}
+\newcommand{\kmods}{$k$\nobreakdash-modules}
+\newcommand{\twosided}{two\nobreakdash-sided}
+\newcommand{\welldef}{well\nobreakdash-defined}
+
+
+% math shortcuts
+\newcommand{\longto}{\longrightarrow}
 
 
 % relations
@@ -46,11 +61,16 @@
 
 
 % important spaces
-\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\mat}[2]{\operatorname{M}_{#1}(#2)}
 
 
 % space and set constructions
+\DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Hom}{Hom}
+
+
+% functions
+\newcommand{\id}{\operatorname{id}}
 
 
 % custom macros with case distinctions
