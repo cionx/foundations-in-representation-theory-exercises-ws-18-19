@@ -1,1 +1,99 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection*{(i) + (ii)}
+
+Recall that we have for all sets~$X$,~$Y$,~$Z$ the usual adjuction
+\[
+  \Maps(X \times Y, Z)
+  \xlongrightarrow{\sim}
+  \Maps(X, \Maps(Y, Z)) \,,
+  \quad
+          \mu
+  \mapsto [y \mapsto \mu(y,-)]
+\]
+is a bijection.
+It follows in particular that for a~{\kvs}~$V$ we get a bijection
+\[
+          \Maps(A \times V, V)
+  \to     \Maps(A, \Maps(V, V)) \,,
+  \quad   \mu
+  \mapsto [a \mapsto \mu(a,-)]  \,.
+\]
+It sufficies to show that~$\mu \in \Maps(A \times V, V)$ is an~{\Amod} structure if and only if the corresponding element~$\varphi \in \Maps(A, \Maps(V,V))$ is a homomorphism of~{\kalg} into~$\End_k(V)$.
+
+The map~$\mu \in \Maps(A \times V, V)$ is an~{\Amod} structure if and only if the following axioms are satisfied for all~$a, a_1, a_2 \in A$, all~$\lambda \in k$ and all~$m, m_1, m_2 \in M$:
+\begin{enumerate}[label=(MS\arabic*)]
+  \item
+    \label{dist second}
+    $\mu(a,m_1 + m_2) = \mu(a,m_1) + \mu(a,m_2)$,
+  \item
+    \label{dist first}
+    $\mu(a_1 + a_2,m) = \mu(a_1,m) + \mu(a_2,m)$,
+  \item
+    \label{ass}
+    $\mu(a_1, \mu(a_2, m)) = \mu(a_1 a_2, m)$,
+  \item
+    \label{unital}
+    $\mu(1,m) = m$,
+  \item
+    \label{kass}
+    $\mu(\lambda a, m) = \lambda \mu(a,m) = \mu(a,\lambda m)$.
+\end{enumerate}
+The map~$\varphi$ is a homomorphism of~{\kalg} into~$\End_k(V)$ if and only if the following conditions are satisfied for all~$a, a_1, a_2 \in A$ and all~$\lambda \in k$:
+\begin{enumerate}[label=(AH\arabic*)]
+  \item
+    $\varphi(a) \in \End_k(M)$,
+  \item
+    $\varphi(a_1 + a_2) = \varphi(a_1) + \varphi(a_2)$,
+  \item
+    $\varphi(\lambda a) = \lambda \varphi(a)$
+  \item
+    $\varphi(a_1 a_2) = \varphi(a_1) \varphi(a_2)$,
+  \item
+    $\varphi(1) = 1$.
+\end{enumerate}
+Spelling out these conditions in more detail mean that the following conditions need to be satisfied for all~$a, a_1, a_2 \in A$, all~$\lambda \in k$ and all~$m, m_1, m_2 \in M$
+\begin{enumerate}[label=(AH\arabic**)]
+  \item
+    \label{new dist second}
+    $\varphi(a)(m_1 + m_2) = \varphi(a)(m_1) + \varphi(m_2)$,
+  \item
+    \label{new kass first}
+    $\varphi(a)(\lambda m) = \lambda \varphi(a)(m)$,
+  \item
+    \label{new dist first}
+    $\varphi(a_1 + a_2)(m) = \varphi(a_1)(m) + \varphi(a_2)(m)$,
+  \item
+    \label{new kass second}
+    $\varphi(\lambda a)(m) = \lambda \varphi(a)(m)$,
+  \item
+    \label{new ass}
+    $\varphi(a_1 a_2)(m) = \varphi(a_1)(\varphi(a_2)(m))$,
+  \item
+    \label{new unital}
+    $\varphi(1) = 1$.
+\end{enumerate}
+The relation between~$\mu$ and~$\varphi$ is so that~$\mu(a,m) = \varphi(a)(m)$ for all~$a \in A$ and all~$m \in M$.
+We therefore find that condition~\ref{dist first} is equivalent to~\ref{new dist first},~\ref{dist second} is equivalent to~\ref{new dist second},~\ref{ass} is equivalent to~\ref{new ass},~\ref{kass} is equivalent to the combination of~\ref{new kass first} and~\ref{new kass second}, and that~\ref{unital} is equivalent to~\ref{new unital}.
+
+
+
+
+
+\subsection{}
+
+Since the map~$f$ is already~{\klin} we find that
+\begin{align*}
+      &{} \text{$f$ is a homomorphism of~{\Amod}} \\
+  \iff&{} \text{$f(av) = af(v)$ for all~$a \in A$,~$v \in V$} \\
+  \iff&{} \text{$f(\varphi(a)) = \psi(a)(f(v)$ for all~$a \in A$,~$v \in V$}  \\
+  \iff&{} \text{$f \circ \varphi(a) = \psi(a) \circ f$ for all~$a \in A$} \,.
+\end{align*}
+
+
+
+
