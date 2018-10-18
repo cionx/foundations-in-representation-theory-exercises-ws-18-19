@@ -1,8 +1,9 @@
 \usepackage{xparse} % defining certain macros
 \usepackage{microtype}  % better typography
+\usepackage{enumitem} % better list type environments
 \usepackage{amsmath, amssymb, amsthm, mathtools} % smath stuff
 \usepackage{extarrows} % xlongrightarrow
-\usepackage{enumitem} % better list type environments
+\usepackage{tikz-cd}
 \usepackage[capitalise,noabbrev]{cleveref}  % smarter referencing, load after hyperref
 
 
@@ -30,21 +31,11 @@
 
 % text shortcuts
 \newcommand{\dash}[2]{#1\nobreakdash-#2}
-\newcommand{\dashmod}{\nobreakdash-module}
-\newcommand{\dashmods}{\nobreakdash-modules}
-\newcommand{\dashsmod}{\nobreakdash-submodule}
-\newcommand{\dashsmods}{\nobreakdash-submodules}
-\newcommand{\Amod}{$A$\nobreakdash-module}
-\newcommand{\Amods}{$A$\nobreakdash-modules}
-\newcommand{\Asmod}{$A$\nobreakdash-submodule}
-\newcommand{\Asmods}{$A$\nobreakdash-submodules}
 \newcommand{\kalg}{$k$\nobreakdash-algebra}
 \newcommand{\kalgs}{$k$\nobreakdash-algebras}
 \newcommand{\kbasis}{$k$\nobreakdash-basis}
 \newcommand{\kbil}{$k$\nobreakdash-bilinear}
 \newcommand{\klin}{$k$\nobreakdash-linear}
-\newcommand{\kmod}{$k$\nobreakdash-module}
-\newcommand{\kmods}{$k$\nobreakdash-modules}
 \newcommand{\kvs}{$k$\nobreakdash-vector space}
 \newcommand{\twosided}{two\nobreakdash-sided}
 \newcommand{\welldef}{well\nobreakdash-defined}
@@ -52,6 +43,9 @@
 
 % math shortcuts
 \newcommand{\longto}{\longrightarrow}
+\newcommand{\xlongto}{\xlongrightarrow}
+\newcommand{\xto}{\xrightarrow}
+
 
 
 % relations
@@ -76,6 +70,25 @@
 % functions
 \newcommand{\id}{\operatorname{id}}
 \DeclareMathOperator{\ringchar}{char}
+
+
+% module macros
+\NewDocumentCommand{\module}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-module}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bimodule}%
+}
+\NewDocumentCommand{\modules}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-modules}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bimodules}%
+}
+\NewDocumentCommand{\submodule}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-submodule}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bisubmodule}%
+}
+\NewDocumentCommand{\submodules}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-submodules}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bisubmodules}%
+}
 
 
 % custom macros with case distinctions

@@ -4,7 +4,7 @@ We convince ourselves that~$A^\times$ is a group with respect to the multiplicat
 
 \begin{itemize}
   \item
-    If~$a_1, a_2 \in A^\times$ are units in~$A$ then there exist~$b_1, b_2 \in A$ with~$a_i b_i = 1 = b_i a_i$ for~$i = 1,, 2$.
+    If~$a_1, a_2 \in A^\times$ are units in~$A$ then there exist~$b_1, b_2 \in A$ with~$a_i b_i = 1 = b_i a_i$ for both~$i = 1, 2$.
     It then follows that
     \[
         (a_1 a_2) (b_2 b_1)
@@ -16,7 +16,7 @@ We convince ourselves that~$A^\times$ is a group with respect to the multiplicat
     and similarly~$(b_2 b_1) (a_1 a_2) = 1$.
     This shows that~$a_1, a_2$ is again a unit, which shows that~$A^\times$ is closed under the multiplication of~$A$.
   \item
-    It follows from the equation~$1 \cdot 1 = 1$ that~$1 \in A$ is a unit with inverse~$1^{-1}$, and that~$1$ is a neutral element for~$A^\times$.
+    It follows from the equation~$1 \cdot 1 = 1$ that~$1 \in A$ is a unit with inverse given by~$1$, and that~$1$ is a neutral element for~$A^\times$.
   \item
     If~$a \in A^\times$ is a unit with~$ab = 1 = ba$ for some~$b \in A$ then~$b$ is again a unit and an inverse for~$a$ in~$A^\times$.
 \end{itemize}
@@ -37,9 +37,21 @@ This shows that~$f$ restricts to a map~$f \colon A^\times \to B^\times$, which i
 
 \subsection{}
 
-It follows from~$G$ being a {\kbasis} of~$k[G]$ that there exists a unique~{\klin}~extension~$f \colon k[G] \to A$ with~$f(g) = \psi(g)$ of~$\psi$.
-We onl need to show that~$f$ is already a homomorphism of~{\kalg}:
-The map~$f$ is multiplicative on the~{\kbasis}~$G$ of~$k[G]$ and therefore multiplicativeon the whole of~$k[G]$.
+It follows from~$G$ being a {\kbasis} of~$k[G]$ that there exists a unique~{\klin}~extension~$f \colon k[G] \to A$ of~$\psi$, which is given by~$f(g) = \psi(g)$ for every~$g \in G$.
+It remains to show that~$f$ is already a homomorphism of~{\kalg}:
+The map~$f$ is multiplicative on the~{\kbasis}~$G$ of~$k[G]$ and therefore multiplicative on the whole of~$k[G]$, because both
+\begin{align*}
+          k[G] \times k[G]
+  &\to    k[G] \,,
+  \quad   (x,y)
+  \mapsto f(xy)
+\shortintertext{and}
+          k[G] \times k[G]
+  &\to    k[G] \,,
+  \quad   (x,y)
+  \mapsto f(x)f(y)
+\end{align*}
+are~{\klin}.
 It also holds that~$f(1) = \psi(1) = 1$.
 
 
@@ -47,6 +59,10 @@ It also holds that~$f(1) = \psi(1) = 1$.
 
 
 \subsection{}
+
+
+
+\subsubsection{The group algebra~$k[\Integer^n]$}
 
 We denote the basis element of~$k[\Integer^n]$ associated to the group element~$(a_1, \dotsc, a_n) \in \Integer^n$ by~$t_1^{a_1} \dotsm t_n^{a_n}$.
 The group algebra~$k[\Integer^n]$ has then a basis~$t_1^{a_1} \dotsm t_n^{a_n}$ with~$a_1, \dotsc, a_n \in \Integer$ on which the~{\kbil} multiplication of~$k[\Integer^n]$ is given by
@@ -56,6 +72,10 @@ The group algebra~$k[\Integer^n]$ has then a basis~$t_1^{a_1} \dotsm t_n^{a_n}$ 
   =     t_1^{a_1 + b_1} \dotsm t_n^{a_n + b_n} \,.
 \]
 This shows that~$k[\Integer^n] \cong k[t_1, t_1^{-1}, \dotsc, t_n, t_n^{-1}]$ is the~{\kalg} of Lauraunt polynomials in~$n$ variables~$t_1, \dotsc, t_n$ over~$k$.
+
+
+
+\subsubsection{The group algebra~$k[\Integer/2]$}
 
 The group algebra~$k[\Integer/2]$ has a~{\kbasis} consisting of two elements~$1, s$, with~$1$ being the unit of~$A$ and~$s$ satisfying the equation~$s^2 = 1$.
 This shows that~$k[\Integer/2] \cong k[x]/(x^2 - 1)$.

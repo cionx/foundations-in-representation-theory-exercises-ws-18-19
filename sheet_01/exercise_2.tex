@@ -1,31 +1,56 @@
 \section{}
 
-In the given quiver~$Q$ there exists for every pair~$(i,j)$ of vertices~$i,j \in \{1, \dotsc, n\} = Q_0$ a unique path from~$i$ to~$j$ in~$Q$ if~$i \leq j$, and no path otherwise.
-It follows that the path algebra~$kQ$ has a~{\kbasis}~$e_{ij}$ with~$1 \leq j \leq i \leq n$, where~$e_{ij}$ is the unique path from~$j$ to~$i$ in~$Q$.
-It holds that
-\[
-    e_{ij} e_{kl}
-  = \delta_{jk} e_{il}
-\]
-for all~$i,j,k,l$ by definition of the multiplication of~$kQ$.
+In the given quiver~$Q$ there exists for every pair~$(i,j)$ of vertices~$i,j \in \{1, \dotsc, n\} = Q_0$ a unique path~$e_{ij}$ from~$i$ to~$j$ in~$Q$ if~$i \leq j$, and no path otherwise.
+The paths~$e_{ij}$ with~$1 \leq i \leq j \leq n$ are by definition a~{\kbasis} of~$kQ$.
 
-If~$E_{ij}$ with~$1 \leq j \leq i \leq n$ denotes the standard~{\kbasis} of~$L_n$ then it holds that
+The quiver~$Q$ has a representation over~$k$ with vertices~$k$ and edges~$k \xto{1} k$:
 \[
-    E_{ij} E_{kl}
-  = \delta_{jk} E_{il}
+  \begin{tikzcd}
+      k
+      \arrow{r}[above]{1}
+    & k
+      \arrow{r}[above]{1}
+    & k
+      \arrow{r}[above]{1}
+    & \cdots
+      \arrow{r}[above]{1}
+    & k
+      \arrow{r}[above]{1}
+    & k
+  \end{tikzcd}
 \]
-for all~$i,j,k,l$.
-The unique~{\klin} map~$\varphi \colon kQ \to L_n$ with~
-\[
-    \varphi(e_{ij})
-  = E_{ij}
-\]
-for all~$1 \leq j \leq i \leq n$ is an isomorphism because it maps the above~{\kbasis} of~$kQ$ bijectively onto the standard~{\kbasis} of~$L_n$.
-The isomorphism~$\varphi$ is multiplicative on a~\dash{$k$}{generating} set of~$kQ$, and therefore multiplicative on all of~$Q$.
+This representation of~$Q$ over~$k$ corresponds to a~{\module{$kQ$}} structure on~$k^{\oplus n} = k^n$ as discussed in the lecture (i.e.\ as in the standard way).
+The action of~$e_{ij}$ on~$k^n$ is with respect to the standard basis given by the lower triangular matrix~$E_{ij}$.
+The~{\kalg} homomorphism~$\varphi \colon kQ \to \End_k(k^n) = \mat{n}{k}$ which corresponds to this~{\module{$kQ$}} structure therefore maps~$e_{ij}$ onto~$E_{ij}$.
+The homomorphisms~$\varphi$ therefore maps the path~{\kbasis} of~$kQ$ bijectively onto the standard~{\kbasis} of~$L_n$, and it is hence an isomorphism of~{\kalgs}.
 
-This shows that~$\varphi$ is multiplicative and~{\klin}, which shows that it is an isomorphism of~{\kalgs}.
-(That~$\varphi(1) = 1$ follows from the multiplicativity and bijectivity.)
-
+% 
+% 
+% It follows that the path algebra~$kQ$ has a~{\kbasis}~$e_{ij}$ with~$1 \leq j \leq i \leq n$, where~$e_{ij}$ is the unique path from~$j$ to~$i$ in~$Q$.
+% It holds that
+% \[
+%     e_{ij} e_{kl}
+%   = \delta_{jk} e_{il}
+% \]
+% for all~$i,j,k,l$ by definition of the multiplication of~$kQ$.
+% 
+% If~$E_{ij}$ with~$1 \leq j \leq i \leq n$ denotes the standard~{\kbasis} of~$L_n$ then it holds that
+% \[
+%     E_{ij} E_{kl}
+%   = \delta_{jk} E_{il}
+% \]
+% for all~$i,j,k,l$.
+% The unique~{\klin} map~$\varphi \colon kQ \to L_n$ with~
+% \[
+%     \varphi(e_{ij})
+%   = E_{ij}
+% \]
+% for all~$1 \leq j \leq i \leq n$ is an isomorphism because it maps the above~{\kbasis} of~$kQ$ bijectively onto the standard~{\kbasis} of~$L_n$.
+% The isomorphism~$\varphi$ is multiplicative on a~\dash{$k$}{generating} set of~$kQ$, and therefore multiplicative on all of~$Q$.
+% 
+% This shows that~$\varphi$ is multiplicative and~{\klin}, which shows that it is an isomorphism of~{\kalgs}.
+% (That~$\varphi(1) = 1$ follows from the multiplicativity and bijectivity.)
+% 
 
 
 

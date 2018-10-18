@@ -6,7 +6,7 @@
 
 \subsection*{(i) + (ii)}
 
-Recall that we have for all sets~$X$,~$Y$,~$Z$ the usual adjuction
+Recall that we have for all sets~$X$,~$Y$ and~$Z$ the usual adjuction
 \[
   \Maps(X \times Y, Z)
   \xlongrightarrow{\sim}
@@ -23,9 +23,9 @@ It follows in particular that for a~{\kvs}~$V$ we get a bijection
   \quad   \mu
   \mapsto [a \mapsto \mu(a,-)]  \,.
 \]
-It sufficies to show that~$\mu \in \Maps(A \times V, V)$ is an~{\Amod} structure if and only if the corresponding element~$\varphi \in \Maps(A, \Maps(V,V))$ is a homomorphism of~{\kalg} into~$\End_k(V)$.
+It sufficies to show that~$\mu \in \Maps(A \times V, V)$ is an~{\module{$A$}} structure if and only if the corresponding element~$\varphi \in \Maps(A, \Maps(V,V))$ is a homomorphism of~{\kalg} into~$\End_k(V)$.
 
-The map~$\mu \in \Maps(A \times V, V)$ is an~{\Amod} structure if and only if the following axioms are satisfied for all~$a, a_1, a_2 \in A$, all~$\lambda \in k$ and all~$m, m_1, m_2 \in M$:
+The map~$\mu \in \Maps(A \times V, V)$ is an~{\module{$A$}} structure if and only if the following axioms are satisfied for all~$a, a_1, a_2 \in A$, all~$\lambda \in k$ and all~$m, m_1, m_2 \in M$:
 \begin{enumerate}[label=(MS\arabic*)]
   \item
     \label{dist second}
@@ -50,13 +50,13 @@ The map~$\varphi$ is a homomorphism of~{\kalg} into~$\End_k(V)$ if and only if t
   \item
     $\varphi(a_1 + a_2) = \varphi(a_1) + \varphi(a_2)$,
   \item
-    $\varphi(\lambda a) = \lambda \varphi(a)$
-  \item
     $\varphi(a_1 a_2) = \varphi(a_1) \varphi(a_2)$,
   \item
-    $\varphi(1) = 1$.
+    $\varphi(\lambda a) = \lambda \varphi(a)$,
+  \item
+    $\varphi(1) = \id_V$.
 \end{enumerate}
-Spelling out these conditions in more detail mean that the following conditions need to be satisfied for all~$a, a_1, a_2 \in A$, all~$\lambda \in k$ and all~$m, m_1, m_2 \in M$
+Spelling out these conditions in more detail, we see that the following conditions need to be satisfied for all~$a, a_1, a_2 \in A$, all~$\lambda \in k$ and all~$m, m_1, m_2 \in M$
 \begin{enumerate}[label=(AH\arabic**)]
   \item
     \label{new dist second}
@@ -68,27 +68,28 @@ Spelling out these conditions in more detail mean that the following conditions 
     \label{new dist first}
     $\varphi(a_1 + a_2)(m) = \varphi(a_1)(m) + \varphi(a_2)(m)$,
   \item
-    \label{new kass second}
-    $\varphi(\lambda a)(m) = \lambda \varphi(a)(m)$,
-  \item
     \label{new ass}
     $\varphi(a_1 a_2)(m) = \varphi(a_1)(\varphi(a_2)(m))$,
   \item
+    \label{new kass second}
+    $\varphi(\lambda a)(m) = \lambda \varphi(a)(m)$,
+  \item
     \label{new unital}
-    $\varphi(1) = 1$.
+    $\varphi(1) = \id_V$.
 \end{enumerate}
 The relation between~$\mu$ and~$\varphi$ is so that~$\mu(a,m) = \varphi(a)(m)$ for all~$a \in A$ and all~$m \in M$.
-We therefore find that condition~\ref{dist first} is equivalent to~\ref{new dist first},~\ref{dist second} is equivalent to~\ref{new dist second},~\ref{ass} is equivalent to~\ref{new ass},~\ref{kass} is equivalent to the combination of~\ref{new kass first} and~\ref{new kass second}, and that~\ref{unital} is equivalent to~\ref{new unital}.
+We therefore find that condition~\ref{dist second} is equivalent to~\ref{new dist second},~\ref{dist first} is equivalent to~\ref{new dist first},~\ref{ass} is equivalent to~\ref{new ass},~\ref{unital} is equivalent to~\ref{new unital}, and~\ref{kass} is equivalent to the combination of~\ref{new kass first} and~\ref{new kass second}.
 
 
 
 
 
+\addtocounter{subsection}{2}
 \subsection{}
 
-Since the map~$f$ is already~{\klin} we find that
+Since the map~$f$ is already~{\klin}, we find that
 \begin{align*}
-      &{} \text{$f$ is a homomorphism of~{\Amod}} \\
+      &{} \text{$f$ is a homomorphism of~{\module{$A$}}} \\
   \iff&{} \text{$f(av) = af(v)$ for all~$a \in A$,~$v \in V$} \\
   \iff&{} \text{$f(\varphi(a)) = \psi(a)(f(v)$ for all~$a \in A$,~$v \in V$}  \\
   \iff&{} \text{$f \circ \varphi(a) = \psi(a) \circ f$ for all~$a \in A$} \,.
