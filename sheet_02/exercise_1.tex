@@ -1,1 +1,97 @@
-\addtocounter{section}{1}
+\section{}
+
+A homomorphism~$f \colon X_{(a,b)} \to X_{(c,d)}$ is the same as a pair~$f = (\lambda, \mu)$ consisting of scalars~$\lambda, \mu \in k$ such that the diagrams
+\[
+  \begin{tikzcd}
+      k
+      \arrow{r}[above]{a}
+      \arrow{d}[left]{\lambda}
+    & k
+      \arrow{d}[right]{\mu}
+    \\
+      k
+      \arrow{r}[above]{c}
+    & k
+  \end{tikzcd}
+  \qquad\text{and}\qquad
+  \begin{tikzcd}
+      k
+      \arrow{r}[above]{b}
+      \arrow{d}[left]{\lambda}
+    & k
+      \arrow{d}[right]{\mu}
+    \\
+      k
+      \arrow{r}[above]{d}
+    & k
+  \end{tikzcd}
+\]
+commute, i.e.\ such that
+\[
+  \left\{
+    \begin{aligned}
+      \mu a &= c \lambda \,, \\
+      \mu b &= d \lambda \,,
+    \end{aligned}
+  \right.
+  \iff
+  \begin{bmatrix}
+    a & -c  \\
+    b & -d
+  \end{bmatrix}
+  \begin{bmatrix}
+    \lambda \\
+    \mu
+  \end{bmatrix}
+  = 0
+  \iff
+  \begin{bmatrix}
+    \lambda \\
+    \mu
+  \end{bmatrix}
+  \in \ker
+  \begin{bmatrix}
+    a & -c  \\
+    b & -d
+  \end{bmatrix} \,.
+\]
+We now distinguish between some cases:
+\begin{itemize}
+  \item
+    If~$(a,b)$ and~$(c,d)$ are linearly independent then the matrix~%
+    $
+      \begin{bsmallmatrix}
+        a & -c  \\
+        b & -d
+      \end{bsmallmatrix}
+    $ %
+    is invertible and it follows that~$\Hom(X_{(a,b)}, X_{(c,d)}) = 0$.
+  \item
+    If~$(a,b) = (0,0)$ but~$(c,d) \neq (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (\lambda, 0) \suchthat \lambda \in k \}$.
+  \item
+    If~$(a,b) \neq (0,0)$ but~$(c,d) = (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (0, \mu) \suchthat \mu \in k \}$.
+  \item
+    If~$(a,b), (c,d) \neq (0,0)$ are linearly dependent then the space~$\Hom(X_{(a,b)}, X_{(c,d)})$ is \dash{one}{dimensional}. We distinguish between two non-exclusive cases:
+    \begin{itemize}
+      \item
+        If~$a \neq 0$ then $\Hom(X_{(a,b)}, X_{(c,d)}) = \{ \kappa(c,a) \suchthat \kappa \in k \}$.
+        Note that it also follows that~$c \neq 0$.
+      \item
+        If~$b \neq 0$ then $\Hom(X_{(a,b)}, X_{(c,d)}) = \{ \kappa(d,b) \suchthat \kappa \in k \}$
+        Note that it also follows that~$d \neq 0$.
+    \end{itemize}
+  \item
+    If~$(a,b) = (c,d) = (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (\lambda, \mu) \suchthat \lambda, \mu \in k \}$.
+\end{itemize}
+The two representations~$X_{(a,b)}$ and~$X_{(c,d)}$ are isomorphic if and only if there exists some~$(\lambda, \mu) \in \Hom(X_{(a,b)}, X_{(c,d)})$ with~$\lambda \neq 0$ and~$\mu \neq 0$.
+We see from the above that this is the case only in two cases:
+\begin{itemize}
+  \item
+    If~$(a,b)$ and~$(c,d)$ are both nonzero but linearly dependent.
+  \item
+    If~$(a,b) = (c,d) = (0,0)$, in which case already~$X_{(a,b)} = X_{(0,0)} = X_{(c,d)}$.
+\end{itemize}
+
+
+
+
