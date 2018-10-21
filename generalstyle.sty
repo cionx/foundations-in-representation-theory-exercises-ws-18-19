@@ -39,6 +39,23 @@
 \newcommand{\kvs}{$k$\nobreakdash-vector space}
 \newcommand{\twosided}{two\nobreakdash-sided}
 \newcommand{\welldef}{well\nobreakdash-defined}
+\newcommand{\balanced}[1]{#1\nobreakdash-balanced}
+\NewDocumentCommand{\module}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-module}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bimodule}%
+}
+\NewDocumentCommand{\modules}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-modules}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bimodules}%
+}
+\NewDocumentCommand{\submodule}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-submodule}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bisubmodule}%
+}
+\NewDocumentCommand{\submodules}{m o}{%
+  \IfNoValueTF{#2}{{#1}\nobreakdash-submodules}
+                  {{#1}\nobreakdash-{#2}\nobreakdash-bisubmodules}%
+}
 
 
 % math shortcuts
@@ -49,8 +66,11 @@
 
 
 % relations
+\newcommand{\bigdsum}{\bigoplus}
 \newcommand{\defined}{\coloneqq}
 \newcommand{\defines}{\eqqcolon}
+\newcommand{\dsum}{\oplus}
+\newcommand{\tensor}{\otimes}
 
 
 % important sets
@@ -70,25 +90,6 @@
 % functions
 \newcommand{\id}{\operatorname{id}}
 \DeclareMathOperator{\ringchar}{char}
-
-
-% module macros
-\NewDocumentCommand{\module}{m o}{%
-  \IfNoValueTF{#2}{{#1}\nobreakdash-module}
-                  {{#1}\nobreakdash-{#2}\nobreakdash-bimodule}%
-}
-\NewDocumentCommand{\modules}{m o}{%
-  \IfNoValueTF{#2}{{#1}\nobreakdash-modules}
-                  {{#1}\nobreakdash-{#2}\nobreakdash-bimodules}%
-}
-\NewDocumentCommand{\submodule}{m o}{%
-  \IfNoValueTF{#2}{{#1}\nobreakdash-submodule}
-                  {{#1}\nobreakdash-{#2}\nobreakdash-bisubmodule}%
-}
-\NewDocumentCommand{\submodules}{m o}{%
-  \IfNoValueTF{#2}{{#1}\nobreakdash-submodules}
-                  {{#1}\nobreakdash-{#2}\nobreakdash-bisubmodules}%
-}
 
 
 % custom macros with case distinctions

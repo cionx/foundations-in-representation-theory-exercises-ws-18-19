@@ -1,1 +1,214 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+For~$f \in \Hom_A(M,N)$ and~$z \in P$ consider the map
+\[
+          \tilde{\Phi}(f,z)
+  \colon  M
+  \to     N \tensor_B P \,,
+  \quad   m
+  \mapsto f(m) \tensor z \,.
+\]
+The map~$\tilde{\Phi}(f,z)$ is a homomorphism of left~{\modules{$M$}} because
+\begin{gather*}
+  \begin{aligned}
+      \tilde{\Phi}(f,z)(x_1 + x_2)
+  &=  f(x_1 + x_2) \tensor z
+   =  ( f(x_1) + f(x_2) ) \tensor z \\
+  &=  f(x_1) \tensor z + f(x_2) \tensor z
+   =  \tilde{\Phi}(f,z)(x_1) + \varphi(f,z)(x_2)
+  \end{aligned}
+\shortintertext{and}
+    \tilde{\Phi}(f,z)(ax)
+  = f(ax) \tensor z
+  = (af(x)) \tensor z
+  = a ( f(x) \tensor z )
+  = a \tilde{\Phi}(f,z)(x)
+\end{gather*}
+for all~$x, x_1, x_2 \in M$,~$a \in A$.
+This shows that~$\tilde{\Phi}(f,z)$ is a {\welldef} element of~$\Hom_A(M, N \tensor_B P)$, hence that the map
+\[
+          \tilde{\Phi}
+  \colon  \Hom_A(M,N) \times P
+  \to     \Hom_A(M, N \tensor_B P)
+\]
+is {\welldef}.
+The map~$\tilde{\Phi}$ is~{\balanced{$B$}} because
+\begin{gather*}
+  \begin{aligned}
+        \tilde{\Phi}(f_1 + f_2, z)(x)
+    &=  (f_1 + f_2)(x) \tensor z
+     =  ((f_1)(x) + (f_2)(x)) \tensor z \\
+    &=  f_1(x) \tensor z + f_2(x) \tensor z
+     =  \tilde{\Phi}(f_1,z)(x) + \tilde{\Phi}(f_2,z)(x) \\
+    &=  ( \tilde{\Phi}(f_1,z) + \tilde{\Phi}(f_2,z) )(x) \,,
+  \end{aligned}
+  \\
+      \tilde{\Phi}(f, z_1 + z_2)(x)
+    = f(x) \tensor (z_1 + z_2)
+    = f(x) \tensor z_1 + f(x) \tensor z_2
+    = \tilde{\Phi}(f, z_1) + \tilde{\Phi}(f, z_2) \,,
+  \\
+      \tilde{\Phi}(fb,z)(x)
+    = (fb)(x) \tensor z
+    = (f(x)b) \tensor z
+    = f(x) \tensor bz
+    = \tilde{\Phi}(f,bz)(x)
+\end{gather*}
+for all~$f, f_1, f_2 \in \Hom_A(M,N)$~$x, x_1, x_2 \in M$,~$z \in P$.
+It follows that~$\tilde{\Phi}$ induces a {\welldef}~{\klin} map
+\begin{align*}
+            \Phi
+   \colon   \Hom_A(M, N) \tensor_B P
+  &\to      \Hom_A(M, N \tensor_B P) \,,
+  \\
+            f \tensor z
+  &\mapsto  \left[
+                      \tilde{\Phi}(f,z)
+              \colon  x
+              \mapsto f(x) \tensor z
+            \right] \,,
+\end{align*}
+as desired.
+
+
+
+
+
+\subsection{}
+
+
+
+
+
+
+
+
+
+\subsection{}
+
+
+
+\subsubsection{If~$M$ is Free}
+
+Suppose that~$M$ is free of rank~$n$ with basis~$x_1, \dotsc, x_n$.
+Let~$\varphi \colon A^n \to M$ be the unique isomorphism of left~{\modules{$A$}} with~$\varphi(e_i) = x_i$ for all~$i = 1, \dotsc, n$.
+Then
+\begin{align}
+       {}&  \Hom_A(M, N) \tensor_B P  \notag  \\
+  \cong{}&  \Hom_A(A^{\oplus n}, N) \tensor_B P \label{iso first} \\
+  \cong{}&  \Hom_A(A, N)^{\times n} \tensor_B P \notag  \\
+  \cong{}&  N^{\times n} \tensor_B P  \notag  \\
+        =&  N^{\oplus n} \tensor_B P  \notag  \\
+  \cong{}&  (N \tensor_B P)^{\oplus n}  \notag
+\end{align}
+and also
+\begin{align}
+       {}&  \Hom_A(M, N \tensor_B P)  \notag  \\
+  \cong{}&  \Hom_A(A^{\oplus n}, N \tensor_B P) \label{iso second}  \\
+  \cong{}&  \Hom_A(A, N \tensor_B P)^{\times n} \notag  \\
+  \cong{}&  (N \tensor_B P)^{\times n}  \notag  \\
+      ={}&  (N \tensor_B P)^{\oplus n}  \notag  \,,
+\end{align}
+where the isomorphisms~\eqref{iso first} and~\eqref{iso second} are induced by~$\varphi$.
+The first isomorphism is altogether given by
+\begin{align*}
+            \Hom_A(M, N) \tensor P
+  &\to      (N \tensor_B P)^{\oplus n} \,,
+  \\
+            f \tensor z
+  &\mapsto  ( f(x_1) \tensor z, \dotsc, f(x_n) \tensor z ) \,,
+\end{align*}
+and the second isomorphism is altogether given by
+\begin{align*}
+            \Hom_A(M, N \tensor_B P)
+  &\to      (N \tensor P)^{\oplus n} \,,
+  \\
+            g
+  &\mapsto  ( g(x_1), \dotsc, g(x_n) ) \,.
+\end{align*}
+The diagram
+\[
+  \begin{tikzcd}
+      \Hom_A(M, N) \tensor_B P
+      \arrow{dr}[below left]{\sim}
+      \arrow{rr}[above]{\Phi}
+    & {}
+    & \Hom_A(M, N \tensor_B P)
+      \arrow{dl}[below right]{\sim}
+    \\
+      {}
+    & (N \tensor_B P)^{\oplus n}
+    & {}
+  \end{tikzcd}
+\]
+commutes, and so it follows that~$\Phi$ is an isomorphism.
+
+
+
+
+
+\subsubsection{If~$P$ is Free}
+
+Suppose that~$P$ is free of rank~$n$ and with basis~$z_1, \dotsc, z_n$.
+Let~$\varphi \colon B^n \to P$ be the unique isomorphism of left~{\modules{$B$}} with~$\varphi(z_i) = e_i$ for every~$i = 1 \dotsc, n$.
+Then
+\begin{align}
+       {}&  \Hom_A(M, N) \tensor_B P  \notag  \\
+  \cong{}&  \Hom_A(M, N) \tensor_B B^{\oplus n} \label{third iso} \\
+  \cong{}&  \Hom_A(M, N)^{\oplus n} \notag
+\end{align}
+and also
+\begin{align}
+       {}&  \Hom_A(M, N \tensor_B P)  \notag  \\
+  \cong{}&  \Hom_A(M, N \tensor_B B^{\oplus n}) \label{fourth iso}  \\
+  \cong{}&  \Hom_A(M, N^{\oplus n}) \notag  \\
+  \cong{}&  \Hom_A(M, N^{\times n}) \notag  \\
+  \cong{}&  \Hom_A(M, N)^{\times n}  \notag  \\
+  \cong{}&  \Hom_A(M, N)^{\oplus n} \notag  \,,
+\end{align}
+where the isomorphisms~\eqref{third iso} and~\eqref{fourth iso} are induced by~$\varphi$.
+The inverse of the first isomorphism is given by
+\begin{align*}
+            \Hom_A(M,N)^{\oplus n}
+  &\to      \Hom_A(M,N) \tensor_B P \,,
+  \\
+            (f_1, \dotsc, f_n)
+  &\mapsto  f_1 \tensor z_1 + \dotsb + f_n \tensor z_n \,,
+\end{align*}
+and the inverse of the second isomorphism is given by
+\begin{align*}
+              \Hom_A(M,N)^{\oplus n}
+  \to{}&      \Hom_A(M, N \tensor_B P) \,,
+  \\
+              (f_1, \dotsc, f_n)
+  \mapsto{}&  [x \mapsto f_1(x) \tensor z_1 + \dotsb + f_n(x) \tensor z_n]
+  \\
+              {}
+  &=          \Phi( f_1 \tensor z_1 + \dotsb + f_n \tensor z_n ) \,.
+\end{align*}
+This shows that the diagram
+\[
+  \begin{tikzcd}
+      \Hom_A(M, N) \tensor_B P
+      \arrow{rr}[above]{\Phi}
+    & {}
+    & \Hom_A(M, N \tensor_B P)
+    \\
+      {}
+    & \Hom_A(M, N)^{\oplus n}
+      \arrow{ul}[below left]{\sim}
+      \arrow{ur}[below right]{\sim}
+    & {}
+  \end{tikzcd}
+\]
+commutes, hence that~$\Phi$ is an isomorphism.
+
+
+
+
