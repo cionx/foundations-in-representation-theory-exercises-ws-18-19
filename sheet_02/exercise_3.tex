@@ -54,13 +54,26 @@ The map~$\tilde{\Phi}$ is~{\balanced{$B$}} because
     = f(x) \tensor z_1 + f(x) \tensor z_2
     = \tilde{\Phi}(f, z_1) + \tilde{\Phi}(f, z_2) \,,
   \\
+      \tilde{\Phi}(\lambda f,z)(x)
+    = (\lambda f)(x) \tensor z
+    = (\lambda f(x)) \tensor z
+    = \lambda (f(x) \tensor z)
+    = \lambda \tilde{\Phi}(f,z)(x)
+    = ( \lambda \tilde{\Phi}(f,z) )(x)
+  \\
+      \tilde{\Phi}(f, \lambda z)(x)
+    = f(x) \tensor (\lambda z)
+    = \lambda (f(x) \tensor z)
+    = \lambda \tilde{\Phi}(f,z)(x)
+    = ( \lambda \tilde{\Phi}(f,z) )(x)
+  \\
       \tilde{\Phi}(fb,z)(x)
     = (fb)(x) \tensor z
     = (f(x)b) \tensor z
     = f(x) \tensor bz
     = \tilde{\Phi}(f,bz)(x)
 \end{gather*}
-for all~$f, f_1, f_2 \in \Hom_A(M,N)$~$x, x_1, x_2 \in M$,~$z \in P$.
+for all~$f, f_1, f_2 \in \Hom_A(M,N)$~$x, x_1, x_2 \in M$,~$\lambda \in k$,~$z \in P$.
 It follows that~$\tilde{\Phi}$ induces a {\welldef}~{\klin} map
 \begin{align*}
             \Phi
@@ -80,7 +93,116 @@ as desired.
 
 
 
-\addtocounter{subsection}{1}
+\subsection{}
+
+We consider the commutative~{\kalgs}~$A \defined B \defined k[t]/(t^2)$ and the~{\modules{$A$}}~$N = A$ and~$M \defined P \defined A/(t) \cong k[t]/(t)$.
+The module~$\Hom_A(M,N) = \Hom_A(M,A) = \dual{M}$ is the dual module of~$M$, and~$N \tensor_B P \cong P = M$.
+We thus have to show that the homomorphism
+\[
+          \dual{M} \tensor_A M
+  \to     \End_A(M) \,,
+  \quad   f \tensor x
+  \mapsto (z \mapsto f(z) x)
+\]
+is neither surjective nor injective.
+
+We first note that
+\[
+        \dual{M}
+  =     \Hom_A(M, A)
+  =     \Hom_A( A/(t), A)
+  =     (\text{\dash{$t$}{torsion} of~$A$})
+  =     tA
+  \cong A/(t)
+  =     M \,,
+\]
+where the isomorphism~$M \to \dual{M}$ is given on representatives given by
+\[
+                  M
+  \xlongto{\sim}  \dual{M} \,,
+  \quad           [p]
+  \mapsto         ( [q] \mapsto qtp = tpq ) \,.
+\]
+We also have an isomorphism
+\[
+        M \tensor_A M
+  =     A/(t) \tensor_A A/(t)
+  \cong A/( (t) + (t) )
+  =     A/(t)
+  =     M \,,
+\]
+whose inverse is given by
+\[
+                  M
+  \xlongto{\sim}  M \tensor_A M \,,
+  \quad           [p]
+  \mapsto         [p] \tensor [1] \,.
+\]
+Lastly, we have an isomorphrism
+\[
+        \End_A(M)
+  =     \End_A(A/(t))
+  \cong \End_{A/(t)}(A/(t))
+  \cong A/(t)
+  =     M \,,
+\]
+which is given by
+\[
+                  \End_A(M)
+  \xlongto{\sim}  M \,,
+  \quad           f
+  \mapsto         f(1) \,.
+\]
+The overall resulting composition
+\[
+                  M
+  \xlongto{\sim}  M \tensor_A M
+  \xlongto{\sim}  \dual{M} \tensor_A M
+  \xlongto{\Phi}  \End_A(M)
+  \xlongto{\sim}  M
+\]
+is on elements given by
+\[
+          [p]
+  \mapsto [p] \tensor [1]
+  \mapsto ( [q] \mapsto tpq ) \tensor [1]
+  \mapsto ( [q] \mapsto tpq [1] = [tpq] )
+  \mapsto [tp]
+  =       t [p] \,,
+\]
+and thus by multiplication with~$t$.
+It follows that this composition is the zero map because~$t M = 0$.
+We thus have the following commutative diagram in which all vertical arrows are isomorphisms:
+\[
+  \begin{tikzcd}
+      \dual{M} \tensor_A M
+      \arrow{r}[above]{\Phi}
+    & \End_A(M)
+      \arrow{dd}[right]{\sim}
+    \\
+      M \tensor M
+      \arrow{u}[left]{\sim}
+    & {}
+    \\
+      M
+      \arrow{u}[left]{\sim}
+      \arrow{r}[above]{0}
+    & M
+  \end{tikzcd}
+\]
+This shows that~$\Phi = 0$, and because the zero endomorphism~$M \to M$ is neither injective nor surjective, the same holds for~$\Phi$.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
