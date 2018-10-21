@@ -1,1 +1,704 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+The~{\module{$k$}} of~$R$ comes from identifying~$R$ with~$A \times X \times B$ via the bijection
+\[
+          R
+  \to     A \times X \times B \,,
+  \quad   \begin{bmatrix}
+            a & x \\
+            0 & b
+          \end{bmatrix}
+  \mapsto (a,x,b) \,.
+\]
+The proposed multiplication is {\welldef} because
+\[
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_2 & x_2 \\
+    0   & b_2
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    a_1 a_2 & a_1 x_2 + x_1 b_2 \\
+          0 & b_1 b_2
+  \end{bmatrix}
+  \in
+  R \,.
+\]
+The multiplication is associative because
+\begin{align*}
+  {}&
+  \left(
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+  \right)
+  \begin{bmatrix}
+    a_3 & x_3 \\
+    0   & b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 a_2 & a_1 x_2 + x_1 b_2 \\
+    0       & b_1 b_2
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_3 & x_3 \\
+    0   & b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 a_2 a_3 & a_1 a_2 x_3 + a_1 x_2 b_3 + x_1 b_2 b_3 \\
+    0           & b_1 b_2 b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_2 a_3 & a_2 x_3 + x_2 b_3 \\
+    0       & b_2 b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \left(
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_3 & x_3 \\
+      0   & b_3
+    \end{bmatrix}
+  \right)
+\end{align*}
+The multiplication is distributive on the left because
+\begin{align*}
+  {}&
+  \left(
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+  \right)
+  \begin{bmatrix}
+    a_3 & x_3 \\
+    0   & b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 + a_2 & x_1 + x_2 \\
+    0         & b_1 + b_2
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_3 & x_3 \\
+    0   & b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    (a_1 + a_2) a_3 & (a_1 + a_2) x_3 + (x_1 + x_2) b_3 \\
+    0               & (b_1 + b_2) b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 a_3 + a_2 a_3 & a_1 x_3 + a_2 x_3 + x_1 b_3 + x_2 b_3 \\
+    0                 & b_1 b_3 + b_2 b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 a_3 & a_1 x_3 + x_1 b_3 \\
+    0       & b_1 b_3
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+    a_2 a_3 & a_2 x_3 + x_2 b_3 \\
+    0       & b_2 b_3
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_3 & x_3 \\
+    0   & b_3
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+    a_2 & x_2 \\
+    0   & b_2
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_3 & x_3 \\
+    0   & b_3
+  \end{bmatrix} \,.
+\end{align*}
+The distributivity on the right can be shown in the same way.
+The multiplication is already~{\kbil} because
+\begin{align*}
+  {}&
+  \left(
+    \lambda
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+  \right)
+  \begin{bmatrix}
+    a_2 & x_2 \\
+    0   & b_2
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    \lambda a_1 & \lambda x_1 \\
+    0           & \lambda b_1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_2 & x_2 \\
+    0   & b_2
+  \end{bmatrix}
+  \\
+  ={}&
+  \begin{bmatrix}
+    \lambda a_1 a_2 & \lambda a_1 x_2 + \lambda x_1 b_2 \\
+    0               & \lambda b_1 b_2
+  \end{bmatrix}
+  \\
+  ={}&
+  \lambda
+  \begin{bmatrix}
+    a_1 a_2 & a_1 x_2 + x_1 b_2 \\
+    0       & b_1 b_2
+  \end{bmatrix}
+  \\
+  ={}&
+  \lambda
+  \left(
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+  \right) \,,
+\end{align*}
+und similarly
+\[
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \left(
+    \lambda
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+  \right)
+  =
+  \lambda
+  \left(
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+  \right) \,.
+\]
+The multiplicative unit of~$R$ is given by the identity matrix because
+\[
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix} \,.
+\]
+This shows altogether that~$R$ together with the given~{\module{$k$}} structure and multiplication is a~{\kalg}.
+
+
+
+
+
+\subsection{}
+
+The~{\klin} map
+\[
+    X \tensor_k N
+  \xlongto{ \lambda \tensor \id_N }
+    \Hom_k(N, M) \tensor_k N
+  \xlongto[f \tensor n \mapsto f(n)]{ \text{eval} }
+    M
+\]
+corresponds to a~{\kbil} map
+\begin{equation}
+  \label{action of X on N}
+          X \times M
+  \to     N \,,
+  \quad   (x,n)
+  \mapsto \lambda(x)(n) \,,
+\end{equation}
+which we might think about this as an action of~$X$ on~$N$ to~$M$, and write
+\[
+            x \cdot n
+  \defined  \lambda(x)(n)
+\]
+for all~$x \in X$,~$n \in N$.
+It follows from the~{\kbil} of~\eqref{action of X on N} that
+\[
+    (x_1 + x_2) n
+  = x_1 n + x_2 n \,,
+  \quad
+    x (n_1 + n_2)
+  = x n_1 + x n_2 \,,
+  \quad
+    (\lambda x) n
+  = \lambda (xn)
+  = x (\lambda n)
+\]
+for all~$x, x_1, x_2 \in X$,~$n, n_1, n_2 \in N$,~$\lambda \in k$.
+It further folows from~$\lambda$ being a homomorphism of~{\modules{$A$}[$B$]} that
+\begin{gather}
+  \label{asso a}
+    (a x) n
+  = \lambda(ax)(n)
+  = (a \lambda(x))(n)
+  = a \lambda(x)(n)
+  = a (x n)
+\shortintertext{and}
+  \label{asso b}
+    (x b) n
+  = \lambda(xb)(n)
+  = (\lambda(x)b)(n)
+  = \lambda(x)(bn)
+  = x (b n) \,.
+\end{gather}
+
+As the underlying~{\module{$k$}} of~$F(M,N,\lambda)$ we choose~$M \dsum N$, and write the elements of~$F(M,N,\lambda)$ as column vectors
+\[
+  \vect{m \\ n}
+\]
+with~$m \in M$,~$n \in N$.
+The action of~$R$ on~$F(M,N,\lambda)$ is given by
+\[
+    \begin{bmatrix}
+      a & x \\
+      0 & b
+    \end{bmatrix}
+    \vect{m \\ n}
+  = \vect{ am + xn \\ bn } \,.
+\]
+This action is distributive because
+\begin{align*}
+  {}&
+  \left(
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+  \right)
+  \vect{m \\ n}
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 + a_2 & x_1 + x_2 \\
+    0         & b_1 + b_2
+  \end{bmatrix}
+  \vect{m \\ n}
+  \\
+  ={}&
+  \vect{ (a_1 + a_2) m + (x_1 + x_2) n \\ (b_1 + b_2) n  }
+  \\
+  ={}&
+  \vect{ a_1 m + a_2 m + x_1 n + x_2 n \\ b_1 n + b_2 n }
+  \\
+  ={}&
+    \vect{ a_1 m + x_1 n \\ b_1 n }
+  + \vect{ a_2 m + x_2 n \\ b_2 n }
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \vect{m \\ n}
+  +
+  \begin{bmatrix}
+    a_2 & x_2 \\
+    0   & b_2
+  \end{bmatrix}
+  \vect{m \\ n} \,,
+\end{align*}
+and distributive in the second argument because
+\begin{align*}
+  {}&
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \left(
+      \vect{ m_1 \\ n_1 }
+    + \vect{ m_2 \\ n_2 }
+  \right)
+  \\
+  ={}&
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \vect{ m_1 + m_2 \\ n_1 + n_2 }
+  \\
+  ={}&
+  \vect{ a (m_1 + m_2) + x (n_1 + n_2) \\ b (n_1 + n_2) }
+  \\
+  ={}&
+  \vect{ a m_1 + a m_2 + x n_1 + x n_2 \\ b n_1 + b n_2 }
+  \\
+  ={}&
+    \vect{ a m_1 + x n_1 \\ b n_1 }
+  + \vect{ a m_2 + x n_2 \\ b n_2 }
+  \\
+  ={}&
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \vect{ m_1 \\ n_1 }
+  +
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \vect{ m_2 \\ n_2 }
+\end{align*}
+The multiplicaiton is already~{\kbil} because
+\begin{align*}
+  \left(
+    \lambda
+    \begin{bmatrix}
+      a & x \\
+      0 & b
+    \end{bmatrix}
+  \right)
+  \vect{ m \\ n }
+  =
+  \begin{bmatrix}
+    \lambda a & \lambda x \\
+    0         & \lambda b
+  \end{bmatrix}
+  \vect{ m \\ n }
+  =
+  \vect{\lambda a m + \lambda x n \\ \lambda b n}
+  &=
+  \lambda \vect{a m + x n \\ b n}
+  \\
+  &=
+  \lambda
+  \left(
+    \begin{bmatrix}
+      a & x \\
+      0 & b
+    \end{bmatrix}
+    \vect{ m \\ n }
+  \right)
+\end{align*}
+and similarly
+\begin{align*}
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \left(
+    \lambda
+    \vect{m \\ n}
+  \right)
+  =
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \vect{\lambda m \\ \lambda n}
+  =
+  \vect{ \lambda am + \lambda xn \\ \lambda bn }
+  &=
+  \lambda 
+  \vect{am + xn \\ bn}
+  \\
+  &=
+  \lambda
+  \left(
+    \begin{bmatrix}
+      a & x \\
+      0 & b
+    \end{bmatrix}
+    \vect{m \\ n}
+  \right)
+\end{align*}
+The multiplication is associative because
+\begin{align*}
+  {}&
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \left(
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+    \vect{m \\ n}
+  \right)
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 & x_1 \\
+    0   & b_1
+  \end{bmatrix}
+  \vect{ a_2 m + x_2 n \\ b_2 n }
+  \\
+  ={}&
+  \vect{ a_1 a_2 m + a_1 x_2 n + x_1 b_2 n \\ b_1 b_2 n }
+  \\
+  ={}&
+  \vect{ (a_1 a_2) m + (a_1 x_2 + x_1 b_2) n \\ (b_1 b_2) n }
+  \\
+  ={}&
+  \begin{bmatrix}
+    a_1 + a_2 & a_1 x_2 + x_1 b_2 \\
+    0         & b_1 + b_2
+  \end{bmatrix}
+  \vect{m \\ n}
+  \\
+  ={}&
+  \left(
+    \begin{bmatrix}
+      a_1 & x_1 \\
+      0   & b_1
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_2 & x_2 \\
+      0   & b_2
+    \end{bmatrix}
+  \right)
+  \vect{m \\ n} \,,
+\end{align*}
+where we use the associativity of~\eqref{asso a} and~\eqref{asso b}.
+It also holds that
+\[
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+  \vect{m \\ n}
+  =
+  \vect{1 \cdot m + 0 \cdot n \\ 1 \cdot n}
+  =
+  \vect{m \\ n} \,.
+\]
+Altogether this shows that we have defined on~$F(M,N,\lambda)$ the structure of an~{\module{$R$}}.
+
+
+
+
+
+\subsection{}
+
+Let~$(M, N, \lambda)$ and~$(M', N', \lambda')$ be two triples consisting of left~{\modules{$A$}}~$M$ and~$M'$, left~{\modules{$B$}}~$N$ and~$N'$, and homomorphism of~{\modules{$A$}[$B$]}~$\lambda \colon X \to \Hom_k(N, M)$ and~$\lambda' \colon X \to \Hom_k(N', M')$.
+We define a \emph{morphism}~$f \colon (M, N, \lambda) \to (M', N', \lambda')$ to be a pair~$f = (f_1, f_2)$ consisting of a homomorphism of left~{\modules{$A$}}~$f_1 \colon M \to M'$ and a homomorphism of left~{\modules{$B$}}~$f_2 \colon N \to N'$, subject to the relation that
+\[
+  f_1 \lambda(x) = \lambda'(x) f_2
+\]
+for all~$x \in X$; this means for the action of~$X$ on~$N$ to~$M$ that
+\[
+    f_1(xn)
+  = x f_2(n)
+\]
+for all~$x \in X$,~$n \in N$.
+This may be represented by the following commutative diagram:
+\[
+  \begin{tikzcd}
+      M
+      \arrow{d}[left]{f_1}
+    & N
+      \arrow{l}[above]{X}
+      \arrow{d}[right]{f_2}
+    \\
+      M'
+    & N'
+      \arrow{l}[above]{X}
+  \end{tikzcd}
+\]
+The \emph{composition} of two such morphisms
+\begin{align*}
+  f   \colon (M, N, \lambda)    &\to  (M', N', \lambda') \,,  \\
+  f'  \colon (M', N', \lambda') &\to  (M'', N'', \lambda'')
+\end{align*}
+is given by
+\[
+    f' \circ f
+  = (f'_1, f'_2) \circ (f_1, f_2)
+  = (f'_1 \circ f_1, f_2' \circ f_2) \,.
+\]
+This is again a morphism because
+\[
+    f'_1 \circ f_1 \circ \lambda(x)
+  = f'_1 \circ \lambda'(x) \circ f_2
+  = \lambda''(x) \circ f'_2 \circ f_2(x)
+\]
+for every~$x \in X$.
+The identity morphism of~$(M, N, \lambda)$ is given by~$\id_{(M,N,\lambda)} = (\id_M, \id_N)$;
+this is a morphisms because
+\[
+    {\id_M} \circ \lambda(x)
+  = \lambda(x)
+  = \lambda(x) \circ \id_N
+\]
+for every~$x \in X$, and it holds for every morphism~$f \colon (M,N,\lambda) \to (M',N',\lambda')$ that~$f \circ \id = f$, and for every morphisms~$f \colon (M',N',\lambda') \to (M,N,\lambda)$ that~$\id \circ f = f$.
+
+The construction~$F$ is functorial:
+Every morphism~$f \colon (M, N, \lambda) \to (M', N', \lambda')$ induces a map
+\[
+          F(f)
+  \colon  F(M,N,\lambda)
+  \to     F(M',N',\lambda') \,,
+  \quad   \vect{m \\ n}
+  \mapsto \vect{f_1(m) \\ f_2(n)} \,,
+\]
+i.e.\ $F(f) = f_1 \dsum f_2$.
+The additive map~$F(f)$ is a homomorphism of left~{\modules{$R$}} because
+\begin{align*}
+  F(f)
+  \left(
+    \begin{bmatrix}
+      a & x \\
+      0 & b
+    \end{bmatrix}
+    \vect{m \\ n}
+  \right)
+  &=
+  F(f)
+  \left(
+    \vect{ am + xn \\ bn }
+  \right)
+  =
+  \vect{ f_1(am + xn) \\ f_2(bn) }
+  \\
+  &=
+  \vect{ f_1(am) + f_1(xn) \\ f_2(bn) }
+  =
+  \vect{ a f_1(m) + x f_2(n) \\ b f_2(n) }
+  \\
+  &=
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  \vect{ f_1(m) \\ f_2(n) }
+  =
+  \begin{bmatrix}
+    a & x \\
+    0 & b
+  \end{bmatrix}
+  F(f)
+  \left(
+    \vect{m \\ n}
+  \right) \,.
+\end{align*}
+It furthermore holds for any two composable morphisms~$f \colon (M, N, \lambda) \to (M', N', \lambda')$ and~$f' \colon (M', N', \lambda') \to (M'', N'', \lambda'')$ that
+\begin{align*}
+      F(f') \circ F(f)
+  &=  (f'_1 \dsum f'_2) \circ (f_1 \dsum f_2)
+   =  (f'_1 \circ f_1) \dsum (f'_2 \circ f_2) \\
+  &=  (f' \circ f)_1 \dsum (f' \circ f)_2
+   =  F(f' \circ f) \,,
+\end{align*}
+and it holds that
+\[
+  F(\id_{(M, N, \lambda)})
+  =
+  \id_M \dsum \id_N
+  =
+  \id_{M \dsum N}
+  =
+  \id_{F(M, N, \lambda)} \,.
+\]
+This shows altogether the claimed functoriality of~$F$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
