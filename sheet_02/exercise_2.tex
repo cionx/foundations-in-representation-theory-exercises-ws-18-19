@@ -1,1 +1,124 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+I assume that we only supposed to classify the finitely presented indecomposable representations of~$Q$.
+
+The path algebra of the quiver~$Q$ is given by~$k Q \cong k[x]$, and representations are therefore \enquote{the same} as~{\modules{$k[x]$}}.
+To be more precise, a representation
+\[
+  \begin{tikzcd}
+    V
+    \arrow[loop]{r}[above]{\varphi}
+  \end{tikzcd}
+\]
+of~$Q$ corresponds to the~{\module{$k[x]$}} whose underlying~{\kvs} is~$V$ and for which the action of~$x$ is given by~$\varphi$.
+It follows from the classification of finitely generated~{\modules{$k[x]$}} and~$k$ being algebraically closed that the finitely generated indecomposable~{\modules{$k[x]$}} are up to isomorphism precisely those of the form
+\[
+  k[x]/(x-\lambda)^n
+\]
+with~$\lambda \in k$ and~$n \geq 1$, and that these representations are pairwise nonisomorphic.
+With respect to the basis~$1, (x-\lambda), \dotsc, (x-\lambda)^{n-1}$ of~$k[x]/(x-\lambda)^n$ the action of~$x$ is given by the Jordan block matrix
+\[
+  \begin{bmatrix}
+      \lambda
+    & {}
+    & {}
+    & {}
+    \\
+      1
+    & \ddots
+    & {}
+    & {}
+    \\
+      {}
+    & \ddots
+    & \ddots
+    & {}
+    \\
+      {}
+    & {}
+    & 1
+    & \lambda
+  \end{bmatrix}
+\]
+This shows altogether that the representations
+\[
+  \begin{tikzcd}[ampersand replacement = \&]
+    k^n
+    \arrow[loop]{r}[above]{
+      \begin{bsmallmatrix}
+          \lambda
+        & {}
+        & {}
+        & {}
+        \\
+          1
+        & \ddots
+        & {}
+        & {}
+        \\
+          {}
+        & \ddots
+        & \ddots
+        & {}
+        \\
+          {}
+        & {}
+        & 1
+        & \lambda
+      \end{bsmallmatrix}
+    }
+  \end{tikzcd}
+\]
+with~$\lambda \in k$ and~$n \geq 1$ form a set of representatives for the isomorphism classes of finitely generated indecomposable representations of~$Q$.
+
+
+
+
+
+\subsection{}
+
+For the matrix
+\[
+  A
+  \defined
+  \begin{bmatrix*}[r]
+    0 & -1  \\
+    1 &  0
+  \end{bmatrix*}
+  \in
+  \mat{2}{\Real}
+\]
+the only~\dash{$A$}{invariant} subspaces of~$\Real^2$ are~$0$ and~$\Real^2$, because the vectors~$v$ and~$Av$ are linearly independent for every~$v \in V$,~$v \neq 0$.
+The representation
+\[
+  \begin{tikzcd}
+    \Real^2
+    \arrow[loop]{r}[above]{A}
+  \end{tikzcd}
+\]
+is therefore irreducible, and hence indecomposable.
+
+But when we change the base field from~$\Real$ to~$\Complex$ then the matrix~$A$ becomes diagonalizable with
+\[
+    \Complex^2
+  = \gen{ e_1 + i e_2 }_\Complex
+    \oplus
+    \gen{ e_1 - i e_2 }_\Complex
+\]
+being a decomposition into nonzero~\dash{$A$}{invariant} subspaces.
+The representation
+\[
+  \begin{tikzcd}
+    \Complex^2
+    \arrow[loop]{r}[above]{A}
+  \end{tikzcd}
+\]
+is therefore decomposable.
+
+

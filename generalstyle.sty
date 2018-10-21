@@ -1,6 +1,7 @@
 \usepackage{xparse} % defining certain macros
 \usepackage{microtype}  % better typography
 \usepackage{enumitem} % better list type environments
+\usepackage{csquotes} % quotes
 \usepackage{amsmath, amssymb, amsthm, mathtools} % smath stuff
 \usepackage{extarrows} % xlongrightarrow
 \usepackage{tikz-cd}
@@ -77,15 +78,15 @@
 % important sets
 \newcommand{\Natural}{\mathbb{N}}
 \newcommand{\Integer}{\mathbb{Z}}
-
-
-% important spaces
-\newcommand{\mat}[2]{\operatorname{M}_{#1}(#2)}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Complex}{\mathbb{C}}
 
 
 % space and set constructions
 \DeclareMathOperator{\End}{End}
+\DeclarePairedDelimiter{\gen}{\langle}{\rangle}
 \DeclareMathOperator{\Hom}{Hom}
+\newcommand{\mat}[2]{\operatorname{M}_{#1}(#2)}
 
 
 % functions
