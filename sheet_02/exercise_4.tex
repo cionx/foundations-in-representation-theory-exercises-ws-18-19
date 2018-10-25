@@ -92,7 +92,7 @@ The multiplication is associative because
       a_3 & x_3 \\
       0   & b_3
     \end{bmatrix}
-  \right)
+  \right) \,.
 \end{align*}
 The multiplication is distributive on the left because
 \begin{align*}
@@ -231,6 +231,8 @@ und similarly
     \end{bmatrix}
   \right)
   =
+  \dotsb
+  =
   \lambda
   \left(
     \begin{bmatrix}
@@ -292,13 +294,14 @@ corresponds to a~{\kbil} map
   \quad   (x,n)
   \mapsto \lambda(x)(n) \,,
 \end{equation}
-which we might think about this as an action of~$X$ on~$N$ to~$M$, and write
+which we might think about as an action of~$X$ on~$N$ to~$M$.
+We hence write
 \[
             x \cdot n
   \defined  \lambda(x)(n)
 \]
 for all~$x \in X$,~$n \in N$.
-It follows from the~{\kbil} of~\eqref{action of X on N} that
+It follows from the~\dash{$k$}{bilinearity} of~\eqref{action of X on N} that
 \[
     (x_1 + x_2) n
   = x_1 n + x_2 n \,,
@@ -311,7 +314,7 @@ It follows from the~{\kbil} of~\eqref{action of X on N} that
   = x (\lambda n)
 \]
 for all~$x, x_1, x_2 \in X$,~$n, n_1, n_2 \in N$,~$\lambda \in k$.
-It further folows from~$\lambda$ being a homomorphism of~{\modules{$A$}[$B$]} that
+It further follows from~$\lambda$ being a homomorphism of~{\modules{$A$}[$B$]} that
 \begin{gather}
   \label{asso a}
     (a x) n
@@ -342,7 +345,7 @@ The action of~$R$ on~$F(M,N,\lambda)$ is given by
     \vect{m \\ n}
   = \vect{ am + xn \\ bn } \,.
 \]
-This action is distributive because
+This action is distributive on the left because
 \begin{align*}
   {}&
   \left(
@@ -388,7 +391,7 @@ This action is distributive because
   \end{bmatrix}
   \vect{m \\ n} \,,
 \end{align*}
-and distributive in the second argument because
+and distributive on the right because
 \begin{align*}
   {}&
   \begin{bmatrix}
@@ -428,12 +431,12 @@ and distributive in the second argument because
     a & x \\
     0 & b
   \end{bmatrix}
-  \vect{ m_2 \\ n_2 }
+  \vect{ m_2 \\ n_2 } \,.
 \end{align*}
 The multiplicaiton is already~{\kbil} because
 \begin{align*}
   \left(
-    \lambda
+    \mu
     \begin{bmatrix}
       a & x \\
       0 & b
@@ -442,17 +445,17 @@ The multiplicaiton is already~{\kbil} because
   \vect{ m \\ n }
   =
   \begin{bmatrix}
-    \lambda a & \lambda x \\
-    0         & \lambda b
+    \mu a & \mu x \\
+    0     & \mu b
   \end{bmatrix}
   \vect{ m \\ n }
   =
-  \vect{\lambda a m + \lambda x n \\ \lambda b n}
+  \vect{\mu a m + \mu x n \\ \mu b n}
   &=
-  \lambda \vect{a m + x n \\ b n}
+  \mu \vect{a m + x n \\ b n}
   \\
   &=
-  \lambda
+  \mu
   \left(
     \begin{bmatrix}
       a & x \\
@@ -468,7 +471,7 @@ and similarly
     0 & b
   \end{bmatrix}
   \left(
-    \lambda
+    \mu
     \vect{m \\ n}
   \right)
   =
@@ -476,15 +479,15 @@ and similarly
     a & x \\
     0 & b
   \end{bmatrix}
-  \vect{\lambda m \\ \lambda n}
+  \vect{\mu m \\ \mu n}
   =
-  \vect{ \lambda am + \lambda xn \\ \lambda bn }
+  \vect{ \mu am + \mu xn \\ \mu bn }
   &=
-  \lambda 
+  \mu 
   \vect{am + xn \\ bn}
   \\
   &=
-  \lambda
+  \mu
   \left(
     \begin{bmatrix}
       a & x \\
@@ -554,7 +557,7 @@ It also holds that
   =
   \vect{m \\ n} \,.
 \]
-Altogether this shows that we have defined on~$F(M,N,\lambda)$ the structure of an~{\module{$R$}}.
+Altogether we have defined on~$F(M,N,\lambda)$ the structure of a left~{\module{$R$}}.
 
 
 
@@ -565,26 +568,27 @@ Altogether this shows that we have defined on~$F(M,N,\lambda)$ the structure of 
 Let~$(M, N, \lambda)$ and~$(M', N', \lambda')$ be two triples consisting of left~{\modules{$A$}}~$M$ and~$M'$, left~{\modules{$B$}}~$N$ and~$N'$, and homomorphism of~{\modules{$A$}[$B$]}~$\lambda \colon X \to \Hom_k(N, M)$ and~$\lambda' \colon X \to \Hom_k(N', M')$.
 We define a \emph{morphism}~$f \colon (M, N, \lambda) \to (M', N', \lambda')$ to be a pair~$f = (f_1, f_2)$ consisting of a homomorphism of left~{\modules{$A$}}~$f_1 \colon M \to M'$ and a homomorphism of left~{\modules{$B$}}~$f_2 \colon N \to N'$, subject to the relation that
 \[
-  f_1 \lambda(x) = \lambda'(x) f_2
+    f_1 \circ \lambda(x)
+  = \lambda'(x) \circ f_2
 \]
-for all~$x \in X$; this means for the action of~$X$ on~$N$ to~$M$ that
+for all~$x \in X$; this means for the actions of~$X$ on~$N$ to~$M$ and on~$N'$ to~$M'$ that
 \[
     f_1(xn)
   = x f_2(n)
 \]
 for all~$x \in X$,~$n \in N$.
-This may be represented by the following commutative diagram:
+This may be represented pictorially by the following \enquote{commutative diagram}:
 \[
-  \begin{tikzcd}
+  \begin{tikzcd}[column sep = large]
       M
       \arrow{d}[left]{f_1}
     & N
-      \arrow{l}[above]{X}
+      \arrow{l}[above]{x \cdot (-)}
       \arrow{d}[right]{f_2}
     \\
       M'
     & N'
-      \arrow{l}[above]{X}
+      \arrow{l}[above]{x \cdot (-)}
   \end{tikzcd}
 \]
 The \emph{composition} of two such morphisms
@@ -602,7 +606,7 @@ This is again a morphism because
 \[
     f'_1 \circ f_1 \circ \lambda(x)
   = f'_1 \circ \lambda'(x) \circ f_2
-  = \lambda''(x) \circ f'_2 \circ f_2(x)
+  = \lambda''(x) \circ f'_2 \circ f_2
 \]
 for every~$x \in X$.
 The identity morphism of~$(M, N, \lambda)$ is given by~$\id_{(M,N,\lambda)} = (\id_M, \id_N)$;
@@ -612,7 +616,8 @@ this is a morphisms because
   = \lambda(x)
   = \lambda(x) \circ \id_N
 \]
-for every~$x \in X$, and it holds for every morphism~$f \colon (M,N,\lambda) \to (M',N',\lambda')$ that~$f \circ \id = f$, and for every morphisms~$f \colon (M',N',\lambda') \to (M,N,\lambda)$ that~$\id \circ f = f$.
+for every~$x \in X$;
+it holds for every morphism~$f \colon (M,N,\lambda) \to (M',N',\lambda')$ that~$f \circ \id = f$, and for every morphisms~$f \colon (M',N',\lambda') \to (M,N,\lambda)$ that~$\id \circ f = f$.
 
 The construction~$F$ is functorial:
 Every morphism~$f \colon (M, N, \lambda) \to (M', N', \lambda')$ induces a map
@@ -621,9 +626,9 @@ Every morphism~$f \colon (M, N, \lambda) \to (M', N', \lambda')$ induces a map
   \colon  F(M,N,\lambda)
   \to     F(M',N',\lambda') \,,
   \quad   \vect{m \\ n}
-  \mapsto \vect{f_1(m) \\ f_2(n)} \,,
+  \mapsto \vect{f_1(m) \\ f_2(n)} \,;
 \]
-i.e.\ $F(f) = f_1 \dsum f_2$.
+we hence have that $F(f) = f_1 \dsum f_2$.
 The additive map~$F(f)$ is a homomorphism of left~{\modules{$R$}} because
 \begin{align*}
   F(f)

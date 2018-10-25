@@ -11,17 +11,17 @@ For~$f \in \Hom_A(M,N)$ and~$z \in P$ consider the map
           \tilde{\Phi}(f,z)
   \colon  M
   \to     N \tensor_B P \,,
-  \quad   m
-  \mapsto f(m) \tensor z \,.
+  \quad   x
+  \mapsto f(x) \tensor z \,.
 \]
-The map~$\tilde{\Phi}(f,z)$ is a homomorphism of left~{\modules{$M$}} because
+The map~$\tilde{\Phi}(f,z)$ is a homomorphism of left~{\modules{$A$}} because
 \begin{gather*}
   \begin{aligned}
       \tilde{\Phi}(f,z)(x_1 + x_2)
   &=  f(x_1 + x_2) \tensor z
    =  ( f(x_1) + f(x_2) ) \tensor z \\
   &=  f(x_1) \tensor z + f(x_2) \tensor z
-   =  \tilde{\Phi}(f,z)(x_1) + \varphi(f,z)(x_2)
+   =  \tilde{\Phi}(f,z)(x_1) + \tilde{\Phi}(f,z)(x_2)
   \end{aligned}
 \shortintertext{and}
     \tilde{\Phi}(f,z)(ax)
@@ -43,7 +43,7 @@ The map~$\tilde{\Phi}$ is~{\balanced{$B$}} because
   \begin{aligned}
         \tilde{\Phi}(f_1 + f_2, z)(x)
     &=  (f_1 + f_2)(x) \tensor z
-     =  ((f_1)(x) + (f_2)(x)) \tensor z \\
+     =  (f_1(x) + f_2(x)) \tensor z \\
     &=  f_1(x) \tensor z + f_2(x) \tensor z
      =  \tilde{\Phi}(f_1,z)(x) + \tilde{\Phi}(f_2,z)(x) \\
     &=  ( \tilde{\Phi}(f_1,z) + \tilde{\Phi}(f_2,z) )(x) \,,
@@ -70,7 +70,7 @@ The map~$\tilde{\Phi}$ is~{\balanced{$B$}} because
       \tilde{\Phi}(fb,z)(x)
     = (fb)(x) \tensor z
     = (f(x)b) \tensor z
-    = f(x) \tensor bz
+    = f(x) \tensor (bz)
     = \tilde{\Phi}(f,bz)(x)
 \end{gather*}
 for all~$f, f_1, f_2 \in \Hom_A(M,N)$~$x, x_1, x_2 \in M$,~$\lambda \in k$,~$z \in P$.
@@ -95,28 +95,31 @@ as desired.
 
 \subsection{}
 
-We consider the commutative~{\kalgs}~$A \defined B \defined k[t]/(t^2)$ and the~{\modules{$A$}}~$N = A$ and~$M \defined P \defined A/(t) \cong k[t]/(t)$.
-The module~$\Hom_A(M,N) = \Hom_A(M,A) = \dual{M}$ is the dual module of~$M$, and~$N \tensor_B P \cong P = M$.
+We consider the commutative~{\kalgs}~$A, B \defined k[t]/(t^2)$ and the~{\modules{$A$}}~$N \defined A$ and~$M, P \defined A/(t) \cong k[t]/(t)$.
+The~{\module{$A$}}~$\Hom_A(M,N) = \Hom_A(M,A) = \dual{M}$ is the dual module of~$M$, and it holds that~$N \tensor_B P \cong P = M$.%
+\footnote{Here we implicitely use that over commutatives rings the \enquote{\dash{non}{commutative}} tensor product coincides with the \enquote{commutative} one.}
 We thus have to show that the homomorphism
 \[
-          \dual{M} \tensor_A M
+          \Phi
+  \colon  \dual{M} \tensor_A M
   \to     \End_A(M) \,,
   \quad   f \tensor x
   \mapsto (z \mapsto f(z) x)
 \]
 is neither surjective nor injective.
+We do so by showing that~$\dual{M} \tensor_A M \cong M$ and~$\End_A(M) \cong M$, but that the homomorphism~$M \to M$ corresponding to~$\Phi$ is the zero homomorphism.
 
 We first note that
 \[
         \dual{M}
   =     \Hom_A(M, A)
   =     \Hom_A( A/(t), A)
-  =     (\text{\dash{$t$}{torsion} of~$A$})
+  =     \{ \text{\dash{$t$}{torsion} of~$A$} \}
   =     tA
   \cong A/(t)
   =     M \,,
 \]
-where the isomorphism~$M \to \dual{M}$ is given on representatives given by
+where the inverse isomorphism~$M \to \dual{M}$ is given on representatives given by
 \[
                   M
   \xlongto{\sim}  \dual{M} \,,
@@ -136,9 +139,10 @@ whose inverse is given by
                   M
   \xlongto{\sim}  M \tensor_A M \,,
   \quad           [p]
-  \mapsto         [p] \tensor [1] \,.
+  \mapsto         [p] \tensor [1]
+  =               [1] \tensor [p] \,.
 \]
-Lastly, we have an isomorphrism
+Lastly, we have an isomorphism
 \[
         \End_A(M)
   =     \End_A(A/(t))
@@ -190,7 +194,7 @@ We thus have the following commutative diagram in which all vertical arrows are 
     & M
   \end{tikzcd}
 \]
-This shows that~$\Phi = 0$, and because the zero endomorphism~$M \to M$ is neither injective nor surjective, the same holds for~$\Phi$.
+Because the zero endomorphism~$M \to M$ is neither injective nor surjective, the same follows for~$\Phi$.
 
 
 
@@ -234,7 +238,7 @@ and also
       ={}&  (N \tensor_B P)^{\oplus n}  \notag  \,,
 \end{align}
 where the isomorphisms~\eqref{iso first} and~\eqref{iso second} are induced by~$\varphi$.
-The first isomorphism is altogether given by
+The first of the above two isomorphisms is altogether given by
 \begin{align*}
             \Hom_A(M, N) \tensor P
   &\to      (N \tensor_B P)^{\oplus n} \,,
@@ -279,6 +283,7 @@ Then
 \begin{align}
        {}&  \Hom_A(M, N) \tensor_B P  \notag  \\
   \cong{}&  \Hom_A(M, N) \tensor_B B^{\oplus n} \label{third iso} \\
+  \cong{}&  \left( \Hom_A(M, N) \tensor_B B \right)^{\oplus n}  \notag  \\
   \cong{}&  \Hom_A(M, N)^{\oplus n} \notag
 \end{align}
 and also

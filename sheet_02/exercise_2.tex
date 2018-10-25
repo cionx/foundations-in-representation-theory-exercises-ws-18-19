@@ -6,18 +6,16 @@
 
 \subsection{}
 
-I assume that we only supposed to classify the finitely presented indecomposable representations of~$Q$.
-
-The path algebra of the quiver~$Q$ is given by~$k Q \cong k[x]$, and representations are therefore \enquote{the same} as~{\modules{$k[x]$}}.
+The path algebra of the quiver~$Q$ is given by~$kQ \cong k[x]$, and representations of~$Q$ over~$k$ are therefore \enquote{the same} as~{\modules{$k[x]$}}.
 To be more precise, a representation
 \[
   \begin{tikzcd}
     V
-    \arrow[loop]{r}[above]{\varphi}
+    \arrow[loop right]{}[right]{\varphi}
   \end{tikzcd}
 \]
-of~$Q$ corresponds to the~{\module{$k[x]$}} whose underlying~{\kvs} is~$V$ and for which the action of~$x$ is given by~$\varphi$.
-It follows from the classification of finitely generated~{\modules{$k[x]$}} and~$k$ being algebraically closed that the finitely generated indecomposable~{\modules{$k[x]$}} are up to isomorphism precisely those of the form
+of~$Q$ corresponds to the~{\module{$k[x]$}} whose underlying~{\kvs} is given by~$V$ and for which the action of~$x$ on~$V$ is given by~$\varphi$.
+It follows from the classification of finitely generated~{\modules{$k[x]$}} and~$k$ being algebraically closed that the {\fd} indecomposable~{\modules{$k[x]$}} are up to isomorphism precisely those of the form
 \[
   k[x]/(x-\lambda)^n
 \]
@@ -44,13 +42,13 @@ With respect to the basis~$1, (x-\lambda), \dotsc, (x-\lambda)^{n-1}$ of~$k[x]/(
     & {}
     & 1
     & \lambda
-  \end{bmatrix}
+  \end{bmatrix} \,.
 \]
 This shows altogether that the representations
 \[
   \begin{tikzcd}[ampersand replacement = \&]
     k^n
-    \arrow[loop]{r}[above]{
+    \arrow[loop right]{}[right]{
       \begin{bsmallmatrix}
           \lambda
         & {}
@@ -75,7 +73,7 @@ This shows altogether that the representations
     }
   \end{tikzcd}
 \]
-with~$\lambda \in k$ and~$n \geq 1$ form a set of representatives for the isomorphism classes of finitely generated indecomposable representations of~$Q$.
+with~$\lambda \in k$ and~$n \geq 1$ form a set of representatives for the isomorphism classes of {\fd} indecomposable representations of~$Q$ over~$k$.
 
 
 
@@ -99,7 +97,7 @@ The representation
 \[
   \begin{tikzcd}
     \Real^2
-    \arrow[loop]{r}[above]{A}
+    \arrow[loop right]{}[right]{A}
   \end{tikzcd}
 \]
 is therefore irreducible, and hence indecomposable.
@@ -116,7 +114,7 @@ The representation
 \[
   \begin{tikzcd}
     \Complex^2
-    \arrow[loop]{r}[above]{A}
+    \arrow[loop right]{}[right]{A}
   \end{tikzcd}
 \]
 is therefore decomposable.

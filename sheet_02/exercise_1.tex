@@ -36,8 +36,8 @@ commute, i.e.\ such that
   \right.
   \iff
   \begin{bmatrix}
-    a & -c  \\
-    b & -d
+    c & -a  \\
+    d & -b
   \end{bmatrix}
   \begin{bmatrix}
     \lambda \\
@@ -51,8 +51,8 @@ commute, i.e.\ such that
   \end{bmatrix}
   \in \ker
   \begin{bmatrix}
-    a & -c  \\
-    b & -d
+    c & -a  \\
+    d & -b
   \end{bmatrix} \,.
 \]
 We now distinguish between some cases:
@@ -61,35 +61,35 @@ We now distinguish between some cases:
     If~$(a,b)$ and~$(c,d)$ are linearly independent then the matrix~%
     $
       \begin{bsmallmatrix}
-        a & -c  \\
-        b & -d
+        c & -a  \\
+        d & -b
       \end{bsmallmatrix}
     $ %
     is invertible and it follows that~$\Hom(X_{(a,b)}, X_{(c,d)}) = 0$.
   \item
-    If~$(a,b) = (0,0)$ but~$(c,d) \neq (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (\lambda, 0) \suchthat \lambda \in k \}$.
+    If~$(a,b) = (0,0)$ but~$(c,d) \neq (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (0,\mu) \suchthat \mu \in k \}$.
   \item
-    If~$(a,b) \neq (0,0)$ but~$(c,d) = (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (0, \mu) \suchthat \mu \in k \}$.
+    If~$(a,b) \neq (0,0)$ but~$(c,d) = (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (\lambda, 0) \suchthat \lambda \in k \}$.
   \item
-    If~$(a,b), (c,d) \neq (0,0)$ are linearly dependent then the space~$\Hom(X_{(a,b)}, X_{(c,d)})$ is \dash{one}{dimensional}. We distinguish between two non-exclusive cases:
+    If~$(a,b), (c,d) \neq (0,0)$ are linearly dependent then~$(c,d)$ is a nonzero scalar multiple of~$(a,b)$ and the space~$\Hom(X_{(a,b)}, X_{(c,d)})$ is \dash{one}{dimensional}
+    We further distinguish between two non-exclusive cases:
     \begin{itemize}
       \item
-        If~$a \neq 0$ then $\Hom(X_{(a,b)}, X_{(c,d)}) = \{ \kappa(c,a) \suchthat \kappa \in k \}$.
-        Note that it also follows that~$c \neq 0$.
+        If~$a \neq 0$ then also~$c \neq 0$ (because~$(c,d)$ is a nonzero scalar multiple of~$(a,b)$) and~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ \kappa(a,c) \suchthat \kappa \in k \}$.
       \item
-        If~$b \neq 0$ then $\Hom(X_{(a,b)}, X_{(c,d)}) = \{ \kappa(d,b) \suchthat \kappa \in k \}$
-        Note that it also follows that~$d \neq 0$.
+        If~$b \neq 0$ then also~$d \neq 0$, and~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ \kappa(b,d) \suchthat \kappa \in k \}$.
     \end{itemize}
   \item
     If~$(a,b) = (c,d) = (0,0)$ then~$\Hom(X_{(a,b)}, X_{(c,d)}) = \{ (\lambda, \mu) \suchthat \lambda, \mu \in k \}$.
 \end{itemize}
-The two representations~$X_{(a,b)}$ and~$X_{(c,d)}$ are isomorphic if and only if there exists some~$(\lambda, \mu) \in \Hom(X_{(a,b)}, X_{(c,d)})$ with~$\lambda \neq 0$ and~$\mu \neq 0$.
-We see from the above that this is the case only in two cases:
+The two representations~$X_{(a,b)}$ and~$X_{(c,d)}$ are isomorphic if and only if there exists some~$(\lambda, \mu) \in \Hom(X_{(a,b)}, X_{(c,d)})$ with both~$\lambda \neq 0$ and~$\mu \neq 0$.
+We see from the discussion above that this happens in only in two cases:
 \begin{itemize}
   \item
     If~$(a,b)$ and~$(c,d)$ are both nonzero but linearly dependent.
   \item
-    If~$(a,b) = (c,d) = (0,0)$, in which case already~$X_{(a,b)} = X_{(0,0)} = X_{(c,d)}$.
+    If~$(a,b) = (c,d) = (0,0)$.
+    In this case it already holds that~$X_{(a,b)} = X_{(0,0)} = X_{(c,d)}$.
 \end{itemize}
 
 
