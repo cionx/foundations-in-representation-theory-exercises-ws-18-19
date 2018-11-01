@@ -1,1 +1,114 @@
-\addtocounter{section}{1}
+\section{}
+
+We convince ourselves that~$\Kcat$ is indeed a category:
+
+For any two objects~$(A,B,h)$ and~$(A',B',h')$ of the proposed category~$\Kcat$, the collection of morphisms~$(A,B,h) \to (A',B',h')$ is a subset of~$\Acat(A,A') \times \Bcat(B,B')$, and is hence again a set (and not a proper class).
+
+That the composition in~$\Kcat$ is associative follows from the associativity of the compositions in~$\Acat$ and~$\Bcat$.
+
+For every object~$(A,B,h)$ of~$\Kcat$ the morphism~$(\id_A, \id_B) \colon (A,B,h) \to (A,B,h)$ is the identity of~$(A,B,h)$ because it holds for all morphisms~$(f', g') \colon (A', B', h') \to (A, B, h)$ and all morphisms~$(f'', g'') \colon (A, B, h) \to (A'', B'', h'')$ that
+\begin{align*}
+    (\id_A, \id_B) \circ (f', g')
+  = (\id_A \circ f', \id_B \circ g')
+  = (f', g')
+\shortintertext{and}
+    (f'', g'') \circ (\id_A, \id_B)
+  = (f'' \circ \id_A, g'' \circ \id_B)
+  = (f'', g'') \,.
+\end{align*}
+
+
+
+
+
+\subsection{}
+
+A functor~$S \colon 1 \to \Ccat$ is the same as an object~$X \in \Ob(\Ccat)$ through the assignment~$X = S(\ast)$.
+An object of the comma category~$\Kcat = (S,\Id_\Ccat)$ is therefore the same as a tupel~$(Y,f)$ consisting of an object~$Y \in \Ob(\Ccat)$ and a morphisms~$f \colon X \to Y$.
+A morphisms~$g \colon (Y, f) \to (Y', f')$ is then a morphisms~$g \colon Y \to Y$ with~$g \circ f = f'$, i.e.\ such that the triangle
+\[
+  \begin{tikzcd}
+      {}
+    & X
+      \arrow{dl}[above left]{f}
+      \arrow{dr}[above right]{f'}
+    & {}
+    \\
+      Y
+      \arrow{rr}[above]{g}
+    & {}
+    & Y'
+  \end{tikzcd}
+\]
+commutes.
+The comma category~$\Kcat$ is therefore (isomorphic to) the \dash{under}{$X$} category.
+
+
+
+
+
+\subsection{}
+
+The objects of the given comma category~$\Kcat = (\Id_\Ccat, \Id_\Ccat)$ are tripels~$(X, X', f)$ consisting of two objects~$X, X' \in \Ob(\Ccat)$ and a morphisms~$f \colon X \to X'$ between them.
+We can therefore identify the objects of~$\Kcat$ with the morphisms in~$\Ccat$.
+For any two morphisms~$(X \xto{f} X')$ and~$(Y \xto{g} Y')$, a morphisms~$f \to f'$ in~$\Kcat$ is then a pair~$(h,h')$ of morphisms~$h \colon X \to Y$ and~$h' \colon X' \to Y'$ which make the square
+\[
+  \begin{tikzcd}
+      X
+      \arrow{r}[above]{f}
+      \arrow{d}[left]{h}
+    & X'
+      \arrow{d}[right]{h'}
+    \\
+      Y
+      \arrow{r}[above]{g}
+    & Y'
+  \end{tikzcd}
+\]
+commute.
+The comma category is therefore just the morphisms category of~$\Ccat$.
+
+
+
+
+
+\subsection{}
+
+A functor~$S \colon 1 \to \Group$ is again the same as choosing an object~$G \defined S(\ast) \in \Group$, i.e.\ a group~$G$.
+The objects of the given comma category~$\Kcat = (S, (-)^\times)$ can therefore be identified with the pairs~$(A,\varphi)$ consisting of a~{\kalg}~$A$ and a group homomorphism~$\varphi \colon A^\times \to G$.
+A morphism~$f \colon (A, \varphi) \to (B, \psi)$ is then an algebra homomorphism~$f \colon A \to B$ which makes the triangle
+\[
+  \begin{tikzcd}
+      {}
+    & G
+      \arrow{dl}[above left]{\varphi}
+      \arrow{dr}[above right]{\psi}
+    & {}
+    \\
+      A^\times
+      \arrow{rr}[above]{f^\times}
+    & {}
+    & B^\times
+  \end{tikzcd}
+\]
+commute.
+By using the adjunction~$k[-] \vdash (-)^\times$ we may further identify the comma category~$\Kcat$ with the \dash{under}{$k[G]$} category, i.e.\ the category whose objects are pairs~$(A,f)$ consisting of a~{\kalg}~$A$ and an algebra homomorphism~$f \colon k[G] \to A$, and where a morphism~$g \colon (A,f) \to (A', f')$ is an algebra homomorphism~$g \colon A \to A'$ which makes the triangle
+\[
+  \begin{tikzcd}
+      {}
+    & k[G]
+      \arrow{dl}[above left]{f}
+      \arrow{dr}[above right]{f'}
+    & {}
+    \\
+      A
+      \arrow{rr}[above]{g}
+    & {}
+    & A'
+  \end{tikzcd}
+\]
+commute.
+
+
+
+
