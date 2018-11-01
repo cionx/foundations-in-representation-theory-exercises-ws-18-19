@@ -67,7 +67,6 @@
 \newcommand{\xto}{\xrightarrow}
 
 
-
 % relations
 \newcommand{\bigdsum}{\bigoplus}
 \newcommand{\defined}{\coloneqq}
@@ -83,15 +82,44 @@
 \newcommand{\Complex}{\mathbb{C}}
 
 
+% categories
+% generic macros
+\newcommand{\catname}[1]{\mathbf{#1}}
+\newcommand{\gencat}[1]{\mathcal{#1}}
+% fixed categories
+\newcommand{\Ab}{\catname{Ab}}
+\newcommand{\Fun}{\catname{Fun}}
+\newcommand{\Group}{\catname{Grp}}
+\newcommand{\kAlg}{\text{$\kf$-$\catname{Alg}$}}
+\newcommand{\Path}{\catname{Path}}
+\newcommand{\Rep}[2]{\catname{Rep}_{#1}(#2)}
+\newcommand{\Set}{\catname{Set}}
+\newcommand{\Top}{\catname{Top}}
+% generaic categories
+\newcommand{\Ccat}{\gencat{C}}
+\newcommand{\Dcat}{\gencat{D}}
+\newcommand{\Ecat}{\gencat{E}}
+\newcommand{\Gcat}{\gencat{G}}
+% more complicated constructions
+\newcommand{\Mod}{\catname{Mod}}
+\newcommand{\Modl}[1]{\text{$#1$-$\Mod$}}
+\newcommand{\modl}[1]{\text{$#1$-$\catname{mod}$}}
+\newcommand{\Modr}[1]{\text{$\Mod$-$#1$}}
+
+
 % space and set constructions
 \DeclareMathOperator{\End}{End}
 \DeclarePairedDelimiter{\gen}{\langle}{\rangle}
 \DeclareMathOperator{\Hom}{Hom}
 \newcommand{\mat}[2]{\operatorname{M}_{#1}(#2)}
+\newcommand{\mnat}[3]{\operatorname{M}(#1 \times #2, #3)}
+
+\DeclareMathOperator{\Ob}{Ob}
 
 
-% functions
+% functions and functors
 \newcommand{\id}{\operatorname{id}}
+\newcommand{\Id}{\mathrm{Id}}
 \DeclareMathOperator{\ringchar}{char}
 
 
