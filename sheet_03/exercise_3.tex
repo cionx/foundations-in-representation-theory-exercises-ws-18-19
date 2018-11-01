@@ -1,1 +1,72 @@
-\addtocounter{section}{1}
+\section{}
+
+We denote the given category by~$\Gcat$.
+
+
+
+
+
+\subsection{}
+
+A~\dash{$G$}{set}~$X$ consists of a set~$X$ and for every~$g \in G$ a map~$X_g \colon X \to X$, in such a way that~$X_e = \id_X$ and~$X_{g_1 g_2} = X_{g_1} \circ X_{g_2}$ for all~$g_1, g_2 \in G$.
+A functor~$F \colon \Gcat$ consists of a single set~$F(\ast)$ and for every~$g \in G = \Gcat(\ast,\ast)$ a map~$F(g) \colon F(\ast) \to F(\ast)$, in such a way that~$F(e) = \id_X$ and~$F(g_1 g_2) = F(g_1) F(g_2)$ for all~$g_1, g_2 \in G$.
+We see by setting~$X = F(\ast)$ and~$X_g = F(gr$ that both concept consist of precisely the same data.
+This shows that a~\dash{$G$}{set}~$X$ is the same as a functor~$F \colon \Gcat \to \Set$.
+
+Let~$X$ and~$X'$ be two~\dash{$G$}{sets} with corresponding functors~$F, F' \colon \Gcat \to \Set$, and let~$f \colon X \to X'$ be a map.
+Then
+\begin{align*}
+      {}& \text{$f$ is a homomorphism of~\dash{$G$}{sets}}  \\
+  \iff{}& \text{$f(gx) = g(f(x))$ for all~$g \in G$,~$x \in X$} \\
+  \iff{}& \text{$f \circ F(g) = F'(g) \circ f$ for every~$g \in G$} \\
+  \iff{}& \text{$f \colon F(\ast) \to F'(\ast)$ defines a natural transformation~$F \to F'$}
+\end{align*}
+
+This altogether shows that the category~$\Gset{G}$ is isomorphic to the functor category~$\Fun(\Gcat, \Set)$, and therefore in particular equivalent to it.
+
+
+
+
+
+\subsection{}
+
+The~\dash{$G$}{set}~$X$ which corresponds to the covariant functor~$h^\ast \colon \Gcat \to \Set$ is given by the set~$X = h^\ast(\ast) = \Gcat(\ast,\ast) = G$, and the action of~$g \in G$ on~$x \in G$ is given by
+\[
+    gx
+  = h^\ast(g)(x)
+  = g_*(x)
+  = g \circ x
+  = gx \,.
+\]
+The~\dash{$G$}{set}~$X$ is therefore just the regular left~\dash{$G$}{set}, i.e.\ the group~$G$ acting on itself by left multiplication.
+
+
+
+
+
+\subsection{}
+
+Let~$X$ be the left regular~\dash{$G$}{set}, as before.
+We find that
+\[
+        \End_{\Gset{G}}(X)
+  =     \Gset{G}(X,X)
+  \cong \Fun(\Gset{G}, \Set)(h^\ast, h^\ast)
+  \cong h^\ast(\ast)
+  =     \Gcat(\ast,\ast)
+  =     G \,.
+\]
+Under this bijection, the group element~$g \in G$ corresponds the the endomorphism of~\dash{$G$}{sets}~$X \to X$ which is given by right multiplication of~$g$.
+Thus the Yoneda lemma tells us that every endomorphism of~$X$ is given by right multiplication with a unique element~$g \in G$.
+Moreover, the explicit description of the bijection
+\[
+          \Fun(\Gset{G}, \Set)(h^\ast, h^\ast)
+  \to     h^\ast(\ast) \,,
+  \quad   \eta
+  \mapsto \eta_\ast(\ast)
+\]
+tells us that for every endomorphism of~\dash{$G$}{sets}~$\varphi \colon X \to X$, the corresponding group element~$g \in G$ is given by~$g = \varphi(e)$.
+
+
+
+
