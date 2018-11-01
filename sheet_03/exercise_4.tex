@@ -4,12 +4,37 @@ We convince ourselves that~$\Kcat$ is indeed a category:
 
 For any two objects~$(A,B,h)$ and~$(A',B',h')$ of the proposed category~$\Kcat$, the collection of morphisms~$(A,B,h) \to (A',B',h')$ is a subset of~$\Acat(A,A') \times \Bcat(B,B')$, and is hence again a set (and not a proper class).
 
+The composition of morphisms in~$\Kcat$ is {\welldef}:
+If~$(f,g) \colon (A, B, h) \to (A', B', h')$ and~$(f',g') \colon (A',B',h') \to (A'',B'',h'')$ are two morphisms then in the diagram
+\[
+  \begin{tikzcd}
+      S(A)
+      \arrow{r}[above]{h}
+      \arrow{d}[left]{S(f)}
+      \arrow[bend right = 90]{dd}[left]{S(f' \circ f)}
+    & T(B)
+      \arrow{d}[right]{T(g)}
+      \arrow[bend left = 90]{dd}[right]{T(g' \circ g)}
+    \\
+      S(A')
+      \arrow{r}[above]{h'}
+      \arrow{d}[left]{S(f')}
+    & T(B')
+      \arrow{d}[right]{T(g')}
+    \\
+      S(A'')
+      \arrow{r}[above]{h''}
+    & T(B'')
+  \end{tikzcd}
+\]
+both squares and both triangles commute;
+from this it follows that the outer square also commutes.
 That the composition in~$\Kcat$ is associative follows from the associativity of the compositions in~$\Acat$ and~$\Bcat$.
 
-For every object~$(A,B,h)$ of~$\Kcat$ the morphism~$(\id_A, \id_B) \colon (A,B,h) \to (A,B,h)$ is the identity of~$(A,B,h)$ because it holds for all morphisms~$(f', g') \colon (A', B', h') \to (A, B, h)$ and all morphisms~$(f'', g'') \colon (A, B, h) \to (A'', B'', h'')$ that
+For every object~$(A,B,h)$ of~$\Kcat$, the morphism~$(\id_A, \id_B) \colon (A,B,h) \to (A,B,h)$ is the identity of~$(A,B,h)$ in~$\Kcat$ as it holds for all morphisms~$(f', g') \colon (A', B', h') \to (A, B, h)$ and all morphisms~$(f'', g'') \colon (A, B, h) \to (A'', B'', h'')$ that
 \begin{align*}
     (\id_A, \id_B) \circ (f', g')
-  = (\id_A \circ f', \id_B \circ g')
+  = ({\id_A} \circ f', {\id_B} \circ g')
   = (f', g')
 \shortintertext{and}
     (f'', g'') \circ (\id_A, \id_B)
@@ -41,7 +66,7 @@ A morphisms~$g \colon (Y, f) \to (Y', f')$ is then a morphisms~$g \colon Y \to Y
   \end{tikzcd}
 \]
 commutes.
-The comma category~$\Kcat$ is therefore (isomorphic to) the \dash{under}{$X$} category.
+The givencomma category~$\Kcat$ is therefore (isomorphic to) the \dash{under}{$X$} category.
 
 
 
@@ -66,7 +91,7 @@ For any two morphisms~$(X \xto{f} X')$ and~$(Y \xto{g} Y')$, a morphisms~$f \to 
   \end{tikzcd}
 \]
 commute.
-The comma category is therefore just the morphisms category of~$\Ccat$.
+The given comma category~$\Kcat$ is therefore (isomorphic to) the morphism category of~$\Ccat$.
 
 
 
@@ -74,7 +99,7 @@ The comma category is therefore just the morphisms category of~$\Ccat$.
 
 \subsection{}
 
-A functor~$S \colon 1 \to \Group$ is again the same as choosing an object~$G \defined S(\ast) \in \Group$, i.e.\ a group~$G$.
+A functor~$S \colon 1 \to \Group$ is again the same as choosing an object~$S(\ast) \in \Group$, i.e.\ choosing a group~$G \defined S(\ast)$.
 The objects of the given comma category~$\Kcat = (S, (-)^\times)$ can therefore be identified with the pairs~$(A,\varphi)$ consisting of a~{\kalg}~$A$ and a group homomorphism~$\varphi \colon A^\times \to G$.
 A morphism~$f \colon (A, \varphi) \to (B, \psi)$ is then an algebra homomorphism~$f \colon A \to B$ which makes the triangle
 \[
@@ -92,7 +117,7 @@ A morphism~$f \colon (A, \varphi) \to (B, \psi)$ is then an algebra homomorphism
   \end{tikzcd}
 \]
 commute.
-By using the adjunction~$k[-] \vdash (-)^\times$ we may further identify the comma category~$\Kcat$ with the \dash{under}{$k[G]$} category, i.e.\ the category whose objects are pairs~$(A,f)$ consisting of a~{\kalg}~$A$ and an algebra homomorphism~$f \colon k[G] \to A$, and where a morphism~$g \colon (A,f) \to (A', f')$ is an algebra homomorphism~$g \colon A \to A'$ which makes the triangle
+By using the adjunction~$k[-] \vdash (-)^\times$ we may further identify the given comma category~$\Kcat$ with the \dash{under}{$k[G]$} category, i.e.\ the category whose objects are pairs~$(A,f)$ consisting of a~{\kalg}~$A$ and an algebra homomorphism~$f \colon k[G] \to A$, and in which a morphism~$g \colon (A,f) \to (A', f')$ is an algebra homomorphism~$g \colon A \to A'$ which makes the triangle
 \[
   \begin{tikzcd}
       {}

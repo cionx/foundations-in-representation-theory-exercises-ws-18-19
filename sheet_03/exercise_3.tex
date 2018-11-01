@@ -9,8 +9,8 @@ We denote the given category by~$\Gcat$.
 \subsection{}
 
 A~\dash{$G$}{set}~$X$ consists of a set~$X$ and for every~$g \in G$ a map~$X_g \colon X \to X$, in such a way that~$X_e = \id_X$ and~$X_{g_1 g_2} = X_{g_1} \circ X_{g_2}$ for all~$g_1, g_2 \in G$.
-A functor~$F \colon \Gcat$ consists of a single set~$F(\ast)$ and for every~$g \in G = \Gcat(\ast,\ast)$ a map~$F(g) \colon F(\ast) \to F(\ast)$, in such a way that~$F(e) = \id_X$ and~$F(g_1 g_2) = F(g_1) F(g_2)$ for all~$g_1, g_2 \in G$.
-We see by setting~$X = F(\ast)$ and~$X_g = F(gr$ that both concept consist of precisely the same data.
+A functor~$F \colon \Gcat \to \Set$ consists of a single set~$F(\ast)$ and for every~$g \in \Gcat(\ast,\ast) = G$ a map~$F(g) \colon F(\ast) \to F(\ast)$, in such a way that~$F(e) = \id_X$ and~$F(g_1 g_2) = F(g_1) F(g_2)$ for all~$g_1, g_2 \in G$.
+We see by setting~$X = F(\ast)$ and~$X_g = F(g)$ that both constructs consist of precisely the same data.
 This shows that a~\dash{$G$}{set}~$X$ is the same as a functor~$F \colon \Gcat \to \Set$.
 
 Let~$X$ and~$X'$ be two~\dash{$G$}{sets} with corresponding functors~$F, F' \colon \Gcat \to \Set$, and let~$f \colon X \to X'$ be a map.
@@ -50,13 +50,13 @@ Let~$X$ be the left regular~\dash{$G$}{set}, as before.
 We find that
 \[
         \End_{\Gset{G}}(X)
-  =     \Gset{G}(X,X)
+  =     (\Gset{G})(X,X)
   \cong \Fun(\Gset{G}, \Set)(h^\ast, h^\ast)
   \cong h^\ast(\ast)
   =     \Gcat(\ast,\ast)
   =     G \,.
 \]
-Under this bijection, the group element~$g \in G$ corresponds the the endomorphism of~\dash{$G$}{sets}~$X \to X$ which is given by right multiplication of~$g$.
+Under this bijection, the group element~$g \in G$ corresponds the the endomorphism of~\dash{$G$}{sets}~$X \to X$ which is given by right multiplication with~$g$.
 Thus the Yoneda lemma tells us that every endomorphism of~$X$ is given by right multiplication with a unique element~$g \in G$.
 Moreover, the explicit description of the bijection
 \[
