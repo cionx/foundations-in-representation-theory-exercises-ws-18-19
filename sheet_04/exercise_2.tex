@@ -1,1 +1,108 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+Let more generally~$A$ and~$B$ be two~{\kalg} and let~$f \colon A \to B$ be a homorphism of~{\kalgs}.
+We show that the induced restrictions of scalars~$R \colon \Modl{B} \to \Modl{A}$ has both a left and a right adjoint.
+For this we show that~$R$ can be expressed both as a tensor product and via~$\Hom$, and then use the usual \dash{$\tensor$}{$\Hom$} adjunctions.
+
+To construct the left adjoint of~$R$ we regard~$B$ as an~{\module{$B$}[$A$]} and note that~$R \cong \Hom_B(B, -)$.
+It then follows from one of the~\dash{$\tensor$}{$\Hom$} adjunctions that
+\[
+        (\Modl{A})(-, R)
+  \cong (\Modl{A})(-, \Hom_B(B, -))
+  \cong (\Modl{A})((-) \tensor_B B, -) \,,
+\]
+which shows that the functor~$(-) \tensor_B B \colon \Modl{A} \to \Modl{B}$ is left adjoint to~$R$.
+
+
+To construct the right adjoint of~$R$ we regard~$B$ as an~{\module{$A$}[$B$]} and note that~$R \cong B \tensor_B (-)$, as shown in the lecture.
+It then then follows that from another~\dash{$\tensor$}{$\Hom$} adjunction that
+\[
+        (\Modl{A})(R, -)
+  \cong (\Modl{A})(B \tensor_B (-), -)
+  \cong (\Modl{B})(-, \Hom_A(B, -)) \,,
+\]
+which shows that the functor~$\Hom_A(B,-) \colon \Modl{A} \to \Modl{B}$ is right adjoint to~$R$.
+
+
+
+
+
+\subsection{}
+
+We define a functor~$D \colon \Set \to \Top$ which assigns to every set~$X$ the topological space~$D(X)$ which is~$X$ together with the discrete topology, and assigns to every map~$f \colon X \to X'$ between sets~$X$ and~$X'$ the map~$f$ viewed as a continuous (because~$D(X)$ is discrete) map~$D(f) \colon D(X) \to D(X')$.
+It then holds that
+\[
+    \Top(D(-), -)
+  = \Set(-,V(-)) \,.
+\]
+Indeed, it holds for every set~$X$ and every topological space~$Y$ that
+\[
+    \Top(D(X), Y)
+  = \Set(X, V(Y))
+\]
+because the topology on~$D(X)$ is discrete.
+We have for every map~$f \colon X \to X'$ between sets~$X$ and~$X'$ and every continuous map~$g \colon Y \to Y'$ between topological spaces~$Y$ and~$Y'$ that the square
+\[
+  \begin{tikzcd}[column sep = 7em]
+      \Top(D(X), Y)
+      \arrow{r}[above]{g_* \circ (-) \circ D(f)^*}
+      \arrow[equal]{d}
+    & \Top(D(X'), Y')
+      \arrow[equal]{d}
+    \\
+      \Set(X, V(Y))
+      \arrow{r}[above]{V(g)_* \circ (-) \circ f^*}
+    & \Set(X', V(Y'))
+  \end{tikzcd}
+\]
+commutes, which shows that naturality of~$\Top(D(-),-) = \Set(-,V(-))$.
+This shows altogether that~$D$ is left adjoint to~$V$.
+
+We also define a functor~$T \colon \Set \to \Top$ which assigns to every set~$X$ the topological space~$T(X)$ which is~$X$ together with the trivial (i.e.\ indiscrete) topology, and assigns to every map~$f \colon X \to X'$ between sets~$X$ and~$X'$ the map~$f$ viewed as a continuous (because~$T(X')$ is trivial) map~$T(f) \colon T(X) \to T(X')$.
+It then holds that
+\[
+    \Top(-, T(-))
+  = \Set(V(-), -) \,.
+\]
+Indeed, it holds for every topological space~$X$ and every set~$Y$ that
+\[
+    \Top(X, T(Y))
+  = \Set(V(X), Y)
+\]
+because the topology on~$T(Y)$ is trivial.
+We have for every continuous map~$f \colon X \to X'$ between topological spaces~$X$ and~$X'$ and every map~$g \colon X \to X'$ between sets~$X$ and~$X'$ that the square
+\[
+  \begin{tikzcd}[column sep = 7em]
+      \Top(X, T(Y))
+      \arrow[equal]{d}
+      \arrow{r}[above]{T(g)_* \circ (-) \circ f^*}
+    & \Top(X', T(Y'))
+      \arrow[equal]{d}
+    \\
+      \Set(X, T(Y))
+      \arrow{r}[above]{g_* \circ (-) \circ T(f)^*}
+    & \Set(X', T(Y'))
+  \end{tikzcd}
+\]
+commutes, which shows the naturality of~$\Top(-,T(-)) = \Set(V(-),-)$.
+This shows altogether that~$T$ is right adjoint to~$V$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
