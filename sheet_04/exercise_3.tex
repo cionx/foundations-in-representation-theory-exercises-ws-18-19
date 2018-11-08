@@ -18,7 +18,7 @@ which are given by
   = f(1 \tensor v)
   \qquad\text{and}\qquad
     \varphi_{V,M}^{-1}(g)(a \tensor v)
-  = a g(m) \,.
+  = a g(v) \,.
 \]
 It follows that the unit~$\eta \colon \Id_{\Modl{A}} \to G \circ F$ is at an object~$V \in \Ob(\Modl{k})$ given by
 \[
@@ -26,8 +26,7 @@ It follows that the unit~$\eta \colon \Id_{\Modl{A}} \to G \circ F$ is at an obj
   =       \varphi_{V, A \tensor_k V}( \id_{A \tensor_k V} )
   \colon  V
   \to     A \tensor_k V \,,
-  \\
-          v
+  \quad   v
   \mapsto 1 \tensor v \,,
 \]
 and that the counit~$\varepsilon \colon F \circ G \to \Id_{\Modl{k}}$ is at an object~$M \in \Ob(\Modl{A})$ given by
@@ -96,20 +95,21 @@ which are given by
 \[
     \varphi_{(A,S),B}(f)
   = f \circ i_{A,S}
-  \quad\text{and}\quad
-    \varphi_{(A,S),B}^{-1}\left( \frac{a}{s} \right)
-  = f(a) f(s)^{-1} \,,
+  \qquad\text{and}\qquad
+    \varphi_{(A,S),B}^{-1}(g)\left( \frac{a}{s} \right)
+  = g(a) g(s)^{-1} \,,
 \]
 where~$i_{A,S} \colon A \to S^{-1} A$,~$a \mapsto a/1$ denotes the canonical homomorphism.
 It follows that the unit~$\eta \colon \Id_{\Ccat} \to G \circ F$ is at an object~$(A,S)$ given by
-\[
+\begin{align*}
             \eta_{(A,S)}
-  =         \varphi_{(A,S), S^{-1} A}
+  =         \varphi_{(A,S), S^{-1} A}( \id_{S^{-1} A} )
   \colon    ( A, S )
-  \to       ( S^{-1} A, (S^{-1} A)^\times ) \,,
-  \quad     \eta_{(A,S)}
-  =         i_{A,S} \,,
-\]
+  &\to      ( S^{-1} A, (S^{-1} A)^\times ) \,,
+  \\
+            \eta_{(A,S)}
+  &=        i_{A,S} \,,
+\end{align*}
 and that the counit~$\varepsilon \colon F \circ G \to \Id_{\CommRing}$ is at an object~$B$ given by
 \[
             \varepsilon_{(B^\times)^{-1} B}

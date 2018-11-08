@@ -1,21 +1,21 @@
 \section{}
 
-If the functor~$G$ admits a left adjoint functor~$F \colon \Dcat \to \Ccat$  then
+If the functor~$G \colon \Dcat \to \Ccat$ admits a left adjoint functor~$F \colon \Ccat \to \Dcat$  then
 \[
         \Ccat(X, G(-))
   \cong \Dcat(F(X), -) \,,
 \]
 for every~$X \in \Ob(\Ccat)$, which shows that the functor~$\Ccat(X, G(-))$ is represented by the object~$F(X) \in \Ob(\Dcat)$.
 
-Suppose on the other hand that the functor~$\Ccat(X, G(-)) \colon \Dcat \to \Set$ is representable for every~$X \in \Ob(\Ccat)$.
-Let~$\Ecat \subseteq \Fun(\Dcat, \Set)$ be the the essential image of the \dash{Yoneda}{embedding}
+Suppose on the other hand that the functor~$\Ccat(X, G(-)) \colon \Dcat \to \Set$ is representable for every object~$X \in \Ob(\Ccat)$.
+Let~$\Ecat \subseteq \Fun(\Dcat, \Set)$ be the the essential image of the Yoneda embedding
 \[
           E
   \colon  \Dcat
   \to     \Fun(\Dcat, \Set) \,,
 \]
 i.e.\ the full subcategory of~$\Fun(\Dcat, \Set)$ spanned by all representable functors.
-It follows from~$E$ being fully faithful and essentially surjective (onto~$\Ecat$) that there exist a \dash{quasi}{inverse}~$E' \colon \Ecat \to \Dcat$ for~$E$.
+It follows from the Yoneda embedding~$E$ being fully faithful and essentially surjective (onto~$\Ecat$) that there exist a \dash{quasi}{inverse}~$E' \colon \Ecat \to \Dcat$ for~$E$.
 Note that both~$E$ and~$E'$ are contravariant.
 
 We can now define a functor
@@ -29,16 +29,16 @@ which assigns to every objects~$X \in \Ob(\Ccat)$ the functor
             F'(X)
   \defined  \Ccat(X, G(-))
   \colon    \Dcat
-  \longto   \Set \,,
+  \to       \Set \,,
 \]
 and assigns to every morphism~$f \colon X \to X'$ in~$\Ccat$ the natural transformation
 \[
             F'(f)
   \defined  f^*
   \colon    \Ccat(X', G(-))
-  \longto   \Ccat(X, G(-)) \,.
+  \to       \Ccat(X, G(-)) \,.
 \]
-It follows from the assumption that the image of~$F'$ is contained in~$\Ecat$;
+The image of~$F'$ is by assumption contained in the full subcategory~$\Ecat$ of~$\Fun(\Dcat, \Set)$;
 we may therefore regard~$F'$ instead as a functor~$F' \colon \Ccat \to \Ecat$.
 
 We now define the desired left adjoint~$F \colon \Ccat \to \Dcat$ as the composition
@@ -51,15 +51,15 @@ We now define the desired left adjoint~$F \colon \Ccat \to \Dcat$ as the composi
   \xlongto{E'}
     \Dcat \,.
 \]
-That~$F$ is indeed left adjoint to~$G$ follows from the computation.
-\[
-        \Dcat(F(-), -)
-  =     E \circ F
-  =     E \circ E' \circ F'
-  \cong \Id_\Ecat \circ F'
-  =     F'
-  =     \Ccat(-, G(-)) \,.
-\]
+That~$F$ is indeed left adjoint to~$G$ follows from the computation
+\begin{align*}
+          \Dcat(F(-_1), -_2)
+  &=      (E \circ F)(-_1)(-_2)
+   =      (E \circ E' \circ F')(-_1)(-_2) \\
+  &\cong  (\Id_\Ecat \circ F')(-_1)(-_2)
+   =      F'(-_1)(-_2)
+   =      \Ccat(-_1, G(-_2)) \,.
+\end{align*}
 
 
 

@@ -7,7 +7,7 @@
 \subsection{}
 
 The given functor~$F$ is represented by the polynomial ring~$k[X_1, \dotsc, X_n]$.
-Indeed, there exist for every commutative~{\kalg} a bijection
+Indeed, there exist for every commutative~{\kalg}~$B$ a bijection
 \[
           \eta_B
   \colon  \Hom_{\kCommAlg}(k[X_1, \dotsc, X_n], B)
@@ -16,7 +16,7 @@ Indeed, there exist for every commutative~{\kalg} a bijection
   \mapsto ( f(X_1), \dotsc, f(X_n) )
 \]
 by the universal property of the polynomial ring.
-This bijections are natural and hence yield an isomorphism of functors~$\eta \colon \Hom_{\kCommAlg}(k[X_1, \dotsc, X_n], -) \to F$.
+These bijections are natural and hence yield an isomorphism of functors~$\eta \colon \Hom_{\kCommAlg}(k[X_1, \dotsc, X_n], -) \to F$.
 
 
 
@@ -30,16 +30,32 @@ This bijections are natural and hence yield an isomorphism of functors~$\eta \co
 
 \subsection{}
 
-An~\dash{$A$}{valued}~\dash{$(n \times n)$}{matrix}~$M$ is invertible if it and only if its determinant~$\det(M) \in A$ is a unit, i.e.\ if there exists an element~$a \in A$ with~$\det(M) a = 1$;
+An~\dash{$A$}{valued}~\dash{$(n \times n)$}{matrix}~$M$ is invertible if and only if its determinant~$\det(M) \in A$ is a unit, i.e.\ if there exists an element~$a \in A$ with~$\det(M) a = 1$;
 the value~$a$ is then uniquely determined as~$a = \det(M)^{-1}$.
 It follows that we have bijections
 \begin{align*}
        {}&  \GL_n(A)  \\
-      ={}&  \{ M \in \mat{n}{A} \suchthat \exists a \in A : \det(M) a  = 1 \} \\
-  \cong{}&  \{ (M,a) \in \mat{n}{A} \times A \suchthat \det(M) a = 1 \} \\
-  \cong{}&  \{ (a_{11}, \dotsc, a_{nn}, a) \suchthat \det(a_{11}, \dotsc, a_{nn}) a = 1 \}  \\
-      ={}&  \{ (a_{11}, \dotsc, a_{nn}, a) \suchthat \det(a_{11}, \dotsc, a_{nn}) a - 1 = 0 \}  \\
-  \cong{}&  \Hom_{\kCommAlg}(k[X_{11}, \dotsc, X_{nn}, Y]/(\det Y - 1), A)  \\
+      ={}&  \{
+              M \in \mat{n}{A}
+              \suchthat
+            \exists a \in A : \det(M) a  = 1
+            \} \\
+  \cong{}&  \{
+              (M,a) \in \mat{n}{A} \times A
+            \suchthat
+              \det(M) a = 1
+            \} \\
+  \cong{}&  \{
+              (a_{11}, \dotsc, a_{nn}, a) \in A^{n^2 + 1}
+            \suchthat
+              \det(a_{11}, \dotsc, a_{nn}) a = 1
+            \}  \\
+      ={}&  \{
+              (a_{11}, \dotsc, a_{nn}, a) \in A^{n^2 + 1}
+            \suchthat
+              \det(a_{11}, \dotsc, a_{nn}) a - 1 = 0
+            \}  \\
+  \cong{}&  \Hom_{\kCommAlg}(k[X_{11}, \dotsc, X_{nn}, Y]/({\det} \cdot Y - 1), A)  \\
   \cong{}&  \Hom_{\kCommAlg}(k[X_{11}, \dotsc, X_{nn}]_{\det}, A)
 \end{align*}
 where we denote by abuse of notation with~$\det \in k[X_{11}, \dotsc, X_{nn}]$ the polynomial
@@ -60,12 +76,9 @@ The above bijection is (in reverse order) overall given by
               f(X_{n1}) & \cdots  & f(X_{nn})
             \end{bmatrix} \,,
 \end{align*}
-where we identify~$k[X_{11}, \dotsc, X_{nn}]$ with a subalgebra of~$k[X_{11}, \dotsc, X_{nn}]_{\det}$ via the canonical homomorphism (which is possible because~$k[X_{11}, \dotsc, X_{nn}]$ is an integral domain).
+where we identify~$k[X_{11}, \dotsc, X_{nn}]$ with a subalgebra of~$k[X_{11}, \dotsc, X_{nn}]_{\det}$ via the canonical homomorphism~$f \mapsto f/1$ (which is possible because~$k[X_{11}, \dotsc, X_{nn}]$ is an integral domain).
 These bijections are natural and hence give rise to a natural isomorphism~$\eta \colon \Hom_{\kCommAlg}(k[X_{11}, \dotsc, X_{nn}]_{\det}, -) \to F$.
-Then functor~$F$ is therefore representable by~$k[X_{11}, \dotsc, X_{nn}]_{\det}$.
-
-
-
+The functor~$F$ is therefore representable by~$k[X_{11}, \dotsc, X_{nn}]_{\det}$.
 
 
 
