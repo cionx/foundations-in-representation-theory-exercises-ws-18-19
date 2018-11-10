@@ -1,0 +1,264 @@
+\section{}
+
+
+\subsection{}
+
+The given statement is false.
+We give some counterexamples:
+\begin{enumerate}
+  \item
+    If~$k$ is any commutative ring then
+    \[
+            \mat{n}{k}^\op
+      \cong \mat{n}{k^\op}
+      =     \mat{n}{k} \,,
+    \]
+    as~{\kalgs} where the first isomorphism is given by the matrix transpose~$A \mapsto A^T$.
+    But the algebra~$\mat{n}{k}$ is noncommutative whenever~$n \geq 2$ and~$k \neq 0$.
+  \item
+    It holds for any group~$G$ that
+    \[
+            k[G]^\op
+      \cong k[G^\op]
+      \cong k[G] \,,
+    \]
+    as~{\kalgs} where the second isomorphism is induced by the group isomorphism
+    \[
+              G^\op
+      \to     G \,,
+      \quad   g
+      \mapsto g^{-1} \,.
+    \]
+    But if~$G$ is noncommutative then~$k[G]$ is also not commutative.
+  \item
+    Consider the quiver~$Q$ with a single vertex and and two distinct arrow~$\alpha$ and~$\beta$:
+    \[
+      \begin{tikzcd}
+        \bullet
+        \arrow[loop,out=315,in=405,looseness=5]
+        \arrow[loop,out=135,in=225,looseness=5]
+      \end{tikzcd}
+    \]
+    Then~$kQ \cong k\gen{\alpha,\beta}$ is the free~{\kalg} on two generators~$\alpha$ and~$\beta$, and in particular not commutative (because~$\alpha$ and~$\beta$ don’t commute).
+    But
+    \[
+            (kQ)^\op
+      \cong k(Q^\op)
+      =     kQ
+    \]
+    as~{\kalgs} because~$Q = Q^\op$.
+  \item
+    Let~$\glie$ be a Lie algebra over a field~$k$.
+    Then the Lie algebra isomorphism
+    \[
+              \glie
+      \to     \glie^\op \,,
+      \quad   x
+      \mapsto -x
+    \]
+    extends to an algebra isomorphism
+    \[
+            \uni(\glie)
+      \to   \uni(\glie^\op)
+      \cong \uni(\glie)^\op \,.
+    \]
+    (Here we denote by~$\uni(\glie)$ the universal enveloping algebra of~$\glie$.)
+    But if~$\glie$ is not abelian (as most Lie algebras tend to be) then~$\uni(\glie)$ is noncommutative (because~$\glie$ is a Lie subalgebra of~$\uni(\glie)$).
+\end{enumerate}
+
+
+
+
+
+\subsection{}
+
+The statement is true:
+One of the~$\tensor$\nobreakdash-$\Hom$\nobreakdash-adjunctions states that the map
+\[
+          \Hom_B(N \tensor_A M, P)
+  \to     \Hom_A(M, \Hom_B(N, P)) \,,
+  \quad   f
+  \mapsto [m \mapsto [n \mapsto f(m \tensor n)]
+\]
+is a {\welldef} isomorphism of~{\kvs}.
+
+
+
+
+
+\subsection{}
+
+The statement is true:
+The Yoneda embedding~$Y \colon \Ccat \to \Fun(\Ccat, \Set)$ is fully faithful and thus reflects isomorphisms.
+It therefore follows for any two ojects~$X, X' \in \Ob(\Ccat)$ that the map
+\[
+        \{\text{isomorphisms~$X \to X'$}\}
+  \to   \{\text{natural isomorphisms~$h^{X'} \to h^X$}\} \,,
+  \quad f
+  \mapsto f^*
+\]
+is a {\welldef} bijection.
+It therefore follows from~$h^X \cong h^{X'}$ that also~$X \cong X'$
+
+
+
+
+
+\subsection{}
+
+The statement is true:
+Suppose more generally that~$\Ccat$ is a category which admits an intinal object~$I$.
+Then the functor~$F \colon \Ccat \to \Set$ given by~$F(A) = \{\ast\}$ is represented by~$I$:
+There exist for every object~$X \in \Ob(\Ccat)$ a (unique) bijection
+\[
+          \eta_X
+  \colon  h^I(X)
+  \to     F(X) \,.
+\]
+The square
+\[
+  \begin{tikzcd}
+      h^I(X)
+      \arrow{r}[above]{f_*}
+      \arrow{d}[left]{\eta_X}
+    & h^I(I')
+      \arrow{d}[right]{\eta_{X'}}
+    \\
+      F(X)
+      \arrow{r}[above]{F(f)}
+    & F(X')
+  \end{tikzcd}
+\]
+commutes for every morphism~$f \colon X \to X'$ in~$\Ccat$ because the set~$F(X')$ is a singleton.
+This shows that~$\eta \colon h^I \to F$ is a natural isomorphism, hence that~$I$ represents the functor~$F$.
+
+In our case~$\Ccat = \kAlg$ the initial object, and hence representing object of~$F$, is given by the~{\kalg}~$k$.
+
+
+
+
+
+\subsection{}
+
+The statement is true:
+Let~$(X^\lambda)_{\lambda \in \Lambda}$ be a family of representations of~$Q$ over~$k$.
+We can then define a new representation~$\prod_{\lambda \in \Lambda} X^\lambda$ of~$Q$ over~$k$ by setting
+\[
+            \left( \prod_{\lambda \in \Lambda} X^\lambda \right)_i
+  \defined  \prod_{\lambda \in \Lambda} X^\lambda_i
+\]
+for every~$i \in Q_0$, and
+\[
+            \left( \prod_{\lambda \in \Lambda} X^\lambda \right)_\alpha
+  \defined  \prod_{\lambda \in \Lambda} X^\lambda_\alpha
+  \colon    \prod_{\lambda \in \Lambda} X^\lambda_{s(\alpha)}
+  \to       \prod_{\lambda \in \Lambda} X^\lambda_{t(\alpha)}
+\]
+for every~$\alpha \in Q_1$.
+
+Let~$\lambda \in \Lambda$, and for every~$i \in Q_0$ let~$p^\lambda_i \colon \prod_{\mu \in \Lambda} X^\mu_i \to X^\lambda_i$ be the canonical projection.
+Then the family~$p^\lambda \defined (p^\lambda_i)_{i \in Q_0}$ is a morphism of representations~$p^\lambda \colon \prod_{\mu \in \Lambda} X^\mu \to X^\lambda$ because the square
+\[
+  \begin{tikzcd}[column sep = huge]
+      \prod_{\lambda \in \Lambda} X^\lambda_{s(\alpha)}
+      \arrow{r}[above]{\prod_{\lambda \in \Lambda} X^\lambda_\alpha}
+      \arrow{d}[left]{p^\lambda_{s(\alpha)}}
+    & \prod_{\lambda \in \Lambda} X^\lambda_{t(\alpha)}
+      \arrow{d}[right]{p^\lambda_{t(\alpha)}}
+    \\
+      X^\lambda_{s(\alpha)}
+      \arrow{r}[above]{X^\lambda_\alpha}
+    & X^\lambda_{t(\alpha)}
+  \end{tikzcd}
+\]
+commutes for every arrow~$\alpha \in Q_1$.
+
+Suppose now that~$Y$ is a representation of~$Q$ over~$k$ and that for every~$\lambda \in \Lambda$ we are given a morphism of representations~$f^\lambda \colon Y \to X^\lambda$.
+There exist for every~$i \in Q_0$ a unique~{\klin} map~$g_i \colon Y_i \to \prod_{\lambda \in \Lambda} X^\lambda_i$ with~$p^\lambda_i \circ g_i = f^\lambda_i$ for every~$\lambda \in \Lambda$.
+The family~$g = (g_i)_{i \in Q_0}$ is a morphism~$g \colon Y \to \prod_{\lambda \in \Lambda} X^\lambda$ because the square
+\begin{equation}
+  \label{g is a morphism}
+  \begin{tikzcd}[column sep = huge]
+      \prod_{\lambda \in \Lambda} X^\lambda_{s(\alpha)}
+      \arrow{r}[above]{\prod_{\lambda \in \Lambda} X^\lambda_\alpha}
+    & \prod_{\lambda \in \Lambda} X^\lambda_{t(\alpha)}
+    \\
+      Y_{s(\alpha)}
+      \arrow{u}[left]{g_{s(\alpha)}}
+      \arrow{r}[above]{Y_\alpha}
+    & Y_{t(\alpha)}
+      \arrow{u}[right]{g_{t(\alpha)}}
+  \end{tikzcd}
+\end{equation}
+commutes for every arrow~$\alpha \in Q_1$.
+Indeed, we have for every~$\mu \in \Lambda$ the following diagram:
+\[
+  \begin{tikzcd}[column sep = huge]
+      X^\mu_{s(\alpha)}
+      \arrow{r}[above]{X^\mu_\alpha}
+    & X^\mu_{t(\alpha)}
+    \\
+      \prod_{\lambda \in \Lambda} X^\lambda_{s(\alpha)}
+      \arrow{u}[left]{p^\mu_{s(\alpha)}}
+      \arrow{r}[above]{\prod_{\lambda \in \Lambda} X^\lambda_\alpha}
+    & \prod_{\lambda \in \Lambda} X^\lambda_{t(\alpha)}
+      \arrow{u}[right]{p^\mu_{t(\alpha)}}
+    \\
+      Y_{s(\alpha)}
+      \arrow[bend left = 90]{uu}[left]{g^\mu_{s(\alpha)}}
+      \arrow{u}[left]{g_{s(\alpha)}}
+      \arrow{r}[above]{Y_\alpha}
+    & Y_{t(\alpha)}
+      \arrow[bend right = 90]{uu}[right]{g^\mu_{t(\alpha)}}
+      \arrow{u}[right]{g_{t(\alpha)}}
+  \end{tikzcd}
+\]
+The triangles on the left and right commute by construction of~$g$, the upper square commutes by construction of~$p^\mu$, and the outer square commutes because~$g^\mu \colon Y \to X^\mu$ is a morphism of representations.
+It follows that
+\[
+    p^\mu_{t(\alpha)} \circ \prod_{\lambda \in \Lambda} X^\lambda_\alpha \circ g_{s(\alpha)}
+  = p^\mu_{t(\alpha)} \circ g_{t(\alpha)} \circ Y_\alpha \,.
+\]
+This holds for every~$\mu \in \Lambda$, and so it follows that
+\[
+    \prod_{\lambda \in \Lambda} X^\lambda_\alpha \circ g_{s(\alpha)}
+  = g_{t(\alpha)} \circ Y_\alpha \,.
+\]
+This shows that the square~\eqref{g is a morphism} commutes, and hence that~$g$ is a morphism of representations.
+
+It holds that~$p^\lambda \circ g = f^\lambda$ because
+\[
+    (p^\lambda \circ g)_i
+  = p^\lambda_i \circ g_i
+  = f^\lambda_i
+\]
+at every~$i \in Q_0$ by construction of~$g$.
+That~$g$ is the unique morphism of representations~$Y \to \prod_{\lambda \in \Lambda} X^\lambda$ with this property follows from the uniqueness of the components~$g_i$.
+
+This shows altogether that the constructed representation~$\prod_{\lambda \in \Lambda} X^\lambda$ is together with the projections~$p^\mu \colon \prod_{\lambda \in \Lambda} X^\lambda \to X^\mu$ a product of the family~$(X^\lambda)_{\lambda \in \Lambda}$.
+
+
+\begin{remark}
+  One can also somewhat avoid this explicit calculations:
+  \begin{enumerate}
+    \item
+      By using that~$\Rep{k}{Q} \cong \Fun(\Path(Q), k)$ as categories one can argue that the functor category~$\Fun(\Path(Q), k)$ inherits all nice properties from the nice category~$\Modl{k}$.
+      But we haven’t shows in the lecture that a functor category~$\Fun(\Ccat, \Dcat)$ inherits products from~$\Dcat$, and checking this by hand amounts to the above calculations.
+    \item
+      One can argue that~$\Rep{k}{Q} \cong \Modl{kQ}$, but~$kQ$ is for a general quiver~$Q$ (no finiteness conditions on~$Q$ are given on the exercise sheet) not a unital~{\kalg}, which may make some people uncomfortable.
+  \end{enumerate}
+\end{remark}
+
+
+
+
+
+\subsection{}
+
+The statement is false:
+If the category~$\Field$ would have a terminal object~$K$ then there would exist (unique) field homomorphisms~$\Finite_2 \to K$ and~$\Finite_3 \to K$.
+But then~$K$ would need to have both characteristic~$2$ and characteristic~$3$, which cannot be.
+
+
+
+

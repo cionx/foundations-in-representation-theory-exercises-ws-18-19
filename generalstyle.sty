@@ -27,7 +27,9 @@
 
 % define theorem like environments
 \newcounter{everything}
+\theoremstyle{definition}
 \newtheorem{lemma}[everything]{Lemma}
+\newtheorem{remark}[everything]{Remark}
 
 
 % text shortcuts
@@ -80,6 +82,7 @@
 \newcommand{\Integer}{\mathbb{Z}}
 \newcommand{\Real}{\mathbb{R}}
 \newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Finite}{\mathbb{F}}
 
 
 % categories
@@ -89,6 +92,7 @@
 % fixed categories
 \newcommand{\Ab}{\catname{Ab}}
 \newcommand{\CommRing}{\catname{CRing}}
+\newcommand{\Field}{\catname{Field}}
 \newcommand{\Fun}{\catname{Fun}}
 \newcommand{\Gset}[1]{\text{$#1$-$\Set$}}
 \newcommand{\Group}{\catname{Grp}}
@@ -120,7 +124,6 @@
 \DeclareMathOperator{\Hom}{Hom}
 \newcommand{\mat}[2]{\operatorname{M}_{#1}(#2)}
 \newcommand{\mnat}[3]{\operatorname{M}(#1 \times #2, #3)}
-
 \DeclareMathOperator{\Ob}{Ob}
 
 
@@ -130,6 +133,9 @@
 \DeclareMathOperator{\ringchar}{char}
 \DeclareMathOperator{\sign}{sgn}
 
+
+% decorations
+\newcommand{\op}{\mathrm{op}}
 
 % custom macros with case distinctions
 \NewDocumentCommand{\suchthat}{s}{
