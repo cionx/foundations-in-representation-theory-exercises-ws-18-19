@@ -1,1 +1,46 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+\begin{description}
+  \item[(a)~$\implies$~(d)]
+    There exists a unique morphism~$Z \to Y$;
+    this holds in particular for~$Y = Z$.
+  \item[(d)~$\implies$~(c)]
+    Both~$\id_Z$ and~$0_{\Acat(Z,Z)}$ are elements of the \dash{one}{point} set~$\Acat(Z,Z)$, hence they coincide.
+  \item[(c)~$\implies$~(a)]
+    It holds for every morphism~$f \colon Z \to Y$ in~$\Acat$ that
+    \[
+        f
+      = f \circ {\id_Z}
+      = f \circ 0_{\Acat(Z,Z)}
+      = 0_{\Acat(X,Y)} \,.
+    \]
+    This shows that~$0_{\Acat(X,Y)}$ is the unique morphism~$X \to Y$ in~$\Acat$.
+\end{description}
+The implications (b)~$\implies$~(d)~$\implies$~(c)~$\implies$~(b) can be shown in the same way.
+
+
+
+
+
+\subsection{}
+
+We denote the zero object by~$Z$ (because~$0$ is already overloaded enough).
+Then~$\id_Z = 0_{\Acat(Z,Z)}$ by the previous part of the exercise, and therefore
+\[
+    0_{X,Y}
+  = 0_{Z,Y} \circ 0_{X,Z}
+  = 0_{Z,Y} \circ {\id_Z} \circ 0_{X,Z}
+  = 0_{Z,Y} \circ 0_{\Acat(Z,Z)} \circ 0_{X,Z}
+  = 0_{\Acat(X,Y)}
+\]
+for all~$X, Y \in \Acat(X,Y)$.
+
+
+
+
