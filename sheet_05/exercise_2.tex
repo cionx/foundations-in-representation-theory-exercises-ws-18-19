@@ -7,7 +7,7 @@
 
 \begin{lemma}
   \label{adjoint mono epi}
-  Let~$(F, G, \varphi)$ be an adjunction between categories~$\Ccat$ to~$\Dcat$.
+  Let~$(F, G, \varphi)$ be an adjunction from a category~$\Ccat$ to a category~$\Dcat$.
   Then~$F$ preserves epimorphisms and~$G$ preserves monomorphisms, i.e.\ if~$f$ is an epimorphism in~$\Ccat$ then~$F(f)$ is an epimorphism in~$\Dcat$, and if~$g$ is a monomorphism in~$\Dcat$ then~$G(g)$ is a monomorphism in~$\Ccat$.
 \end{lemma}
 
@@ -29,11 +29,10 @@
       \end{equation}
       commutes by the naturality of~$\varphi$.
       
-      The horizontal arrows in~\eqref{first diagram} are bijections, so it follows that~$F(f)^*$ is injective if~$f^*$ is injective.
-      If~$f$ is an epimorphism then~$f^* \colon \Ccat(X, G(Y)) \to \Ccat(X', G(Y))$ is injective for all~$Y \in \Ob(\Dcat)$, so it then follows that~$F(f)^* \colon \Dcat(F(X), Y) \to \Dcat(F(X'), Y)$ is injective for all~$Y \in \Ob(\Dcat)$.
+      The horizontal arrows in~\eqref{first diagram} are bijections, so it follows that the map~$F(f)^*$ is injective if (and only if) the map~$f^*$ is injective.
+      If~$f$ is an epimorphism then the map~$f^* \colon \Ccat(X, G(Y)) \to \Ccat(X', G(Y))$ is injective for all~$Y \in \Ob(\Dcat)$, so it then follows that~$F(f)^* \colon \Dcat(F(X), Y) \to \Dcat(F(X'), Y)$ is injective for all~$Y \in \Ob(\Dcat)$.
       This is precisely what it means for~$F(f)$ to be a epimorphism.
-      This shows that~$F$ preserves epimorphisms.
-      It can be shown in the same way that~$G$ preserves monomorphisms.
+      This shows that the functor~$F$ preserves epimorphisms, and it can be shown in the same way that the functor~$G$ preserves monomorphisms.
 \end{proof}
 
 
@@ -44,7 +43,7 @@
 
 \begin{proof}
   Let~$f \colon X \to Y$ be a morphism such that~$U(f)$ is a monomorphism in~$\Dcat$.
-  Let~$g_1, g_2 \colon Z \to X$ be two morphisms in~$\Ccat$ with~$f \circ g_1 = f \circ g_2$.
+  Let~$g_1, g_2 \colon W \to X$ be two morphisms in~$\Ccat$ with~$f \circ g_1 = f \circ g_2$.
   Then
   \[
               f g_1 = f g_2
@@ -54,7 +53,7 @@
   \]
   because~$U$ is faithful.
   This shows that~$U$ reflects monomorphisms.
-  That~$U$ als reflects epimorphisms can be shown in the same way.
+  That~$U$ also reflects epimorphisms can be shown in the same way.
 \end{proof}
 
 
@@ -87,8 +86,9 @@ We can then consider the equivalizer
       g_1(y) = g_2(y)
     \} \,.
 \]
-The set~$E$ is closed in~$Y$ because it can be written as the preimage~$E = (g_1, g_2)^{-1}(\Delta)$ for the continuous map~$(g_1, g_2) \colon Y \to Z \times Z$ and the diagonal~$\Delta \subseteq Z \times Z$, which is closed because~$Z$ is Hausdorff.
-The equalizer~$E$ contains the image of~$f$ because~$g \circ f = g_2 \circ f$.
+The set~$E$ is closed in~$Y$:
+It can be written as the preimage~$E = (g_1, g_2)^{-1}(\Delta_Z)$ of the diagonal~$\Delta_Z \subseteq Z \times Z$ under the continuous map~$(g_1, g_2) \colon Y \to Z \times Z$, where the diagonal~$\Delta_Z$ is closed in~$Z \times Z$ because~$Z$ is Hausdorff.
+The equalizer~$E$ contains the image~$f(X)$ because~$g \circ f = g_2 \circ f$.
 But this image is dense in~$Y$, and so it follows that
 \[
             E
@@ -104,7 +104,7 @@ This shows that~$E = Y$ and hence that~$g_1 = g_2$.
 
 \subsection{}
 
-Let more generally~$(X,x_0), (Y,y_0)$ be pointed, connected topological spaces, let~$X$ be Hausdorff and let~$f \colon (X,x_0) \to (Y,y_0)$ be a morphism in~$\Conn_*$ such that the underlying continuous map~$f \colon X \to Y$ is a local homeomorphism.
+Let more generally~$(X,x_0), (Y,y_0)$ be pointed, connected topological spaces, let~$X$ be Hausdorff and let~$f \colon (X,x_0) \to (Y,y_0)$ be a morphism in~$\Conn_*$ for which the underlying continuous map~$f \colon X \to Y$ is a local homeomorphism.
 Then~$f$ is a monomorphism in~$\Conn_*$:
 
 Let~$g_1, g_2 \colon (Z,z_0) \to (X,x_0)$ be morphisms in~$\Conn_*$ with~$f \circ g_1 = f \circ g_2 \defines h$.
@@ -117,11 +117,11 @@ We then consider the equalizer
               g_1(z) = g_2(z)
             \} \,.
 \]
-We find as in the previous part of the exercise that the set~$E$ is closed in~$Z$, because~$X$ is Hausdorff.
+We find as in the previous part of the exercise that the set~$E$ is closed in~$Z$ because~$X$ is Hausdorff.
 
-The set~$E$ is also open in~$Z$:
-Let~$z \in E$ and set~$x \defined g_1(z) = g_2(z)$ and~$y \defined h(z)$.
-Let~$V \subseteq Y$ be an open neighbourhood of~$y$ and let~$U \subseteq X$ be an open neighbourhood of~$x$, so that~$f$ restricts to a homeomorphism~$f' \colon U \to V$.
+The set~$E$ is also open:
+Let~$z \in E$ and set~$x \defined g_1(z) = g_2(z)$ and~$y \defined f(x) = h(z)$.
+Let~$V \subseteq Y$ be an open neighbourhood of~$y$ and let~$U \subseteq X$ be an open neighbourhood of~$x$ such that~$f$ restricts to a homeomorphism~$f' \colon U \to V$.
 The set~$W \defined g_1^{-1}(U) \cap g_2^{-1}(U)$ is then an open neighbourhood of~$z$ in~$Z$ for which we get the following diagram:
 \[
   \begin{tikzcd}
@@ -140,7 +140,6 @@ It follows from~$f'$ being a homeomorphism that already~$g_1 \equiv g_2$ on~$W$.
 This shows that~$E$ contais an open neighbourhood (namely~$W$) around~$z$.
 
 The set~$E$ is also nonempty because it contains the base point~$z_0$.
-
 This shows altogether that~$E$ is a nonempty subset of~$Z$ which is both closed and open.
 It follows from~$Z$ being connected that~$E = Z$ and hence that~$g_1 = g_2$.
 

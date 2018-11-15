@@ -15,7 +15,7 @@ There exist only a single field homorphism~$\Rational \to \Rational$, namely the
 Hence we find that~$M = \Rational$ and~$f = g = \id_\Rational$.
 
 It follows that~$P = \Rational$ together with the inclusions~$p \colon P \to \Rational(i)$ and~$q \colon P \to \Rational(\sqrt{2})$ is a product of~$K$ and~$L$ in~$\Field$.
-(That there exist a \emph{unique} morphism~$M \to P$ follows from~$\Rational$ having only the identity~$\id_\Rational$ as an automorphism.)
+(That there exist a \emph{unique} morphism~$M \to P$ follows from~$\id_\Rational$ follows from~$\id_\Rational$ being the only such homomorphism.)
 
 
 
@@ -23,13 +23,13 @@ It follows that~$P = \Rational$ together with the inclusions~$p \colon P \to \Ra
 
 \subsection{}
 
-Suppose that a product~$P$ of~$K$ and~$L$ exist in~$\Field$.
+Suppose that a product~$P$ of~$K$ and~$L$ exists in the category~$\Field$.
 We find as above that~$P$ is isomorphic to a subfield of~$\Rational(i)$, and hence that either~$P = \Rational$ or~$P = \Rational(i)$.
-It follows from the existence of the diagonal homomorphism~$\Delta_{\Rational(i)} \colon \Rational(i) \to P$ in~$\Field$ that~$P$ is a field extension of~$\Rational(i)$.
+It follows from the existence of the (usual) diagonal homomorphism~$\Delta_{\Rational(i)} \colon \Rational(i) \to P$ that~$P$ is a field extension of~$\Rational(i)$.
 We thus find that~$P = \Rational(i)$.
 
-There exist precisely two field homomorphisms~$\Rational(i) \to \Rational(i)$, the identity~$\id_{\Rational(i)}$ and the conjugation~$c \colon \Rational(i) \to \Rational(i)$,~$a + ib \mapsto a - ib$.
-If~$p \colon P \to \Rational(i)$ and~$q \colon P \to \Rational(i)$ are the structure morphisms belonging to the product~$P$ then it follows that~$p$ and~$q$ are isomorphisms, and that for all field homomorphisms~$f_1, f_2 \colon \Rational(i) \to \Rational(i)$ there exist unique field homomorphism~$g \colon \Rational(i) \to \Rational(i)$ such that the diagram
+There exists precisely two field homomorphisms~$\Rational(i) \to \Rational(i)$, the identity~$\id_{\Rational(i)}$ and the conjugation~$c \colon \Rational(i) \to \Rational(i)$,~$a + ib \mapsto a - ib$.
+If~$p \colon P \to \Rational(i)$ and~$q \colon P \to \Rational(i)$ are the structure morphisms belonging to the product~$P$ then it follows that~$p$ and~$q$ are isomorphisms, and that for every choice of field homomorphisms~$f_1, f_2 \colon \Rational(i) \to \Rational(i)$ there exists a unique field homomorphism~$g \colon \Rational(i) \to \Rational(i)$ such that the diagram
 \[
   \begin{tikzcd}[row sep = large]
       {}
@@ -53,9 +53,9 @@ But then
   = p g
   = p q^{-1} f_2 \,,
 \]
-which cannot holds for both~$f_1 = \id_{\Rational(i)}$,~$f_2 = \id_{\Rational(i)}$ and~$f_1 = c$,~$f_2 = \id_{\Rational(i)}$.
+which cannot holds for both the choice~$f_1 = \id_{\Rational(i)}$,~$f_2 = \id_{\Rational(i)}$ (for which we get~$f_1 = f_2$) and also the choice~$f_1 = c$,~$f_2 = \id_{\Rational(i)}$ (for which we get~$f_1 \neq f_2$).
 
-This shows that no product of~$K$ and~$L$ exist in~$\Field$.
+This shows that no product of~$K$ and~$L$ exists in~$\Field$.
 
 
 
