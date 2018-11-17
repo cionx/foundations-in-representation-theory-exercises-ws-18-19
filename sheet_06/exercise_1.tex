@@ -1,1 +1,367 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+Let~$Z \in \Ob(\Ccat)$ be an object and let~$\alpha \colon A \to X$ and~$\delta \colon Z \to Y''$ be two morphisms in~$\Ccat$ with~$f \circ \alpha = g \circ h \circ \gamma$, i.e.\ such the in the diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[dashed,bend left]{drrr}[above right]{\alpha}
+      \arrow[dashed,bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+the outer diagram commutes.
+By applying the \dash{right}{hand} {\pb} square to the morphisms~$\alpha \colon Z \to X$ and~$h \circ \beta \colon Z \to Y'$, we find that there exist a unique morphism~$\beta \colon Z \to Y'$ with~$g' \circ \beta = \alpha$ and~$f' \circ \beta = h \circ \delta$, i.e.\ such that the diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[dashed, bend left]{drr}[below left]{\beta}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commutes.
+By applying the \dash{left}{hand} {\pb} square to the morphisms~$\beta \colon Z \to X'$ and and~$\delta \colon Z \to Y''$, we find that there exist a unique morphism~$\gamma \colon Z \to X''$ with~$h' \circ \gamma = \beta$ and~$f'' \circ \gamma = \delta$, i.e.\ such that the diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[bend left]{drr}[below left]{\beta}
+      \arrow[dashed]{dr}[above right]{\gamma}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commutes.
+
+Suppose that~$\gamma' \colon Z \to X''$ is another morphism which makes the diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[dashed]{dr}[above right]{\gamma'}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commute, then by setting~$\beta' \defined h' \circ \gamma'$ we get the following commutative diagram:
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[dashed, bend left]{drr}[below left]{\beta'}
+      \arrow{dr}[above right]{\gamma'}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+Then~$\beta' = \beta$ by the uniqueness of~$\beta$ and thus~$\gamma ' = \gamma$ by the uniqueness of~$\gamma$.
+
+
+
+
+
+\subsection{}
+
+Let~$Z \in \Ob(\Ccat)$ be an object and let~$\delta \colon Z \to Y''$ and~$\beta \colon Z \to X'$ be two morphisms in~$\Ccat$ with~$h \circ \delta = f' \circ \beta$, i.e.\ such that the diagram
+% \[
+%   \begin{tikzcd}
+%       Z
+%       \arrow[bend left]{drrr}[above right]{\alpha}
+%       \arrow[bend left]{drr}[below left]{\beta}
+%       \arrow{dr}[above right]{\gamma}
+%       \arrow[bend right]{ddr}[below left]{\delta}
+%     & {}
+%     & {}
+%     & {}
+%     \\
+%       {}
+%     & X''
+%       \arrow{r}[above]{h'}
+%       \arrow{d}[right]{f''}
+%     & X'
+%       \arrow{r}[above]{g'}
+%       \arrow{d}[right]{f'}
+%     & X
+%       \arrow{d}[right]{f}
+%     \\
+%       {}
+%     & Y''
+%       \arrow{r}[above]{h}
+%     & Y'
+%       \arrow{r}[above]{g}
+%     & Y
+%   \end{tikzcd}
+% \]
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[dashed,bend left]{drr}[below left]{\beta}
+      \arrow[dashed,bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commutes.
+For the morphism~$\alpha' \defined g' \circ \beta \colon Z \to X$ we get following commutative diagram:
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[dashed,bend left]{drrr}[above right]{\alpha}
+      \arrow[bend left]{drr}[below left]{\beta}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+By using the outer {\pb} square for the morphisms~$\alpha \colon Z \to X$ and~$\delta \colon Z \to Y''$, we find that there exists a unique morphism~$\gamma \colon Z \to X''$  with~$g' \circ h' \circ \gamma = \alpha$ and~$f'' \circ \gamma = \delta$, i.e.\ such that the diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[dashed]{dr}[above right]{\gamma}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commutes.
+We claim that already the whole diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[bend left]{drr}[below left]{\beta}
+      \arrow{dr}[above right]{\gamma}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commutes.
+For this we still have to show that~$h' \circ \gamma = \beta$.
+The \dash{right}{hand} square is a pushout square, so it follows for any two morphisms~$k_1, k_2 \colon Z \to X'$ that~$k_1 = k_2$ if and only if both~$g' \circ k_1 = g' \circ k_2$ and~$f' \circ k_1 = f' \circ k_2$.
+This holds true for~$k_1 = \beta$ and~$k_2 = h' \circ \gamma$ because
+\[
+    g' \circ \beta
+  = \alpha
+  = g' \circ h' \circ \gamma
+\]
+by construction of~$\gamma$ and
+\[
+    \beta \circ f'
+  = h \circ \delta
+  = h \circ f'' \circ \gamma
+  = f' \circ h' \circ \gamma
+\]
+by choice of~$\beta$ and~$\delta$, and construction of~$\gamma$.
+
+Suppose that~$\gamma' \colon Z \to X''$ is another morphism which makes the diagram
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[bend left]{drrr}[above right]{\alpha}
+      \arrow[bend left]{drr}[below left]{\beta}
+      \arrow[dashed]{dr}[above right]{\gamma'}
+      \arrow[bend right]{ddr}[below left]{\delta}
+    & {}
+    & {}
+    & {}
+    \\
+      {}
+    & X''
+      \arrow{r}[above]{h'}
+      \arrow{d}[right]{f''}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y''
+      \arrow{r}[above]{h}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+commute.
+Then~$f'' \circ \gamma' = \delta$ and~$g' \circ h' \circ \gamma' = \alpha$, and therefore~$\gamma' = \gamma$ by the uniqueness of~$\gamma$.
+
+
+
+
