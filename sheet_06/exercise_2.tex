@@ -1,1 +1,29 @@
-\addtocounter{section}{1}
+\section{}
+
+
+If~$h \colon Z \to X$ is any morphism in~$\Ccat$, then for~$\alpha \defined g' \circ h$ and~$\beta \defined f' \circ h$ the following diagram commutes:
+\[
+  \begin{tikzcd}
+      Z
+      \arrow[dashed,bend left]{drr}[above right]{\alpha}
+      \arrow{dr}[above right]{h}
+      \arrow[dashed,bend right]{ddr}[below left]{\beta}
+    & {}
+    & {}
+    \\
+      {}
+    & X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      {}
+    & Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\]
+The morphism~$h$ is uniquely determined by the compositions~$\alpha$ and~$\beta$ because the given diagram is a {\pb} square.
+The morphisms~$\alpha$ is uniquely determined by the composition~$f \circ \alpha$ because~$f$ is a monomorphism, and~$f \circ \alpha = g \circ \beta$.
+Hence~$h$ is uniquely determined by~$\beta = f' \circ h$, which shows that~$f'$ is a monomorphism.
