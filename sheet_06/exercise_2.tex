@@ -27,3 +27,100 @@ If~$h \colon Z \to X$ is any morphism in~$\Ccat$, then for~$\alpha \defined g' \
 The morphism~$h$ is uniquely determined by the compositions~$\alpha$ and~$\beta$ because the given diagram is a {\pb} square.
 The morphisms~$\alpha$ is uniquely determined by the composition~$f \circ \alpha$ because~$f$ is a monomorphism, and~$f \circ \alpha = g \circ \beta$.
 Hence~$h$ is uniquely determined by~$\beta = f' \circ h$, which shows that~$f'$ is a monomorphism.
+
+
+\begin{remark}
+  In an abelian category~$\Acat$ the converse also holds, i.e.\ if the diagram
+  \[
+    \begin{tikzcd}
+        X'
+        \arrow{r}[above]{g'}
+        \arrow{d}[right]{f'}
+      & X
+        \arrow{d}[right]{f}
+      \\
+        Y'
+        \arrow{r}[above]{g}
+      & Y
+    \end{tikzcd}
+  \]
+  is a {\pb} square and~$f'$ is a monomorphism then~$f$ is also a monomorphism.
+  Indeed, we have the following commutative diagram:
+  \[
+    \begin{tikzcd}
+        \ker(f)
+        \arrow[dashed,bend left]{drr}
+        \arrow[dashed,bend right]{ddr}[below left]{0}
+      & {}
+      & {}
+    \\
+        {}
+      & X'
+        \arrow{r}[above]{g'}
+        \arrow{d}[right]{f'}
+      & X
+        \arrow{d}[right]{f}
+      \\
+        {}
+      & Y'
+        \arrow{r}[above]{g}
+      & Y
+    \end{tikzcd}
+  \]
+  It follows that there exist a unique morphism~$\lambda \colon \ker(f) \to X'$ which makes the diagram
+  \[
+    \begin{tikzcd}
+        \ker(f)
+        \arrow[bend left]{drr}
+        \arrow[dashed]{dr}[above right]{\lambda}
+        \arrow[bend right]{ddr}[below left]{0}
+      & {}
+      & {}
+    \\
+        {}
+      & X'
+        \arrow{r}[above]{g'}
+        \arrow{d}[right]{f'}
+      & X
+        \arrow{d}[right]{f}
+      \\
+        {}
+      & Y'
+        \arrow{r}[above]{g}
+      & Y
+    \end{tikzcd}
+  \]
+  commute.
+  It follows from~$0 = f' \circ \lambda$ and~$f$ being a monomorphism that also~$\lambda = 0$.
+  The canonical morphism~$\ker(f) \to X$ is therefore given by
+  \[
+      g' \circ \lambda
+    = g' \circ 0
+    = 0 \,.
+  \]
+  This shows that~$\ker(f) = 0$ and hence that~$f$ is a monomorphism.
+\end{remark}
+
+
+\begin{remark}
+  \label{pushouts and epis}
+  It holds dually for a pushout square
+  \[
+    \begin{tikzcd}
+        X
+        \arrow{r}[above]{g}
+        \arrow{d}[left]{f}
+      & X'
+        \arrow{d}[left]{f'}
+      \\
+        Y
+        \arrow{r}[above]{g'}
+      & Y'
+    \end{tikzcd}
+  \]
+  that if~$f$ is an epimorphism, then~$f'$ is also an epimorphism;
+  in an abelian category, the converse also holds.
+\end{remark}
+
+
+

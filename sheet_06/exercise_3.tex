@@ -1,78 +1,161 @@
 \section{}
 
-Let~$p \colon X \oplus Y' \to X$ and~$q \colon X \oplus Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \oplus Y$.
-We can then consider the morphism
-\[
-    d
-  \colon
-    X \oplus Y'
-  \xlongto{\begin{bsmallmatrix} f & -g \end{bsmallmatrix}}
-    Y \,.
-\]
-It then holds for every object~$Z \in \Ob(\Ccat)$ and every two morphisms~$\alpha \colon Z \to X$ and~$\beta \colon Z \to Y$ that
-\[
-        f \circ \alpha = g \circ \beta
-  \iff  f \circ \alpha - g \circ \beta = 0
-  \iff  \begin{bmatrix}
-          f & -g
-        \end{bmatrix}
-        \begin{bmatrix}
-          \alpha  \\
-          \beta
-        \end{bmatrix}
-        = 0
-  \iff  d
-        \circ
-        \begin{bmatrix}
-          \alpha  \\
-          \beta
-        \end{bmatrix}
-        = 0
-\]
-Let~$k \colon X' \to X \oplus Y'$ be a morphism, which is uniquely of the form
-\[
-    k
-  = \begin{bmatrix}
-      g'  \\
-      f'
-    \end{bmatrix}
-\]
-for some morphisms~$q' \colon X' \to X$ and~$f' \colon X' \to Y'$.
-We find from the above calculation that~$d \circ k = 0$ if and only if the square
-\[
-  \begin{tikzcd}
+\begin{proposition}
+  \label{characterization of pullbacks}
+  Let~$\Acat$ be an additive category.
+  Then a diagram
+  \[
+    \begin{tikzcd}
+        X'
+        \arrow{r}[above]{g'}
+        \arrow{d}[right]{f'}
+      & X
+        \arrow{d}[right]{f}
+      \\
+        Y'
+        \arrow{r}[above]{g}
+      & Y
+    \end{tikzcd}
+  \]
+  in~$\Acat$ is a {\pb} square if and only if in the squence
+  \begin{equation}
+    \label{left exact sequence}
       X'
-      \arrow{r}[above]{g'}
-      \arrow{d}[right]{f'}
-    & X
-      \arrow{d}[right]{f}
-    \\
+    \xlongto{ \begin{bsmallmatrix} g' \\ f' \end{bsmallmatrix} }
+      X \oplus Y'
+    \xlongto{ \begin{bsmallmatrix} f & -g \end{bsmallmatrix} }
+      Y \,,
+  \end{equation}
+  the morphism~$X' \to X \oplus Y'$ is a kernel of the morphism~$X \oplus Y' \to Y$ (i.e.\ the sequence is left exact).
+\end{proposition} 
+
+\begin{proof}
+  Let~$p \colon X \oplus Y' \to X$ and~$q \colon X \oplus Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \oplus Y$ and let
+  \[
+      d
+    \colon
+      X \oplus Y'
+    \xlongto{\begin{bsmallmatrix} f & -g \end{bsmallmatrix}}
+      Y \,.
+  \]
+  It then holds for every object~$Z \in \Ob(\Ccat)$ and every two morphisms~$\alpha \colon Z \to X$ and~$\beta \colon Z \to Y$ that
+  \[
+          f \circ \alpha = g \circ \beta
+    \iff  f \circ \alpha - g \circ \beta = 0
+    \iff  \begin{bmatrix}
+            f & -g
+          \end{bmatrix}
+          \begin{bmatrix}
+            \alpha  \\
+            \beta
+          \end{bmatrix}
+          = 0
+    \iff  d
+          \circ
+          \begin{bmatrix}
+            \alpha  \\
+            \beta
+          \end{bmatrix}
+          = 0
+  \]
+  Let~$k \colon X' \to X \oplus Y'$ be a morphism, which is uniquely of the form
+  \[
+      k
+    = \begin{bmatrix}
+        g'  \\
+        f'
+      \end{bmatrix}
+  \]
+  for some morphisms~$q' \colon X' \to X$ and~$f' \colon X' \to Y'$.
+  We find from the above calculation that~$d \circ k = 0$ if and only if the square
+  \[
+    \begin{tikzcd}
+        X'
+        \arrow{r}[above]{g'}
+        \arrow{d}[right]{f'}
+      & X
+        \arrow{d}[right]{f}
+      \\
+        Y'
+        \arrow{r}[above]{g}
+      & Y
+    \end{tikzcd}
+  \]
+  commutes.
+  We have moreover find that
+  \begin{align*}
+        {}& \begin{tabular}{c}
+              there exist for all morphisms
+              $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$f \circ \alpha = g \circ \beta$ \\
+              a unique morphism~$\lambda \colon Z \to X'$ with~$g' \circ \lambda = \alpha$ and~$f' \circ \lambda = \beta$
+            \end{tabular} \\
+    \iff{}& \begin{tabular}{c}
+              there exist for all morphisms
+              $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$d \circ \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix} = 0$ \\
+              a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix}$
+            \end{tabular} \\
+    \iff&{} \begin{tabular}{c}
+              there exist for every morphism
+              $\gamma \colon Z \to X \oplus Y'$ with~$d \circ \gamma = 0$ \\
+              a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \gamma$ \,.
+            \end{tabular}
+  \end{align*}
+  This shows that~$(X', f', g')$ is a {\pb} of the given morphisms~$X \xto{f} Y \xfrom{g} Y'$ if and only if the corresponding morphism~$k \colon Z \to X \oplus Y$ is a kernel of~$d$.
+\end{proof}
+
+\begin{remark}
+  \label{variation for pullback}
+  Instead of the sequence~\eqref{left exact sequence} one can also use variations such as
+  \begin{gather*}
+      X'
+    \xlongto{ \begin{bsmallmatrix} g' \\ f' \end{bsmallmatrix} }
+      X \oplus Y'
+    \xlongto{ \begin{bsmallmatrix} -f & g \end{bsmallmatrix} }
+      Y \,,
+  \\
+      X'
+    \xlongto{ \begin{bsmallmatrix} g' \\ -f' \end{bsmallmatrix} }
+      X \oplus Y'
+    \xlongto{ \begin{bsmallmatrix} f & g \end{bsmallmatrix} }
+      Y \,,
+  \\
+      X'
+    \xlongto{ \begin{bsmallmatrix} - g' \\ f' \end{bsmallmatrix} }
+      X \oplus Y'
+    \xlongto{ \begin{bsmallmatrix} f & g \end{bsmallmatrix} }
+      Y \,.
+  \end{gather*}
+\end{remark}
+
+
+\begin{remark}
+  \label{pushout via exact sequence}
+  The dual version of \cref{characterization of pullbacks} states that in an additive category~$\Acat$, a diagram
+  \[
+    \begin{tikzcd}
+        X
+        \arrow{r}[above]{f}
+        \arrow{d}[right]{g}
+      & Y
+        \arrow{d}[right]{g'}
+      \\
+        X'
+        \arrow{r}[above]{f'}
+      & Y'
+    \end{tikzcd}
+  \]
+  is a pushout square if and only if in the sequence
+  \[
+      X
+    \xlongto{ \begin{bsmallmatrix} f' \\ g \end{bsmallmatrix} }
+      X' \oplus Y
+    \xlongto{ \begin{bsmallmatrix} f' & -g \end{bsmallmatrix} }
       Y'
-      \arrow{r}[above]{g}
-    & Y
-  \end{tikzcd}
-\]
-commutes.
-We have moreover find that
-\begin{align*}
-      {}& \begin{tabular}{c}
-            there exist for all morphisms
-            $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$f \circ \alpha = g \circ \beta$ \\
-            a unique morphism~$\lambda \colon Z \to X'$ with~$g' \circ \lambda = \alpha$ and~$f' \circ \lambda = \beta$
-          \end{tabular} \\
-  \iff{}& \begin{tabular}{c}
-            there exist for all morphisms
-            $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$d \circ \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix} = 0$ \\
-            a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix}$
-          \end{tabular} \\
-  \iff&{} \begin{tabular}{c}
-            there exist for every morphism
-            $\gamma \colon Z \to X \oplus Y'$ with~$d \circ \gamma = 0$ \\
-            a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \gamma$ \,.
-          \end{tabular}
-\end{align*}
-This shows that~$(X', f', g')$ is a {\pb} of the given morphisms~$X \xto{f} Y \xfrom{g} Y'$ if and only if the corresponding morphism~$k \colon Z \to X \oplus Y$ is a kernel of~$d$.
-Such a kernel exists by assumption, and hence the desired {\pb} exists.
+  \]
+  the morphism~$X' \oplus Y \to Y'$ is a cokernel of the morphism~$X \to X' \oplus Y$ (i.e.\ the sequence is right exact).
+  One can again vary this sequence, as done in \cref{variation for pullback} for pullbacks.
+\end{remark}
+
 
 % Let~$p \colon X \times Y' \to X$ and~$q \colon X \times Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \otimes Y'$
 % Let~$k \colon X' \to X \times Y'$ be a kernel of the morphism
