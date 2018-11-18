@@ -1,141 +1,215 @@
 \section{}
 
-Let~$p \colon X \times Y' \to X$ and~$q \colon X \times Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \otimes Y'$
-Let~$k \colon X' \to X \times Y'$ be a kernel of the morphism
+Let~$p \colon X \oplus Y' \to X$ and~$q \colon X \oplus Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \oplus Y$.
+We can then consider the morphism
 \[
-            d
-  \defined  f \circ p - g \circ q
-  \colon    X \times Y'
-  \to       Y \,.
+    d
+  \colon
+    X \oplus Y'
+  \xlongto{\begin{bsmallmatrix} f & -g \end{bsmallmatrix}}
+    Y \,.
 \]
-For~$f' \defined q \circ k$ and~$g' \defined q \circ k$ we then have the following diagram, in which the upper and left triangles commute:
+It then holds for every object~$Z \in \Ob(\Ccat)$ and every two morphisms~$\alpha \colon Z \to X$ and~$\beta \colon Z \to Y$ that
+\[
+        f \circ \alpha = g \circ \beta
+  \iff  f \circ \alpha - g \circ \beta = 0
+  \iff  \begin{bmatrix}
+          f & -g
+        \end{bmatrix}
+        \begin{bmatrix}
+          \alpha  \\
+          \beta
+        \end{bmatrix}
+        = 0
+  \iff  d
+        \circ
+        \begin{bmatrix}
+          \alpha  \\
+          \beta
+        \end{bmatrix}
+        = 0
+\]
+Let~$k \colon X' \to X \oplus Y'$ be a morphism, which is uniquely of the form
+\[
+    k
+  = \begin{bmatrix}
+      g'  \\
+      f'
+    \end{bmatrix}
+\]
+for some morphisms~$q' \colon X' \to X$ and~$f' \colon X' \to Y'$.
+We find from the above calculation that~$d \circ k = 0$ if and only if the square
 \[
   \begin{tikzcd}
       X'
-      \arrow{rr}[above]{g'}
-      \arrow{dr}[below left]{k}
-      \arrow{dd}[right]{f'}
-    & {}
-    & X
-      \arrow{dd}[right]{f}
-    \\
-      {}
-    & X \times Y'
-      \arrow{ur}[below right]{p}
-      \arrow{dr}[above right]{d}
-      \arrow{dl}[below right]{q}
-    & {}
-    \\
-      Y'
-      \arrow{rr}[above]{g}
-    & {}
-    & Y
-  \end{tikzcd}
-\]
-The outer square also commutes because
-\[
-    0
-  = d \circ k
-  = (f \circ p - g \circ c) \circ k
-  = f \circ p \circ k - g \circ q \circ k
-  = f \circ g' - g \circ f'
-\]
-and hence~$f \circ g' - g \circ f'$.
-
-If more generally~$Z \in \Ob(\Ccat)$ is an object and~$\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ are morphisms, with~$f \circ \alpha = g \circ \beta$ then it holds for the morphism~$(\alpha,\beta) \colon Z \to X \times Y$ that
-\begin{align*}
-      d \circ (\alpha,\beta)
-  &=  (f \circ p - g \circ q) \circ (\alpha,\beta)  \\
-  &=  f \circ p \circ (\alpha,\beta) - g \circ q \circ (\alpha,\beta)
-   =  f \circ \alpha - g \circ \beta
-   =  0 \,.
-\end{align*}
-Hence~$(\alpha, \beta)$ factors uniquely through the kernel~$k \colon X' \to X \times Y'$ of~$d$, i.e.\ there exists a unique morphism~$\gamma \colon Z \to X'$ with~$k \circ \gamma = (\alpha, \beta)$.
-\[
-  \begin{tikzcd}[column sep={6em,between origins}]
-      Z
-      \arrow[bend left]{drrr}[above right]{\alpha}
-      \arrow[bend right]{dddr}[below left]{\beta}
-      \arrow[dashed]{dr}[below left]{\gamma}
-    & {}
-    & {}
-    & {}
-    \\
-      {}
-    & X'
-      \arrow{rr}[above]{g'}
-      \arrow{dr}[below left]{k}
-      \arrow{dd}[right]{f'}
-    & {}
-    & X
-      \arrow{dd}[right]{f}
-    \\
-      {}
-    & {}
-    & X \times Y'
-      \arrow[dashed, from=uull, bend left, crossing over, above right, "{(\alpha,\beta)}"]
-      \arrow{ur}[below right]{p}
-      \arrow{dr}[above right]{d}
-      \arrow{dl}[below right]{q}
-    & {}
-    \\
-      {}
-    & Y'
-      \arrow{rr}[above]{g}
-    & {}
-    & Y
-  \end{tikzcd}
-\]
-It then holds that
-\begin{gather*}
-    g' \circ \gamma
-  = p \circ k \circ \gamma
-  = p \circ (\alpha, \beta)
-  = \alpha
-\intertext{and}
-    f' \circ \gamma
-  = q \circ k \circ \gamma
-  = q \circ (\alpha, \beta)
-  = \beta \,.
-\end{gather*}
-
-Suppose on the other hand that~$\gamma' \colon Z \to X'$ is another morphism which makes the diagram
-\[
-  \begin{tikzcd}
-      Z
-      \arrow[bend left]{drr}[above right]{\alpha}
-      \arrow[bend right]{ddr}[below left]{\beta}
-      \arrow{dr}[above right]{\gamma}
-    & {}
-    & {}
-    \\
-      {}
-    & X'
       \arrow{r}[above]{g'}
       \arrow{d}[right]{f'}
     & X
       \arrow{d}[right]{f}
     \\
-      {}
-    & Y'
+      Y'
       \arrow{r}[above]{g}
     & Y
   \end{tikzcd}
 \]
-commute.
-Then the composition~$k \circ \gamma'$ satisfies
-\begin{gather*}
-    p \circ k \circ \gamma'
-  = g' \circ \gamma'
-  = \alpha
-\shortintertext{and}
-    q \circ k \circ \gamma'
-  = f' \circ \gamma'
-  = \beta \,,
-\end{gather*}
-and is hence given by~$k \circ \gamma' = (\alpha, \beta)$.
-It follows that~$\gamma = \gamma'$ by the uniqueness of~$\gamma$.
+commutes.
+We have moreover find that
+\begin{align*}
+      {}& \begin{tabular}{c}
+            there exist for all morphisms
+            $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$f \circ \alpha = g \circ \beta$ \\
+            a unique morphism~$\lambda \colon Z \to X'$ with~$g' \circ \lambda = \alpha$ and~$f' \circ \lambda = \beta$
+          \end{tabular} \\
+  \iff{}& \begin{tabular}{c}
+            there exist for all morphisms
+            $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$d \circ \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix} = 0$ \\
+            a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix}$
+          \end{tabular} \\
+  \iff&{} \begin{tabular}{c}
+            there exist for every morphism
+            $\gamma \colon Z \to X \oplus Y'$ with~$d \circ \gamma = 0$ \\
+            a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \gamma$ \,.
+          \end{tabular}
+\end{align*}
+This shows that~$(X', f', g')$ is a {\pb} of the given morphisms~$X \xto{f} Y \xfrom{g} Y'$ if and only if the corresponding morphism~$k \colon Z \to X \oplus Y$ is a kernel of~$d$.
+Such a kernel exists by assumption, and hence the desired {\pb} exists.
 
-
+% Let~$p \colon X \times Y' \to X$ and~$q \colon X \times Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \otimes Y'$
+% Let~$k \colon X' \to X \times Y'$ be a kernel of the morphism
+% \[
+%             d
+%   \defined  f \circ p - g \circ q
+%   \colon    X \times Y'
+%   \to       Y \,.
+% \]
+% For~$f' \defined q \circ k$ and~$g' \defined q \circ k$ we then have the following diagram, in which the upper and left triangles commute:
+% \[
+%   \begin{tikzcd}
+%       X'
+%       \arrow{rr}[above]{g'}
+%       \arrow{dr}[below left]{k}
+%       \arrow{dd}[right]{f'}
+%     & {}
+%     & X
+%       \arrow{dd}[right]{f}
+%     \\
+%       {}
+%     & X \times Y'
+%       \arrow{ur}[below right]{p}
+%       \arrow{dr}[above right]{d}
+%       \arrow{dl}[below right]{q}
+%     & {}
+%     \\
+%       Y'
+%       \arrow{rr}[above]{g}
+%     & {}
+%     & Y
+%   \end{tikzcd}
+% \]
+% The outer square also commutes because
+% \[
+%     0
+%   = d \circ k
+%   = (f \circ p - g \circ c) \circ k
+%   = f \circ p \circ k - g \circ q \circ k
+%   = f \circ g' - g \circ f'
+% \]
+% and hence~$f \circ g' - g \circ f'$.
+% 
+% If more generally~$Z \in \Ob(\Ccat)$ is an object and~$\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ are morphisms, with~$f \circ \alpha = g \circ \beta$ then it holds for the morphism~$(\alpha,\beta) \colon Z \to X \times Y$ that
+% \begin{align*}
+%       d \circ (\alpha,\beta)
+%   &=  (f \circ p - g \circ q) \circ (\alpha,\beta)  \\
+%   &=  f \circ p \circ (\alpha,\beta) - g \circ q \circ (\alpha,\beta)
+%    =  f \circ \alpha - g \circ \beta
+%    =  0 \,.
+% \end{align*}
+% Hence~$(\alpha, \beta)$ factors uniquely through the kernel~$k \colon X' \to X \times Y'$ of~$d$, i.e.\ there exists a unique morphism~$\gamma \colon Z \to X'$ with~$k \circ \gamma = (\alpha, \beta)$.
+% \[
+%   \begin{tikzcd}[column sep={6em,between origins}]
+%       Z
+%       \arrow[bend left]{drrr}[above right]{\alpha}
+%       \arrow[bend right]{dddr}[below left]{\beta}
+%       \arrow[dashed]{dr}[below left]{\gamma}
+%     & {}
+%     & {}
+%     & {}
+%     \\
+%       {}
+%     & X'
+%       \arrow{rr}[above]{g'}
+%       \arrow{dr}[below left]{k}
+%       \arrow{dd}[right]{f'}
+%     & {}
+%     & X
+%       \arrow{dd}[right]{f}
+%     \\
+%       {}
+%     & {}
+%     & X \times Y'
+%       \arrow[dashed, from=uull, bend left, crossing over, above right, "{(\alpha,\beta)}"]
+%       \arrow{ur}[below right]{p}
+%       \arrow{dr}[above right]{d}
+%       \arrow{dl}[below right]{q}
+%     & {}
+%     \\
+%       {}
+%     & Y'
+%       \arrow{rr}[above]{g}
+%     & {}
+%     & Y
+%   \end{tikzcd}
+% \]
+% It then holds that
+% \begin{gather*}
+%     g' \circ \gamma
+%   = p \circ k \circ \gamma
+%   = p \circ (\alpha, \beta)
+%   = \alpha
+% \intertext{and}
+%     f' \circ \gamma
+%   = q \circ k \circ \gamma
+%   = q \circ (\alpha, \beta)
+%   = \beta \,.
+% \end{gather*}
+% 
+% Suppose on the other hand that~$\gamma' \colon Z \to X'$ is another morphism which makes the diagram
+% \[
+%   \begin{tikzcd}
+%       Z
+%       \arrow[bend left]{drr}[above right]{\alpha}
+%       \arrow[bend right]{ddr}[below left]{\beta}
+%       \arrow{dr}[above right]{\gamma}
+%     & {}
+%     & {}
+%     \\
+%       {}
+%     & X'
+%       \arrow{r}[above]{g'}
+%       \arrow{d}[right]{f'}
+%     & X
+%       \arrow{d}[right]{f}
+%     \\
+%       {}
+%     & Y'
+%       \arrow{r}[above]{g}
+%     & Y
+%   \end{tikzcd}
+% \]
+% commute.
+% Then the composition~$k \circ \gamma'$ satisfies
+% \begin{gather*}
+%     p \circ k \circ \gamma'
+%   = g' \circ \gamma'
+%   = \alpha
+% \shortintertext{and}
+%     q \circ k \circ \gamma'
+%   = f' \circ \gamma'
+%   = \beta \,,
+% \end{gather*}
+% and is hence given by~$k \circ \gamma' = (\alpha, \beta)$.
+% It follows that~$\gamma = \gamma'$ by the uniqueness of~$\gamma$.
+% 
+% 
 
 
