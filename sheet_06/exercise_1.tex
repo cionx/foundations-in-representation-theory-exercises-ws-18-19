@@ -6,7 +6,7 @@
 
 \subsection{}
 
-Let~$Z \in \Ob(\Ccat)$ be an object and let~$\alpha \colon A \to X$ and~$\delta \colon Z \to Y''$ be two morphisms in~$\Ccat$ with~$f \circ \alpha = g \circ h \circ \gamma$, i.e.\ such the in the diagram
+Let~$Z \in \Ob(\Ccat)$ be an object and let~$\alpha \colon Z \to X$ and~$\delta \colon Z \to Y''$ be two morphisms in~$\Ccat$ with~$f \circ \alpha = g \circ h \circ \delta$, i.e.\ such the diagram
 \[
   \begin{tikzcd}
       Z
@@ -34,8 +34,8 @@ Let~$Z \in \Ob(\Ccat)$ be an object and let~$\alpha \colon A \to X$ and~$\delta 
     & Y
   \end{tikzcd}
 \]
-the outer diagram commutes.
-By applying the \dash{right}{hand} {\pb} square to the morphisms~$\alpha \colon Z \to X$ and~$h \circ \beta \colon Z \to Y'$, we find that there exist a unique morphism~$\beta \colon Z \to Y'$ with~$g' \circ \beta = \alpha$ and~$f' \circ \beta = h \circ \delta$, i.e.\ such that the diagram
+commutes.
+By applying the \dash{right}{hand} {\pb} square to the morphisms~$\alpha \colon Z \to X$ and~$h \circ \delta \colon Z \to Y'$, we find that there exist a unique morphism~$\beta \colon Z \to X'$ with~$g' \circ \beta = \alpha$ and~$f' \circ \beta = h \circ \delta$, i.e.\ such that the diagram
 \[
   \begin{tikzcd}
       Z
@@ -126,7 +126,8 @@ Suppose that~$\gamma' \colon Z \to X''$ is another morphism which makes the diag
     & Y
   \end{tikzcd}
 \]
-commute, then by setting~$\beta' \defined h' \circ \gamma'$ we get the following commutative diagram:
+commute.
+Then by setting~$\beta' \defined h' \circ \gamma'$ we get the following commutative diagram:
 \[
   \begin{tikzcd}
       Z
@@ -312,7 +313,7 @@ We claim that already the whole diagram
   \end{tikzcd}
 \]
 commutes.
-For this we still have to show that~$h' \circ \gamma = \beta$.
+For this we still have to check that~$h' \circ \gamma = \beta$.
 The \dash{right}{hand} square is a pushout square, so it follows for any two morphisms~$k_1, k_2 \colon Z \to X'$ that~$k_1 = k_2$ if and only if both~$g' \circ k_1 = g' \circ k_2$ and~$f' \circ k_1 = f' \circ k_2$.
 This holds true for~$k_1 = \beta$ and~$k_2 = h' \circ \gamma$ because
 \[
@@ -320,14 +321,14 @@ This holds true for~$k_1 = \beta$ and~$k_2 = h' \circ \gamma$ because
   = \alpha
   = g' \circ h' \circ \gamma
 \]
-by construction of~$\gamma$ and
+by construction of~$\gamma$, and
 \[
-    \beta \circ f'
+    f' \circ \beta
   = h \circ \delta
   = h \circ f'' \circ \gamma
   = f' \circ h' \circ \gamma
 \]
-by choice of~$\beta$ and~$\delta$, and construction of~$\gamma$.
+by choice of~$\beta$ and~$\delta$ and construction of~$\gamma$.
 
 Suppose that~$\gamma' \colon Z \to X''$ is another morphism which makes the diagram
 \[

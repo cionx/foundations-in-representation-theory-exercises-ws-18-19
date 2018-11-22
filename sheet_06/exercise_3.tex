@@ -24,13 +24,13 @@
     \xlongto{ \begin{bsmallmatrix} g' \\ f' \end{bsmallmatrix} }
       X \oplus Y'
     \xlongto{ \begin{bsmallmatrix} f & -g \end{bsmallmatrix} }
-      Y \,,
+      Y
   \end{equation}
   the morphism~$X' \to X \oplus Y'$ is a kernel of the morphism~$X \oplus Y' \to Y$ (i.e.\ the sequence is left exact).
 \end{proposition} 
 
 \begin{proof}
-  Let~$p \colon X \oplus Y' \to X$ and~$q \colon X \oplus Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \oplus Y$ and let
+  Let~$p \colon X \oplus Y' \to X$ and~$q \colon X \oplus Y' \to Y'$ be the canonical projections belonging to the biproduct~$X \oplus Y$, and let
   \[
       d
     \colon
@@ -56,9 +56,10 @@
             \alpha  \\
             \beta
           \end{bmatrix}
-          = 0
+          = 0 \,.
   \]
-  Let~$k \colon X' \to X \oplus Y'$ be a morphism, which is uniquely of the form
+  
+  Let now~$k \colon X' \to X \oplus Y'$ be a morphism, which is uniquely of the form
   \[
       k
     = \begin{bmatrix}
@@ -66,9 +67,10 @@
         f'
       \end{bmatrix}
   \]
-  for some morphisms~$q' \colon X' \to X$ and~$f' \colon X' \to Y'$.
-  We find from the above calculation that~$d \circ k = 0$ if and only if the square
-  \[
+  for some morphisms~$g' \colon X' \to X$ and~$f' \colon X' \to Y'$.
+  We find from the above calculation that the square
+  \begin{equation}
+    \label{generic pullback diagram}
     \begin{tikzcd}
         X'
         \arrow{r}[above]{g'}
@@ -80,27 +82,33 @@
         \arrow{r}[above]{g}
       & Y
     \end{tikzcd}
-  \]
-  commutes.
-  We have moreover find that
+  \end{equation}
+  commutes if and only if~$d \circ k = 0$.
+  We moreover find that
   \begin{align*}
-        {}& \begin{tabular}{c}
+        {}& \text{the diagram~\eqref{generic pullback diagram} is a {\pb} square}
+        \\
+    \iff{}& \begin{tabular}{@{}c@{}}
               there exist for all morphisms
               $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$f \circ \alpha = g \circ \beta$ \\
               a unique morphism~$\lambda \colon Z \to X'$ with~$g' \circ \lambda = \alpha$ and~$f' \circ \lambda = \beta$
-            \end{tabular} \\
-    \iff{}& \begin{tabular}{c}
+            \end{tabular}
+        \\
+    \iff{}& \begin{tabular}{@{}c@{}}
               there exist for all morphisms
               $\alpha \colon Z \to X$ and~$\beta \colon Z \to Y'$ with~$d \circ \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix} = 0$ \\
               a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \begin{bsmallmatrix} \alpha \\ \beta \end{bsmallmatrix}$
-            \end{tabular} \\
-    \iff&{} \begin{tabular}{c}
+            \end{tabular}
+        \\
+    \iff{}& \begin{tabular}{@{}c@{}}
               there exist for every morphism
               $\gamma \colon Z \to X \oplus Y'$ with~$d \circ \gamma = 0$ \\
-              a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \gamma$ \,.
+              a unique morphism~$\lambda \colon Z \to X'$ with~$k \circ \lambda = \gamma$
             \end{tabular}
+        \\
+    \iff{}& \text{$k$ is a kernel for~$d$} \,.
   \end{align*}
-  This shows that~$(X', f', g')$ is a {\pb} of the given morphisms~$X \xto{f} Y \xfrom{g} Y'$ if and only if the corresponding morphism~$k \colon Z \to X \oplus Y$ is a kernel of~$d$.
+  This shows the claimed equivalence.
 \end{proof}
 
 \begin{remark}
@@ -134,26 +142,26 @@
   \[
     \begin{tikzcd}
         X
-        \arrow{r}[above]{f}
-        \arrow{d}[right]{g}
-      & Y
-        \arrow{d}[right]{g'}
+        \arrow{r}[above]{g}
+        \arrow{d}[right]{f}
+      & X'
+        \arrow{d}[right]{f'}
       \\
-        X'
-        \arrow{r}[above]{f'}
+        Y
+        \arrow{r}[above]{g'}
       & Y'
     \end{tikzcd}
   \]
   is a pushout square if and only if in the sequence
   \[
       X
-    \xlongto{ \begin{bsmallmatrix} f' \\ g \end{bsmallmatrix} }
+    \xlongto{ \begin{bsmallmatrix} g \\ f \end{bsmallmatrix} }
       X' \oplus Y
-    \xlongto{ \begin{bsmallmatrix} f' & -g \end{bsmallmatrix} }
+    \xlongto{ \begin{bsmallmatrix} f' & -g' \end{bsmallmatrix} }
       Y'
   \]
   the morphism~$X' \oplus Y \to Y'$ is a cokernel of the morphism~$X \to X' \oplus Y$ (i.e.\ the sequence is right exact).
-  One can again vary this sequence, as done in \cref{variation for pullback} for pullbacks.
+  One can again vary this sequence, just as done in \cref{variation for pullback} for pullbacks.
 \end{remark}
 
 

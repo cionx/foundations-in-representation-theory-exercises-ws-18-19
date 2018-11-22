@@ -2,13 +2,21 @@
 
 \begin{lemma}
   \label{epi in component}
-  Let~$X, Y_1, Y_2 \in \Ob(\Ccat)$ be objects, let~$f_1 \colon X \colon Y_1$ be an epimorphism and let~$f_2 \colon X \to Y_2$ be a morphism.
-  Then the morphism~$f \colon X \xto{\begin{bsmallmatrix} f_1 & f_2 \end{bsmallmatrix}} Y_1 \oplus Y_2$ is also an epimorphism.
+  Let~$X, Y_1, Y_2 \in \Ob(\Ccat)$ be objects, let~$f_1 \colon X \to Y_1$ be an epimorphism and let~$f_2 \colon X \to Y_2$ be a morphism.
+  Then the morphism
+  \[
+      f
+    \colon
+      X
+    \xlongto{\begin{bsmallmatrix} f_1 \\ f_2 \end{bsmallmatrix}}
+      Y_1 \oplus Y_2
+  \]
+  is also an epimorphism.
 \end{lemma}
 
 \begin{proof}
   Let~$g_1, g_2 \colon Y_1 \oplus Y_2 \to Z$ be two parallel morphism with~$g_1 \circ f = g_2 \circ f$.
-  If~$i \colon Y_1 \to Y_1 \oplus Y_2$ is the canonical morphism into the second summand then
+  If~$i \colon Y_1 \to Y_1 \oplus Y_2$ is the canonical morphism into the first summand then
   \[
               g_1 \circ f = g_2 \circ f
     \implies  g_1 \circ f \circ i = g_2 \circ f \circ i
@@ -25,8 +33,8 @@
 \end{lemma}
 
 \begin{proof}
-  The zero morphism~$Y \to \coker(f)$ is a cokornel of~$f$ because~$f$ is an epimorphism, and the identity~$\id_Y \colon Y \to Y$ is a therefore an image of~$f$.
-  Together with the canonical factorization~$\coim(f) \to \im(f) = Y$ of the morphism~$f$, which is an isomorphism beause~$\Acat$ is abelian, we get the following commutative triangle:
+  The zero morphism~$Y \to \coker(f)$ is a cokernel of~$f$ because~$f$ is an epimorphism, and the identity morphism~$\id_Y \colon Y \to Y$ is therefore an image of~$f$.
+  Together with the canonical factorization~$\tilde{f} \colon \coim(f) \to \im(f) = Y$ of the morphism~$f$, which is an isomorphism beause~$\Acat$ is abelian, we get the following commutative triangle: 
   \[
     \begin{tikzcd}
         X
@@ -35,13 +43,30 @@
       & Y
       \\
         \coim(f)
-        \arrow{ur}[below right]{\sim}
+        \arrow{ur}[below right]{\tilde{f}}
       & {}
     \end{tikzcd}
   \]
-  As the coimage~$X \to \coim(f)$ is a cokernel of~$\ker(f) \to X$, this diagram shows that~$f$ is a cokernel of~$\ker(f) \to X$.
+  The coimage~$X \to \coim(f)$ is a cokernel of~$\ker(f) \to X$.
+  It hence follows from the commutativity of the above diagram and~$\tilde{f}$ being an isomorphism that~$f$ is also a cokernel of~$\ker(f) \to X$.
 \end{proof}
 
+Let now
+\begin{equation}
+  \label{used square}
+  \begin{tikzcd}
+      X'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{d}[right]{f}
+    \\
+      Y'
+      \arrow{r}[above]{g}
+    & Y
+  \end{tikzcd}
+\end{equation}
+be a pullback diagram in~$\Acat$ such that~$f$ is an epimorphism.
 It follows from \cref{characterization of pullbacks} that in the sequence
 \[
     X'
@@ -50,7 +75,7 @@ It follows from \cref{characterization of pullbacks} that in the sequence
   \xlongto{ \begin{bsmallmatrix} f & -g \end{bsmallmatrix} }
     Y
 \]
-the morphism~$X' \to X \oplus Y'$ is a kernel of the morphism~$X \oplus Y' \to Y$, and it follows from \cref{epi in component} that the morphism~$X \oplus Y' \to Y$ is an epimorphism.
-It follows from \cref{epi is cokernel of kernel} that the morphism~$X \oplus Y' \to Y$ is a cokernel of the morphism~$X' \to X \oplus Y'$.
-The diagram given diagram is therefore a pushout square by \cref{pushout via exact sequence}.
+the morphism~$X' \to X \oplus Y'$ is a kernel of the morphism~$X \oplus Y' \to Y$.
+It follows from \cref{epi in component} that the morphism~$X \oplus Y' \to Y$ is again an epimorphism, and it hence follows from \cref{epi is cokernel of kernel} that the morphism~$X \oplus Y' \to Y$ is a cokernel of the morphism~$X' \to X \oplus Y'$.
+The diagram~\eqref{used square} is therefore a pushout square by \cref{pushout via exact sequence}.
 It hence follows from \cref{pushouts and epis} that~$f'$ is again an epimorphism (beause~$\Acat$ is abelian).
