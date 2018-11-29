@@ -1,1 +1,59 @@
-\addtocounter{section}{1}
+\section{}
+
+We define the first homomorphism~$\Phi \colon F(U) \to \prod_{i \in I} F(U_i)$ in the~\dash{$i$}{th} component as the restriction~$\rho_{U, U_i}$, hence by
+\[
+    \Phi( s )
+  = ( \restrict{s}{U_i} )_{i \in I} \,.
+\]
+The second homomorphism~$\Psi \colon \prod_{i \in I} F(U_i) \to \prod_{(j,k) \in I \times I} F(U_j \cap U_k)$ is in components given by
+\begin{align*}
+  \Psi_{j,k}
+  \colon
+  \prod_{i \in I} F(U_i)
+  &\xlongto{\text{projection}}
+  F(U_j) \times F(U_k)  \\
+  &\xlongto{\rho_{U_j, U_j \cap U_k} \times \rho_{U_k, U_j \cap U_k}}
+  F(U_j \cap U_k) \times F(U_j \cap U_k)  \\
+  &\xlongto{\text{difference}}
+  F(U_j \cap U_k) \,,
+\end{align*}
+hence by
+\[
+    \Psi( (s_i)_{i \in I} )
+  = ( \restrict{s_j}{U_j \cap U_k} - \restrict{s_k}{U_j \cap U_k} )_{(j,k) \in I \times I} \,.
+\]
+We consider now the sequence
+\begin{equation}
+  \label{considered sequence}
+  0
+  \to
+  F(U)
+  \xlongto{\Phi}
+  \prod_{i \in I} F(U_i)
+  \xlongto{\Psi}
+  \prod_{(j,k) \in I \in } F(U_j \cap U_k) \,.
+\end{equation}
+
+The exactness of this sequence is at~$F(U)$ means that~$\Phi$ is a monmorphisms, that~$\ker(\Phi) = 0$.
+This is equivalent to~$\Phi$ satisfying the separability axiom.
+
+For the exactness at~$\prod_{i \in I} F(U_i)$ we note that~$\Psi \circ \Phi = 0$, because~$F$ is a presheaf and therefore
+\begin{align*}
+      \Psi_{j,k}( \Phi(s) )
+  &=  \Psi_{j,k}( \restrict{s}{U_i} ) \\
+  &=  \restrict{(\restrict{s}{U_j})}{U_j \cap U_k} - \restrict{(\restrict{s}{U_k})}{U_j \cap U_k} \\
+  &=  \restrict{s}{U_j \cap U_k} - \restrict{s}{U_j \cap U_k} \\
+  &=  0
+\end{align*}
+for all~$s \in F(U)$ and~$(j,k) \in I \times I$.
+That on the other hand already~$\im(\Phi) = \ker(\Psi)$ means that for every collection~$(s_i)_{i \in I}$ of sections~$s_i \in F(U_i)$ with~$\restrict{s_j}{U_j \cap U_k} = \restrict{s_k}{U_j \cap U_k}$ for all~$k,j \in I$, there exist a section~$s \in F(U)$ with~$\restrict{s}{U_i} = s_i$ for every~$i \in I$.
+This is what is means for~$F$ to satisfy the glueing lemma.
+
+This shows that the sequence~\eqref{considered sequence} is exact if and only if the presheaf~$F$ satisfies with respect to the given open subset~$U$ and cover~$U = \bigcup_{i \in I} U_i$ both the separability and glueing axioms.
+(We have also seen that the composition~$\Psi \circ \Phi$ vanishes if and only if the restrictions of~$F$ are compatible with each other.)
+
+That the sequence~\eqref{considered sequence} is exact for every open subset~$U$ and every open cover~$U = \bigcup_{i \in I} U_i$ is therefore equivalent to~$F$ being a sheaf.
+
+
+
+
