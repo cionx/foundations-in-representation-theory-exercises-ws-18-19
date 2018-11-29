@@ -1,1 +1,517 @@
-\addtocounter{section}{1}
+\section{}
+
+We denote the given morphims as follows:
+\begin{equation}
+  \label{3x3 diagram}
+  \begin{tikzcd}
+      {}
+    & 0
+      \arrow{d}
+    & 0
+      \arrow{d}
+    & 0
+      \arrow{d}
+    & {}
+  \\
+      0
+      \arrow{r}
+    & X'
+      \arrow{r}[above]{\alpha'}
+      \arrow{d}[right]{f'}
+    & X
+      \arrow{r}[above]{\beta'}
+      \arrow{d}[right]{f}
+    & X''
+      \arrow{r}
+      \arrow{d}[right]{f''}
+    & 0
+    \\
+      0
+      \arrow{r}
+    & Y'
+      \arrow{r}[above]{\alpha}
+      \arrow{d}[right]{g'}
+    & Y
+      \arrow{r}[above]{\beta}
+      \arrow{d}[right]{g}
+    & Y''
+      \arrow{r}
+      \arrow{d}[right]{g''}
+    & 0
+    \\
+      0
+      \arrow{r}
+    & Z'
+      \arrow{r}[above]{\alpha''}
+      \arrow{d}
+    & Z
+      \arrow{r}[above]{\beta''}
+      \arrow{d}
+    & Z''
+      \arrow{r}
+      \arrow{d}
+    & 0
+    \\
+      {}
+    & 0
+    & 0
+    & 0
+    & {}
+  \end{tikzcd}
+\end{equation}
+
+
+We consider the following three cases:
+
+\begin{enumerate}[label = (\roman*)]
+  \item
+    The upper two rows are exact.
+  \item
+    The lower two rows are exact.
+  \item
+    The upper and lower row are exact.
+\end{enumerate}
+
+
+
+
+
+\subsection{}
+\label{upper rows are exact}
+
+By applying the snake lemma to the upper two rows, we get an exact sequence
+\[
+  0
+  \to
+  \ker(f')
+  \to
+  \ker(f)
+  \to
+  \ker(f'')
+  \xlongto{\delta}
+  \coker(f')
+  \to
+  \coker(f)
+  \to
+  \coker(f'')
+  \to
+  0 \,.
+\]
+The morphisms between the cokernels are the unique ones which make the diagram
+\[
+  \begin{tikzcd}
+      Y'
+      \arrow{r}
+      \arrow{d}
+    & Y
+      \arrow{r}
+      \arrow{d}
+    & Y''
+      \arrow{d}
+    \\
+      \coker(f')
+      \arrow[dashed]{r}
+    & \coker(f)
+      \arrow[dashed]{r}
+    & \coker(f'')
+  \end{tikzcd}
+\]
+commute.
+The morphisms~$f'$,~$f$,~$f''$ are monomorphisms, hence their kernels are given by~$\ker(f') = \ker(f) = \ker(f'') = 0$.
+It follows from the (right) exactness of the columns of~\eqref{3x3 diagram} that~$g'$ is a cokernel of~$f'$, that~$g$ is a cokernel of~$f$ and that~$g''$ is a cokernel of~$f''$.
+The induced morphisms~$Z' \to Z$ and~$Z \to Z''$ between cokernels are then just the ones from the bottom row of~\eqref{3x3 diagram}.
+Hence we have an exact sequence
+\[
+  0
+  \to
+  0
+  \to
+  0
+  \to
+  0
+  \to
+  Z'
+  \to
+  Z
+  \to 
+  Z''
+  \to
+  0 \,.
+\]
+This shows that the last row of~\eqref{3x3 diagram} is exact.
+
+
+
+
+
+\subsection{}
+
+This case is the dual to case~\ref{upper rows are exact}
+
+
+
+
+
+\subsection{}
+
+We need to show the exactness of the sequence
+\[
+  0
+  \to
+  Y'
+  \xlongto{\alpha}
+  Y
+  \xlongto{\beta}
+  Y''
+  \to
+  0
+\]
+i.e.\ the exactness of the sequences
+\[
+  0 \to Y' \xlongto{\alpha} Y \,,
+  \quad
+  Y' \xlongto{\alpha} Y \xlongto{\beta} Y'' \,,
+  \quad
+  Y \xlongto{\beta} Y'' \to 0 \,.
+\]
+
+For the exactness of~$0 \to Y' \xto{\alpha} Y$ we need~$\alpha$ to be a monomorphisms.
+This follows by applying one of the four lemmata to the first two columns of~\eqref{3x3 diagram}, because both~$\alpha'$ and~$\alpha''$ are monomorphisms.
+We find dually that~$Y \xto{\beta} Y'' \to 0$ is also exact.
+
+To show the exactness of~$Y' \xto{\alpha} Y \xto{\beta} Y''$ we use that this composition is zero.
+It remains to show that the induced morphism~$\lambda \colon \im(\alpha) \to \ker(\beta)$ that makes the diagram
+\[
+  \begin{tikzcd}
+      Y'
+      \arrow{rr}[above]{\alpha}
+      \arrow{dr}
+    & {}
+    & Y
+      \arrow{rr}[above]{\beta}
+    & {}
+    & Y''
+    \\
+      {}
+    & \im(\alpha)
+      \arrow{ur}
+      \arrow[dashed]{rr}[above]{\lambda}
+    & {}
+    & \ker(\beta)
+      \arrow{ul}
+    & {}
+  \end{tikzcd}
+\]
+For this we enrich the diagram~\eqref{3x3 diagram} to the following commutative diagram:
+\begin{equation}
+  \label{enriched 3x3 diagram}
+  \begin{tikzcd}
+      {}
+    & 0
+      \arrow{dd}
+    & {}
+    & 0
+      \arrow{dd}
+    & {}
+    & 0
+      \arrow{dd}
+    & {}
+  \\
+      {}
+    & {}
+    & 0
+    & {}
+    & 0
+    & {}
+    & {}
+  \\
+      0
+      \arrow{r}
+    & X'
+      \arrow{rr}[above,near start]{\alpha'}
+      \arrow{dr}
+      \arrow{dd}[right,near end]{f'}
+    & {}
+    & X
+      \arrow{rr}[above,near end]{\beta'}
+      \arrow{dd}[right,near end]{f}
+    & {}
+    & X''
+      \arrow{r}
+      \arrow{dd}[right,near end]{f''}
+    & 0
+    \\
+      {}
+    & {}
+    & \im(\alpha')
+      \arrow[from=uu,dashed,crossing over]
+      \arrow{ur}
+    & {}
+    & \ker(\beta')
+      \arrow{ul}
+      \arrow[from=uu,dashed,crossing over]
+      \arrow[from=ll, dashed, crossing over, "\lambda'", near start]
+    & {}
+    & {}
+  \\
+      0
+      \arrow{r}
+    & Y'
+      \arrow{rr}[above,near start]{\alpha}
+      \arrow{dr}
+      \arrow{dd}[right,near end]{g'}
+    & {}
+    & Y
+      \arrow{rr}[above,near end]{\beta}
+      \arrow{dd}[right,near end]{g}
+    & {}
+    & Y''
+      \arrow{r}
+      \arrow{dd}[right,near end]{g''}
+    & 0
+    \\
+      {}
+    & {}
+    & \im(\alpha)
+      \arrow[from=uu,dashed,crossing over]
+      \arrow{ur}
+    & {}
+    & \ker(\beta)
+      \arrow{ul}
+      \arrow[from=uu,dashed,crossing over]
+      \arrow[from=ll, dashed, crossing over, "\lambda", near start]
+    & {}
+    & {}
+  \\
+      0
+      \arrow{r}
+    & Z'
+      \arrow{rr}[above,near start]{\alpha''}
+      \arrow{dr}
+      \arrow{dd}
+    & {}
+    & Z
+      \arrow{rr}[above,near end]{\beta''}
+      \arrow{dd}
+    & {}
+    & Z''
+      \arrow{r}
+      \arrow{dd}
+    & 0
+    \\
+      {}
+    & {}
+    & \im(\alpha'')
+      \arrow[from=uu,dashed,crossing over]
+      \arrow{ur}
+    & {}
+    & \ker(\alpha'')
+      \arrow{ul}
+      \arrow[from=uu,dashed,crossing over]
+      \arrow[from=ll, dashed, crossing over, "\lambda''", near start]
+    & {}
+    & {}
+    \\
+      {}
+    & 0
+    & {}
+    & 0
+    & {}
+    & 0
+    & {}
+    \\
+      {}
+    & {}
+    & 0
+      \arrow[from=uu,dashed,crossing over]
+    & {}
+    & 0
+      \arrow[from=uu,dashed,crossing over]
+    & {}
+    & {}
+  \end{tikzcd}
+\end{equation}
+We have in particular the following commutative diagram:
+\begin{equation}
+  \label{where to apply 5 lemma}
+  \begin{tikzcd}
+      0
+      \arrow{r}
+    & \im(\alpha')
+      \arrow{r}
+      \arrow{d}[right]{\lambda'}
+    & \im(\alpha)
+      \arrow{r}
+      \arrow{d}[right]{\lambda}
+    & \im(\alpha'')
+      \arrow{r}
+      \arrow{d}[right]{\lambda''}
+    & 0
+    \\
+      0
+      \arrow{r}
+    & \ker(\beta')
+      \arrow{r}
+    & \ker(\beta)
+      \arrow{r}
+    & \ker(\beta'')
+      \arrow{r}
+    & 0
+  \end{tikzcd}
+\end{equation}
+The rows of this diagram are exact:
+
+To see the exactness of the lower row we apply the snake lemma to the diagram
+\[
+  \begin{tikzcd}
+      0
+      \arrow{r}
+    & X
+      \arrow{r}[above]{f}
+      \arrow{d}[right]{\beta'}
+    & Y
+      \arrow{r}[above]{g}
+      \arrow{d}[right]{\beta}
+    & Z
+      \arrow{r}
+      \arrow{d}[right]{\beta''}
+    & 0
+    \\
+      0
+      \arrow{r}
+    & X''
+      \arrow{r}[above]{f''}
+    & Y''
+      \arrow{r}[above]{g''}
+    & Z''
+      \arrow{r}
+    & 0
+  \end{tikzcd}
+\]
+to get the exact sequence
+\[
+  0
+  \to
+  \ker(\beta')
+  \to
+  \ker(\beta)
+  \to
+  \ker(\beta'')
+  \xlongto{\delta}
+  0
+  \to
+  0
+  \to
+  0
+  \to
+  0 \,,
+\]
+where we use that~$\coker(\beta') = \coker(\beta) = \coker(\beta'') = 0$ because~$\beta'$,~$\beta$,~$\beta''$ are epimorphisms.
+
+We similarly see that the lower row of~\eqref{where to apply 5 lemma} is exact:
+We first apply the snake lemma to the diagram
+\[
+  \begin{tikzcd}
+      0
+      \arrow{r}
+    & X'
+      \arrow{r}[above]{f'}
+      \arrow{d}[right]{\alpha'}
+    & Y'
+      \arrow{r}[above]{g'}
+      \arrow{d}[right]{\alpha}
+    & Z'
+      \arrow{r}
+      \arrow{d}[right]{\alpha''}
+    & 0
+    \\
+      0
+      \arrow{r}
+    & X
+      \arrow{r}[above]{f}
+    & Y
+      \arrow{r}[above]{g}
+    & Z
+      \arrow{r}
+    & 0
+  \end{tikzcd}
+\]
+we get the exact sequence
+\[
+  0
+  \to
+  0
+  \to
+  0
+  \to
+  0
+  \xlongto{\delta}
+  \coker(\alpha')
+  \to
+  \coker(\alpha)
+  \to
+  \coker(\alpha'')
+  \to
+  0 \,,
+\]
+where we use that~$\ker(\alpha') = \ker(\alpha) = \ker(\alpha'') = 0$ because~$\alpha'$,~$\alpha$ and~$\alpha''$ are monomorphisms.
+This shows that in the diagram
+\[
+  \begin{tikzcd}
+      0
+      \arrow{r}
+    & X
+      \arrow{r}[above]{f}
+      \arrow{d}
+    & Y
+      \arrow{r}[above]{g}
+      \arrow{d}
+    & Z
+      \arrow{r}
+      \arrow{d}
+    & 0
+    \\
+      0
+      \arrow{r}
+    & \coker(\alpha')
+      \arrow{r}
+    & \coker(\alpha)
+      \arrow{r}
+    & \coker(\alpha'')
+      \arrow{r}
+    & 0
+  \end{tikzcd}
+\]
+the rows are exact.
+We can therefore again apply the snake lemmate to get the exact sequence
+\[
+  0
+  \to
+  \im(\alpha')
+  \to
+  \im(\alpha)
+  \to
+  \im(\alpha'')
+  \xlongto{\delta}
+  0
+  \to
+  0
+  \to
+  0
+  \to
+  0 \,,
+\]
+where we use that the morphisms~$X \to \coker(\alpha')$,~$Y \to \coker(\alpha)$ and~$Z \to \coker(\alpha'')$ are epimorphisms.
+
+We have now shown that both rows of~$\eqref{where to apply 5 lemma}$ are exact.
+We know that both~$\lambda'$ and~$\lambda''$ are isomorphisms because the upper and lower row of~\eqref{3x3 diagram} are exact.
+It follows from the five lemma that~$\lambda$ is again an isomorphism, which shows the desired exactness of~$Y' \xto{\beta} Y \to \xto{\beta'} Y''$.
+
+
+
+
+
+
+
+
+
