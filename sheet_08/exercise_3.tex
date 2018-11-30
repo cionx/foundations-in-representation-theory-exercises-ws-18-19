@@ -1,1 +1,27 @@
-\addtocounter{section}{1}
+\section{}
+We abbreviate~$H_n \defined \Hl(V_\bullet)$,~$Z_n \defined \Zl(V_\bullet)$ and~$B_n \defined \Bl(V_\bullet)$ for every~$n \in \Integer$.
+
+We have for every~$n \in \Integer$ that
+\[
+    \dim H_n
+  = \dim Z_n/B_n
+  = \dim Z_n - \dim B_n \,,
+\]
+and also that
+\[
+    \dim V_n
+  = \dim Z_n + \dim B_{n-1} \,.
+\]
+We hence find that
+\begin{align*}
+      \sum_n (-1)^n \dim V_n
+  &=  \sum_n (-1)^n (\dim Z_n + \dim B_{n-1}) \\
+  &=  \sum_n (-1)^n \dim Z_n + \sum_n (-1)^n \dim B_{n-1} \\
+  &=  \sum_n (-1)^n \dim Z_n - \sum_n (-1)^n \dim B_n \\
+  &=  \sum_n (-1)^n (\dim Z_n - \dim B_n) \\
+  &=  \sum_n (-1)^n \dim H_n \,.
+\end{align*}
+
+
+
+
