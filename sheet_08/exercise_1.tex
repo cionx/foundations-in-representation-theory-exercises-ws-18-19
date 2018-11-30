@@ -183,7 +183,7 @@ The composition~$d'_{n-1} d'_n$ is by \cref{functoriality of kernel} the unique 
 \]
 The zero morphism also makes this diagram commute, hence~$d'_n d'_{n-1} = 0$.
 This shows that~$\ker(f) = ((\ker f_n)_{n \in \Integer}, (d'_n)_{n \in \Integer})$ is a chain complex.
-The commutativity of the square~\eqref{induced differential} tells us that~$k \defined (k_n)_{n \in \Integer}$ is a morphism of chain complexes~$k \colon \ker(f) \to C$.
+The commutativity of the square~\eqref{induced differential} tells us that~$k \defined (k_n)_{n \in \Integer}$ is a morphism of chain complexes~$k \colon \ker(f) \to C_\bullet$.
 
 The composition~$f k$ vanishes because~$(fk)_n = f_n k_n = 0$ for every~$n \in \Integer$.
 Suppose that~$g \colon B_\bullet \to C_\bullet$ is another morphism of chain complexs such that~$f g = 0$.
@@ -240,9 +240,9 @@ That the triangle~\eqref{constructing triangle} commutes for every~$n \in \Integ
   \begin{tikzcd}
       \ker(f)
       \arrow{r}[above]{k}
-    & C
+    & C_\bullet
     \\
-      B
+      B_\bullet
       \arrow[dashed]{u}[left]{h}
       \arrow{ur}[below right]{g}
     & {}
@@ -273,7 +273,7 @@ We similary find the the cokernel of~$f$ is given by a chain complex
     \coker(f)
   = ( (\coker(f_n))_{n \in \Integer}, (d''_n)_{n \in \Integer} )
 \]
-together with a morphism of chain complexes~$c \colon D \to \coker(f)$ such that
+together with a morphism of chain complexes~$c \colon D_\bullet \to \coker(f)$ such that
 \begin{itemize}
   \item
     the morphism $c_n \colon D_n \to \coker(f_n)$ is for every~$n \in \Integer$ a cokernel of the morphism~$f_n \colon C_n \to D_n$, and
@@ -320,9 +320,7 @@ together with a morphism of chain complexes~$c \colon D \to \coker(f)$ such that
       \end{tikzcd}
     \]
 \end{itemize}
-
-
-We can similarly describe the image of~$f$ degree-wise
+We can similarly calculate the image of~$f$ degree-wise
 
 
 
