@@ -1,1 +1,295 @@
-\addtocounter{section}{1}
+\section{}
+
+We write~$S(F')$ instead of~$sF'$.
+
+
+
+
+
+\subsection*{$S(F)(U)$ is a Subgroup of~$F(U)$}
+
+We start by showing that~$S(F')(U)$ is for any open set~$U \subseteq X$ an abelian group, namely a subgroup of~$F(U)$, and that~$S(F')(U)$ contains~$F'(U)$.
+
+By taking for~$U$ the open cover~$\{U\}$ we see that~$F'(U) \subseteq S(F')(U)$.
+This shows in particular that~$0 \in F'(U)$.
+
+Suppose that~$s, t \in S(F')(U)$.
+Then there exist an open cover~$U = \bigcup_{i \in I} U_i$ of~$U$ and an open cover~$V = \bigcup_{j \in J} V_j$ of~$V$ such that~$\restrict{s}{U_i} \in F'(U_i)$ for every~$i \in I$ and~$\restrict{t}{V_j} \in F'(V_j)$ for every~$j \in I$.
+Then
+\[
+    U
+  = U \cap U
+  = \left( \bigcup_{i \in I} U_i \right) \cap \left( \bigcup_{j \in J} V_j \right)
+  = \bigcup_{(i,j) \in I \times J} U_i \cap V_j \,,
+\]
+hence~$U = \bigcup_{(i,j)} W_{ij}$ with~$W_{ij} = U_i \cap V_j$ is again an open cover of~$U$.
+It follows for all~$i$,~$j$ that
+\[
+      \restrict{s}{W_{ij}}
+  =   \restrict{(\restrict{s}{U_i})}{W_{ij}}
+  \in F'(W_{ij})
+\]
+because~$\restrict{s}{U_i} \in F'(U_i)$.
+We similarly find that~$\restrict{t}{W_{ij}} \in F'(W_{ij})$ for all~$i$,~$j$.
+It then follows that
+\[
+      \restrict{s - t}{W_{ij}}
+  =   \restrict{s}{W_{ij}} - \restrict{t}{W_{ij}}
+  \in F'(W_{ij})
+\]
+for all~$i$,~$j$.
+Hence~$s - t \in S(F')(U)$ by definition of~$S(F')$.
+
+This shows that~$S(F')(U)$ is indeed a subgroup of~$F(U)$ that contains~$F'(U)$.
+
+
+
+
+
+\subsection*{$S(F')$ is a Subpresheaf of~$F$}
+
+We claim that~$S(F')$ is a subpresheaf of~$F$, i.e.\ that
+\[
+            \rho_{V,U}(S(F')(V))
+  \subseteq S(F')(U)
+\]
+for all open subsets~$U \subseteq V \subseteq X$.
+
+If~$s \in S(F')(V)$ then there exist an open cover~$V = \bigcup_{i \in I} V_i$ with~$\restrict{s}{V_i} \in F'(U)$ for every~$i \in I$.
+Then
+\[
+    U
+  = U \cap V
+  = U \cap \bigcup_{i \in I} V_i
+  = \bigcup_{i \in I} (U \cap V_i) \,,
+\]
+hence~$U = \bigcup_{i \in I} U_i$ with~$U_i \defined U \cap V_i$ is an open cover of~$U$.
+It holds for every~$i \in I$ that
+\[
+      \restrict{s}{U_i}
+  =   \restrict{(\restrict{s}{V_i})}{U_i}
+  \in F'(U_i)
+\]
+because~$\restrict{s}{V_i} \in F'(V_i)$.
+Hence~$s \in S(F')(V)$ by definition of~$S(F')$.
+
+
+
+
+
+\subsection*{$S(F')$ is Already a Sheaf}
+
+If a presheaf satisfies the separability axiom then the same holds for any of its subpresheafs.
+In holds in particular that subpresheafs of sheafs do satisfy the separability axiom.
+Hence~$S(F')$, which is a subpresheaf of the sheaf~$F$, satisfies the separability axiom.
+
+Let now~$U \subseteq X$ be an open subset and let~$U = \bigcup_{i \in I} U_i$ be an open cover of~$U$.
+For every~$i \in I$ let~$s_i \in S(F')(U_i)$ be a section, such that~$\restrict{s_i}{U_i \cap U_j} = \restrict{s_j}{U_i \cap U_j}$ for all~$i, j \in I$.
+It follows from~$F$ being a sheaf that there exist some~$s \in F(U)$ with~$\restrict{s}{U_i} = s_i$ for every~$i \in I$.
+The section~$s$ is already containd in~$S(F')(U)$ by definiton of~$s(F')$, and the relation~$\restrict{s}{U_i} = s_i$ still holds in~$S(F')$.
+This shows that~$S(F')$ satisfies the glueing axiom.
+
+We have thus shown that~$S(F')$ is a subsheaf of~$F$.
+
+
+
+
+
+\subsection*{Construction of the Structure Morphism~$i \colon F' \to S(F')$}
+
+We have seen above that~$F'(U)$ is for every open subset~$U \subseteq X$ a subgroup of~$S(F')(U)$.
+It follows that~$F'$ is a subpresheaf of~$S(F')$, as both~$F'$ and~$S(F')$ are subpresheafs of~$F$.
+Hence the inclusions~$i_U \colon F'(U) \to S(F')(U)$ with~$U \subseteq X$ open define a homomorphism of presheafes~$i \colon F' \to S(F')$.
+
+
+
+
+
+\subsection*{Checking the Universal Property}
+
+It remains to show that the sheaf~$S(F')$ together with the homomorphism~$i \colon F' \to S(F')$ satisfies the universal property of the sheafification.
+So let~$G$ be another sheaf and let~$f' \colon F' \to G$ be a homomorphism of presheaves.
+We need to show that there exist a unique homomorphism of sheaves~$f \colon S(F') \to G$ that makes the following triangle commute:
+\[
+  \begin{tikzcd}
+      F'
+      \arrow{r}[above]{i}
+      \arrow{dr}[below left]{f'}
+    & S(F')
+      \arrow{d}[right]{f}
+    \\
+    {}
+    & G
+  \end{tikzcd}
+\]
+The commutativity of this triangle means that for every open subset~$U \subseteq X$ the following triangle commutes:
+\[
+  \begin{tikzcd}
+      F'(U)
+      \arrow{r}[above]{i_U}
+      \arrow{dr}[below left]{f'_U}
+    & S(F')(U)
+      \arrow{d}[right]{f_U}
+    \\
+    {}
+    & G(U)
+  \end{tikzcd}
+\]
+The commutativity of this triangle means that~$f_U(s) = f'_U(s)$ for every open subset~$U \subseteq X$ and every section~$s \in F'(U)$.
+
+
+
+
+
+\subsubsection*{uniqueness of~$f$}
+
+Let~$U \subseteq X$ be an open set and let~$s \in S(F')(U)$ be a section.
+Then there exist an open cover~$U = \bigcup_{i \in I} U_i$ with~$\restrict{s}{U_i} \in F'(U)$ for every~$i \in I$.
+It holds for the image~$f_U(s) \in G(U)$ that
+\[
+    \restrict{ f_U(s) }{U_i}
+  = f_{U_i}( \restrict{s}{U_i} )
+  = f'_{U_i}( \restrict{s}{U_i} )
+\]
+because~$\restrict{s}{U_i} \in F'(U_i)$.
+This shows the uniqueness of~$f$.
+
+
+
+\subsubsection*{construction of $f_U$}
+
+We have seen above how we need to construct~$f_U$ for an open subset~$U \subseteq X$:
+For~$s \in S(F')(U)$ there exist an open cover~$U = \bigcup_{i \in I} U_i$ of~$U$ with~$\restrict{s}{U_i} \in F'(U_i)$ for every~$i \in I$.
+We set~$s_i \defined \restrict{s}{U_i}$ for every~$i \in I$.
+We can now consider the elements~$\induced{s}_i \in G(U_i)$ given by~$\induced{s}_i \defined f'_U(s_i)$ for every~$i \in I$.
+It holds for all~$i,j \in I$ that
+\begin{align*}
+      \restrict{\induced{s}_i}{U_i \cap U_j}
+   =  \restrict{f'_{U_i}(s_i)}{U_i \cap U_j}
+   =  f'_{U_i \cap U_j}(\restrict{s_i}{U_i \cap U_j})
+  &=  f'_{U_i \cap U_j}(\restrict{(\restrict{s}{U_i})}{U_i \cap U_j}) \\
+  &=  f'_{U_i \cap U_j}(\restrict{s}{U_i \cap U_j}) \,,
+\end{align*}
+and hence
+\[
+    \restrict{\induced{s}_i}{U_i \cap U_j}
+  = f'_{U_i \cap U_j}(\restrict{s}{U_i \cap U_j})
+  = \restrict{\induced{s}_j}{U_i \cap U_j} \,.
+\]
+It follows from~$G$ being a sheaf that there exist a unique section~$\induced{s} \in G(U)$ with~$\restrict{\induced{s}}{U_i} = \induced{s}_i$ for every~$i \in I$.
+The section~$\induced{s}$ is---in other words---the unique section~$\induced{s} \in G(U)$ with
+\[
+    \restrict{\induced{s}}{U_i}
+  = f'_{U_i}(\restrict{s}{U_i})
+\]
+for every~$i \in I$.
+We will refer to this property as the \emph{defining property} of~$\induced{s}$.
+
+We define the map~$f_U \colon S(F')(U) \to G(U)$ by~$f_U(s) = \induced{s}$.
+
+
+
+\subsubsection*{independence of~$\induced{s}$ of the choosen cover}
+
+The element~$\induced{s}$ above does not depend on the choice of open cover of~$U$, and hence~$f_U$ does not depend on the choice of cover, i.e.\ is~{\welldef}.
+To show this, let~$U = \bigcup_{j \in J} V_j$ be another open cover of~$U$ with~$\restrict{s}{V_j} \in F'(V_j)$ for every~$j \in J$.
+Let~$\induced{s}' \in G(U)$ be the element defined as above but via this alternative cover.
+
+Suppose first that this alternative open cover~$U = \bigcup_{j \in J} V_j$ is a refinement of the previous open cover~$U = \bigcup_{i \in I} U_i$, i.e.\ that for every~$j \in J$ there exist some~$i \in I$ with~$V_j \subseteq U_i$.
+Let~$\induced{s} \in G(U)$ be the section constructed via the open cover~$U = \bigcup_{i \in I} U_i$.
+For every~$j \in J$ there exist some~$i \in I$ with~$V_j \subseteq U_i$, and it follows that
+\[
+    \restrict{ \induced{s} }{V_j}
+  = \restrict{ (\restrict{\induced{s}}{U_i}) }{V_j}
+  = \restrict{ f'_{U_i}(\restrict{s}{U_i}) }{V_j}
+  = f'_{V_j}( \restrict{ (\restrict{s}{U_i}) }{V_j}
+  = f'_{V_j}( \restrict{ s }{V_j} ) \,.
+\]
+This shows that~$\induced{s}$ already satisfies the defining property of~$\induced{s}'$, and hence that~$\induced{s} = \induced{s}'$.
+
+In general the two open covers~$U = \bigcup_{i \in I} U_i$ and~$U = \bigcup_{j \in J} V_j$ have a common refinement~$U = \bigcup_{i,j} W_{ij}$ given by~$W_{ij} = U_i \cap U_j$.
+It then follows from the above that all three covers lead to the same element~$\induced{s} \in G(U)$.
+This shows the claimed independence, and hence that~$f_U$ is~{\welldef}.
+
+
+
+\subsubsection*{$f_U$ is a group homomorphism}
+
+We need to show that the map~$f_U \colon S(F')(U) \to G(U)$ is a group homomorphism for every open subset~$U \subseteq X$.
+
+For this let~$s, t \in S(F')(U)$ be two sections.
+We have previously seen (in the proof that~$S(F')(U)$ is a subgroup of~$F(U)$) that there exist an open cover~$U = \bigcup_{i \in I} U_i$ of~$U$ such that~$\restrict{s}{U_i}, \restrict{t}{U_i} \in F'(U_i)$ for every~$i \in I$.
+It then holds for the section~$\induced{s} + \induced{t} \in G(U)$ that
+\[
+    \restrict{(\induced{s} + \induced{t})}{U_i}
+  = \restrict{\induced{s}}{U_i} + \restrict{\induced{t}}{U_i}
+  = f'_{U_i}(\restrict{s}{U_i}) + f'_{U_i}(\restrict{t}{U_i})
+  = f'_{U_i}( \restrict{s}{U_i} + \restrict{t}{U_i} )
+  = f'_{U_i}( \restrict{(s + t)}{U_i} )
+\]
+for every~$i \in I$.
+This shows that~$\induced{s} + \induced{t}$ satisfies the defining property of~$\induced{s+t}$, and hence that~$\induced{s} + \induced{t} = \induced{s + t}$.
+Hence~$f_U(s + t) = f_U(s) + f_U(t)$.
+
+
+
+\subsection*{$f$ is a homomorphism of sheaves}
+
+The group homomorphisms~$f_U \colon S(F')(U) \to G(U)$ with~$U \subseteq X$ open define a homomorphism of sheaves~$f \colon S(F') \to G$:
+
+Let~$U \subseteq V \subseteq X$ be open subsets and let~$s \in S(F')(V)$ be a section.
+Let~$V = \bigcup_{i \in I} V_i$ be an open cover of~$V$ with~$\restrict{s}{V_i} \in F'(V_i)$ for every~$i \in I$.
+Then~$U = \bigcup_{i \in I} U_i$ with~$U_i = U \cap V_i$ is an open cover of~$U$, and it holds for every~$i \in I$ that
+\[
+      \restrict{s}{U_i}
+  =   \restrict{(\restrict{s}{V_i})}{U_i}
+  \in F'(V_i)
+\]
+because~$\restrict{s}{V_i} \in F'(V_i)$.
+It follows that
+\begin{align*}
+      \restrict{ (\restrict{\induced{s}}{U}) }{U_i}
+   =  \restrict{ \induced{s} }{U_i}
+   =  \restrict{ (\restrict{\induced{s}}{V_i}) }{U_i}
+   =  \restrict{f'_{V_i}(\restrict{s}{V_i})}{U_i}
+   =  f'_{U_i}( \restrict{ \restrict{s}{V_i} }{U_i} )
+  &=  f'_{U_i}( \restrict{s}{U_i} ) \\
+  &=  f'_{U_i}( \restrict{ (\restrict{s}{U}) }{ U_i} ) \,.
+\end{align*}
+This shows that the restriction~$\restrict{\induced{s}}{U}$ satisfies the defining property of the section~$\induced{(\restrict{s}{U})}$, hence that = $\restrict{\induced{s}}{U} = \induced{(\restrict{s}{U})}$.
+Hence~$f_U(\restrict{s}{U}) = \restrict{ f_V(s) }{U}$.
+
+
+
+\subsection{$f$ makes the triangle commute}
+
+It remains to show that the homomorphism~$f$ makes for every open subset~$U \subseteq X$ the triangle
+\[
+  \begin{tikzcd}
+      F'(U)
+      \arrow{r}[above]{i_U}
+      \arrow{dr}[below left]{f'_U}
+    & S(F')(U)
+      \arrow{d}[right]{f_U}
+    \\
+    {}
+    & G(U)
+  \end{tikzcd}
+\]
+commute, i.e.\ that~$f_U(s) = f'_U(s)$ for every section~$s \in F'(U)$.
+
+For this we can use the cover~$U = U$ and calculate
+\[
+    \restrict{f'_U(s)}{U_i}
+  = f'_U( \restrict{s}{U_i} )
+\]
+to see that~$f'_U(s)$ satisfies the defining property of~$\induced{s}$, and hence that~$f_U(s) = f'_U(s)$.
+
+
+
+
+
+
+
+
+
