@@ -59,8 +59,6 @@ We denote the given morphims as follows:
     & {}
   \end{tikzcd}
 \end{equation}
-
-
 We consider the following three cases:
 
 \begin{enumerate}[label = (\roman*)]
@@ -69,7 +67,7 @@ We consider the following three cases:
   \item
     The lower two rows are exact.
   \item
-    The upper and lower row are exact.
+    The upper row and the lower row are exact.
 \end{enumerate}
 
 
@@ -79,8 +77,9 @@ We consider the following three cases:
 \subsection{}
 \label{upper rows are exact}
 
-By applying the snake lemma to the upper two rows, we get an exact sequence
-\[
+By applying the snake lemma to the upper two rows we get an exact sequence
+\begin{equation}
+  \label{general snake sequence}
   0
   \to
   \ker(f')
@@ -96,7 +95,7 @@ By applying the snake lemma to the upper two rows, we get an exact sequence
   \coker(f'')
   \to
   0 \,.
-\]
+\end{equation}
 The morphisms between the cokernels are the unique ones which make the diagram
 \[
   \begin{tikzcd}
@@ -119,8 +118,28 @@ The morphisms between the cokernels are the unique ones which make the diagram
 commute.
 The morphisms~$f'$,~$f$,~$f''$ are monomorphisms, hence their kernels are given by~$\ker(f') = \ker(f) = \ker(f'') = 0$.
 It follows from the (right) exactness of the columns of~\eqref{3x3 diagram} that~$g'$ is a cokernel of~$f'$, that~$g$ is a cokernel of~$f$ and that~$g''$ is a cokernel of~$f''$.
-The induced morphisms~$Z' \to Z$ and~$Z \to Z''$ between cokernels are then just the ones from the bottom row of~\eqref{3x3 diagram}.
-Hence we have an exact sequence
+The induced morphisms~$Z' \to Z$ and~$Z \to Z''$ that make the diagram
+\[
+  \begin{tikzcd}
+      Y'
+      \arrow{r}
+      \arrow{d}
+    & Y
+      \arrow{r}
+      \arrow{d}
+    & Y''
+      \arrow{d}
+    \\
+      Z'
+      \arrow[dashed]{r}
+    & Z
+      \arrow[dashed]{r}
+    & Z''
+  \end{tikzcd}
+\]
+commute and precisely~$\alpha''$ and~$\beta''$ from the last row of~\eqref{3x3 diagram} (by the uniqueness of these induced morphisms).
+
+We have shows that the exact sequence~\eqref{general snake sequence} is (up to isomorphism) given by
 \[
   0
   \to
@@ -131,9 +150,9 @@ Hence we have an exact sequence
   0
   \to
   Z'
-  \to
+  \xlongto{\alpha''}
   Z
-  \to 
+  \xlongto{\beta''}
   Z''
   \to
   0 \,.
@@ -146,7 +165,7 @@ This shows that the last row of~\eqref{3x3 diagram} is exact.
 
 \subsection{}
 
-This case is the dual to case~\ref{upper rows are exact}
+This case follows by duality from case~\ref{upper rows are exact}
 
 
 
@@ -164,23 +183,37 @@ We need to show the exactness of the sequence
   \xlongto{\beta}
   Y''
   \to
-  0
+  0 \,,
 \]
-i.e.\ the exactness of the sequences
+which amounts to showing the exactness of the three sequences
 \[
   0 \to Y' \xlongto{\alpha} Y \,,
-  \quad
+  \qquad
   Y' \xlongto{\alpha} Y \xlongto{\beta} Y'' \,,
-  \quad
+  \qquad
   Y \xlongto{\beta} Y'' \to 0 \,.
 \]
 
-For the exactness of~$0 \to Y' \xto{\alpha} Y$ we need~$\alpha$ to be a monomorphisms.
-This follows by applying one of the four lemmata to the first two columns of~\eqref{3x3 diagram}, because both~$\alpha'$ and~$\alpha''$ are monomorphisms.
-We find dually that~$Y \xto{\beta} Y'' \to 0$ is also exact.
+The exactness of the first sequence
+\[
+  0 \to Y' \xto{\alpha} Y
+\]
+is equivalent to~$\alpha$ being a monomorphisms.
+That~$\alpha$ is indeed a monomorphism follows by applying one of the four lemmata (namely part~\ref{four lemma nice} of Exercise~3) to the first two columns of the diagram~\eqref{3x3 diagram};
+because both~$\alpha'$ and~$\alpha''$ are monomorphisms it follows that~$\alpha$ is also one.
 
-To show the exactness of~$Y' \xto{\alpha} Y \xto{\beta} Y''$ we use that this composition is zero.
-It remains to show that the induced morphism~$\lambda \colon \im(\alpha) \to \ker(\beta)$ that makes the diagram
+We find dually that the third sequence
+\[
+  Y \xto{\beta} Y'' \to 0
+\]
+is exact.
+
+To show the exactness of the second sequence
+\[
+  Y' \xto{\alpha} Y \xto{\beta} Y''
+\]
+it remains to show that the induced morphism~$\lambda \colon \im(\alpha) \to \ker(\beta)$ is an isomorphism.
+By~$\lambda$ we mean the unique morphism~$\im(\alpha) \to \ker(\beta)$ that makes the following diagram commute:
 \[
   \begin{tikzcd}
       Y'
@@ -202,10 +235,11 @@ It remains to show that the induced morphism~$\lambda \colon \im(\alpha) \to \ke
     & {}
   \end{tikzcd}
 \]
-For this we enrich the diagram~\eqref{3x3 diagram} to the following commutative diagram:
+For the existence of this morphism we use the assumption~$\beta \alpha = 0$ (the uniqueness follows from the universal property of the kernel~$\ker(\beta) \to Y$).
+To show that~$\lambda$ is indeed an isomorphism, we further expand the commutative diagram~\eqref{3x3 diagram} to the following commutative beauty:
 \begin{equation}
   \label{enriched 3x3 diagram}
-  \begin{tikzcd}
+  \begin{tikzcd}[row sep = small]
       {}
     & 0
       \arrow{dd}
@@ -359,7 +393,7 @@ We have in particular the following commutative diagram:
     & 0
   \end{tikzcd}
 \end{equation}
-The rows of this diagram are exact:
+The rows of this diagram are again exact:
 
 To see the exactness of the lower row we apply the snake lemma to the diagram
 \[
@@ -408,7 +442,7 @@ to get the exact sequence
 \]
 where we use that~$\coker(\beta') = \coker(\beta) = \coker(\beta'') = 0$ because~$\beta'$,~$\beta$,~$\beta''$ are epimorphisms.
 
-We similarly see that the lower row of~\eqref{where to apply 5 lemma} is exact:
+We argue in a similar way for the exactness of the lower row of~\eqref{where to apply 5 lemma}:
 We first apply the snake lemma to the diagram
 \[
   \begin{tikzcd}
@@ -436,7 +470,7 @@ We first apply the snake lemma to the diagram
     & 0
   \end{tikzcd}
 \]
-we get the exact sequence
+to get the exact sequence
 \[
   0
   \to
@@ -454,8 +488,8 @@ we get the exact sequence
   \to
   0 \,,
 \]
-where we use that~$\ker(\alpha') = \ker(\alpha) = \ker(\alpha'') = 0$ because~$\alpha'$,~$\alpha$ and~$\alpha''$ are monomorphisms.
-This shows that in the diagram
+where we use that~$\ker(\alpha') = \ker(\alpha) = \ker(\alpha'') = 0$ because~$\alpha'$,~$\alpha$,~$\alpha''$ are monomorphisms.
+This shows that in the intermediate diagram
 \[
   \begin{tikzcd}
       0
@@ -482,8 +516,9 @@ This shows that in the diagram
     & 0
   \end{tikzcd}
 \]
-the rows are exact.
-We can therefore again apply the snake lemmate to get the exact sequence
+the rows are again exact.
+We can therefore apply the snake lemma again.
+This time we get the exact sequence
 \[
   0
   \to
@@ -504,8 +539,8 @@ We can therefore again apply the snake lemmate to get the exact sequence
 where we use that the morphisms~$X \to \coker(\alpha')$,~$Y \to \coker(\alpha)$ and~$Z \to \coker(\alpha'')$ are epimorphisms.
 
 We have now shown that both rows of~$\eqref{where to apply 5 lemma}$ are exact.
-We know that both~$\lambda'$ and~$\lambda''$ are isomorphisms because the upper and lower row of~\eqref{3x3 diagram} are exact.
-It follows from the five lemma that~$\lambda$ is again an isomorphism, which shows the desired exactness of~$Y' \xto{\beta} Y \to \xto{\beta'} Y''$.
+We know that both~$\lambda'$ and~$\lambda''$ are isomorphisms because the upper and lower rows of~\eqref{3x3 diagram} are exact.
+It follows from the five lemma that~$\lambda$ is again an isomorphism, which shows the desired exactness.
 
 
 
