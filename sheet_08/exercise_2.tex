@@ -2,32 +2,31 @@
 
 
 
+\begin{lemma}
+  \label{qim via acyclic}
+  Let~$0 \to C'_\bullet \xto{f} C_\bullet \xto{g} C''_\bullet \to $ be a short exact sequence of chain complexes in~$\Acat$.
+  \begin{enumerate}
+    \item
+      If~$C'_\bullet$ is acyclic then~$g$ is a {\qim}.
+    \item
+      If~$C''_\bullet$ is acyclic then~$f$ is a {\qim}.
+  \end{enumerate}
+\end{lemma}
+
+
+\begin{proof}
+  This follows from the long exact sequence in homology.
+\end{proof}
+
+
+
 
 
 \subsection{}
 
-We consider the induced long exact sequence in homology:
-\[
-  \dotsb
-  \to
-  \Hl_{n+1}( C''_\bullet )
-  \to
-  \Hl_n( C'_\bullet )
-  \to
-  \Hl_n( C_\bullet )
-  \to
-  \Hl_n( C''_\bullet )
-  \to
-  \Hl_{n-1}( C'_\bullet )
-  \to
-  \dotsb
-\]
-If~$C''_\bullet$ is acyclic then~$\Hl_n(C''_\bullet) = 0$ for every~$n \in \Integer$.
-It then t follows from the long exact sequence that~$\Hl_n(C'_\bullet) \cong \Hl_n(C_\bullet)$ for every~$n \in \Integer$, and hence that~$C'_\bullet$ is acyclic if and only if~$C_\bullet$ is acylic.
-We find in the same way that if~$C'_\bullet$ is acyclic then~$C_\bullet$ is acyclic if and only if~$C''_\bullet$ is acyclic.
-The given statements follows immediatelly from these observations.
-
-Note that we actually get from the long exact sequence that the morphism~$C'_\bullet \to C_\bullet$ is a {\qim} and only if if the chain complex~$C''_\bullet$ is acyclic, and that the morphism~$C_\bullet \to C''_\bullet$ is a {\qim} if and only if the chain complexe~$C'_\bullet$ is ayclic.
+If~$C''_\bullet$ is acyclic then~$\Hl_n(C'_\bullet) \cong \Hl_n(C_\bullet)$ for every~$n \in \Integer$ by \cref{qim via acyclic}, and hence~$C'_\bullet$ is acyclic if and only if~$C_\bullet$ is acylic.
+Similarly, if~$C'_\bullet$ is acyclic then~$C_\bullet$ is acyclic if and only if~$C''_\bullet$ is acyclic.
+This shows together that if any two of the chain complexes~$C'_\bullet$,~$C_\bullet$,~$C''_\bullet$ are acyclic, then so is the third one.
 
 
 
@@ -47,9 +46,10 @@ With the canonical morphism~$p \colon C_\bullet \to \coim(f)$ we the following s
   \to
   0 \,.
 \]
-It follows from~$\ker(f)$ being acylic that the morphism~$p$ is a {\qim}, as seen above.
+It follows by \cref{qim via acyclic} from~$\ker(f)$ being acylic that the canonical morphism~$p$ is a {\qim}.
 We similarly find that the canonical morphism~$i \colon \im(f) \to D_\bullet$ is a {\qim} because~$\coker(f)$ is acyclic.
-Together with the induced morphism~$\tilde{f} \colon \coim(f) \to \im(f)$, which is an isomorphism because~$\Ch_\bullet(\Acat)$ is abelian, we find that
+The canonical induced morphism~$\tilde{f} \colon \coim(f) \to \im(f)$ is an isomorphism because~$\Ch_\bullet(\Acat)$ is abelian, and hence also a {\qim}.
+We find that
 \[
     f
   = i \tilde{f} p

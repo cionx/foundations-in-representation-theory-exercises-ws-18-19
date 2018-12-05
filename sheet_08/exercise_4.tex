@@ -3,9 +3,9 @@
 We have for all~$i = 0, \dotsc, n$ and~$j = 0, \dotsc, n+1$ that
 \begin{itemize}
   \item
-    $f^{n+1}_j f^n_i = f^{n+1}_i f^n_{j-1}$ if~$j > i$ as both of these compositions are the unique order-preserving map~$\{0, \dotsc, n-1\} \to \{0, \dotsc, n+1\}$ whose image doesn’t contain~$i$ and~$j$, and
+    $f^{n+1}_j f^n_i = f^{n+1}_i f^n_{j-1}$ if~$j > i$ as both compositions are the unique order-preserving map~$\{0, \dotsc, n-1\} \to \{0, \dotsc, n+1\}$ whose image doesn’t contain~$i$ and~$j$, and
   \item
-    $f^{n+1}_j f^n_i = f^{n+1}_{i+1} f^n_j$ if~$j \leq i$ as both of these compositions are the unique order-presvering map~$\{0, \dotsc, n-1\} \to \{0, \dotsc, n+1\}$ whose image doesn’t contain~$i+1$ and~$j$.
+    $f^{n+1}_j f^n_i = f^{n+1}_{i+1} f^n_j$ if~$j \leq i$ as both compositions are the unique order-presvering map~$\{0, \dotsc, n-1\} \to \{0, \dotsc, n+1\}$ whose image doesn’t contain~$i+1$ and~$j$.
 \end{itemize}
 
 
@@ -15,25 +15,25 @@ We have for all~$i = 0, \dotsc, n$ and~$j = 0, \dotsc, n+1$ that
 \subsection{}
 
 We assume that~$C_n(A) = 0$ for all~$n < 0$, and accordingly~$d_n = 0$ for all~$n \leq 0$.
-We then have that~$d_n d_{n+1} = 0$ for all~$n \leq 0$, and for all~$n > 0$ we have that
+We then have that~$d_n d_{n+1} = 0$ for all~$n \leq 0$.
+For~$n > 0$ we have that
 \begin{align*}
       d_n d_{n+1}
   &=  \left( \sum_{i=0}^n (-1)^i A(f^n_i) \right)
-      \left( \sum_{j=0}^{n+1} (-1)^j A(f^{n+1}_j) \right) \\
-  &=  \sum_{i=0}^n \sum_{j=0}^{n+1} (-1)^{i+j} A(f^{n+1}_j f^n_i) \\
+      \left( \sum_{j=0}^{n+1} (-1)^j A(f^{n+1}_j) \right)
+   =  \sum_{i=0}^n \sum_{j=0}^{n+1} (-1)^{i+j} A(f^{n+1}_j f^n_i) \\
   &=    \sum_{0 \leq i < j \leq n+1} (-1)^{i+j} A(f^{n+1}_j f^n_i)
       + \sum_{0 \leq j \leq i \leq n} (-1)^{i+j} A(f^{n+1}_j f^n_i) \,. \\
 \end{align*}
-We can rearrange the second sum as
+By using that~$f^{n+1}_j f^n_i = f^{n+1}_{i+1} f^n_j$ for~$j \leq i$, we can rearrange the second sum as
 \begin{align*}
    {}&  \sum_{0 \leq j \leq i \leq n} (-1)^{i+j} A(f^{n+1}_j f^n_i) \\
   ={}&  \sum_{0 \leq j \leq i \leq n} (-1)^{i+j} A(f^{n+1}_{i+1} f^n_j) \\
   ={}&  \sum_{0 \leq j < i \leq n+1} (-1)^{i-1+j} A(f^{n+1}_i f^n_j) \\
-  ={}&  \sum_{0 \leq j < i \leq n+1} (-1)^{i-1+j} A(f^{n+1}_i f^n_j) \\
   ={}&  -\sum_{0 \leq j < i \leq n+1} (-1)^{i+j} A(f^{n+1}_i f^n_j)  \\
   ={}&  -\sum_{0 \leq i < j \leq n+1} (-1)^{i+j} A(f^{n+1}_j f^n_i) \,.
 \end{align*}
-With this we find that~$d_n d_{n+1} = 0$ also for~$n > 0$.
+We hence find that~$d_n d_{n+1} = 0$.
 
 
 
@@ -54,47 +54,41 @@ For every~$n \geq 0$ let~$e_0, \dotsc, e_n$ be the standard basis of~$\Real^{n+1
 be the standard~\dash{$n$}{simplex}, where~$\conv$ denotes the convex hull operator.%
 \footnote{We avoid the usual notation~$\Delta^n$ for the standard simplex because there are already enough things named~$\Delta$.}
 For all~$0 \leq m \leq n$ and every~$f \in \Delta(m,n)$ let~$\Sigma(f) \colon \Sigma(m) \to \Sigma(n)$ be the unique affine linear map with
-\begin{equation}
-  \label{action on corners}
+\[
     \Sigma(f)(e_i)
   = e_{f(i)}
-\end{equation}
-for every~$i = 0, \dotsc, m$;
-more explicitely,
-\[
-    \Sigma(f)\left( \sum_{i=0}^m \lambda_i e_i \right)
-  = \sum_{i=0}^m \lambda_i e_{f(i)}
 \]
-whenever~$\sum_{i=0}^n \lambda_i = 1$ with~$\lambda_i \geq 0$ for all~$i = 0, \dotsc, n$.
-It follows from the description~$\eqref{action on corners}$ of~$\Sigma(f)$ that~$\Sigma(\id_n) = \id_{\Sigma(n)}$ for every~$n \geq 0$, and that~$\Sigma(gf) = \Sigma(g) \Sigma(f)$ for all composable morphisms~$f \colon k \to m$ and~$g \colon m \to n$ in~$\Delta$.
+for every~$i = 0, \dotsc, m$;
+It then holds that~$\Sigma(\id_n) = \id_{\Sigma(n)}$ for every~$n \geq 0$, and that~$\Sigma(gf) = \Sigma(g) \Sigma(f)$ for all composable morphisms~$f \colon k \to m$ and~$g \colon m \to n$ in~$\Delta$.
 We have hence constructed a covariant functor~$\Sigma \colon \Delta \to \Top$, i.e.\ a cosimplical object in the category~$\Top$.
 
 We set~$S \defined \Top(-,Y) \circ \Sigma \colon \Delta \to \Set$.
-An object~$s \in S(n)$ is a continuous map~$s \colon \Delta^n \to Y$, which one might think about as an~\emph{\dash{$n$}{simplex} in~$Y$}.
+The elements of the set~$S(n)$ are then precisely the continuous map~$s \colon \Delta^n \to Y$, i.e.\ the~\dash{$n$}{simplices} in~$Y$.
 
-Let~$\Csing(Y)$ be the singular chain complex of~$Y$.
-We have from the above that
+Let~$\Csing_\bullet(Y)$ be the singular chain complex of~$Y$.
+We have just seen for~$n \geq 0$ that
 \[
-  \Csing_n(Y) = FS(n) = C_n(FS)
+    \Csing_n(Y)
+  = FS(n)
+  = C_n(FS) \,.
 \]
-for every~$n \geq 0$.
 
-Note that for eveny~$n \geq 0$ and~$i = 0, \dotsc, n$, the map~$\Sigma(f^n_i) \colon \Sigma(n-1) \to \Sigma(n)$ is precisely the inclusion of~$\Sigma(n-1)$ into~$\Sigma(n)$ as the~\dash{$i$}{th} face.
+Note that for every~$n \geq 0$ and~$i = 0, \dotsc, n$, the map~$\Sigma(f^n_i) \colon \Sigma(n-1) \to \Sigma(n)$ is precisely the inclusion of~$\Sigma(n-1)$ into~$\Sigma(n)$ as the~\dash{$i$}{th} face.
 The differential of the singular chain complex~$\Csing_n(Y)$ is therefore given by
 \[
     d^\sing_n(s)
   = \sum_{i=0}^n (-1)^i s \circ \Sigma(f^n_i)
 \]
 for every simplex~$s \in S(n)$.
-The differential of the chain complex~$C_\bullet(FS)$ is also given by
+The differential of the chain complex~$C_\bullet(FS)$ is given by
 \begin{align*}
       d_n(s)
-  &=  \sum_{i=0}^n (-1)^i (FS)(f^n_i)(s)  \\
-  &=  \sum_{i=0}^n (-1)^i (F \circ \Top(-,Y) \circ \Sigma)(f^n_i)(s)  \\
-  &=  \sum_{i=0}^n (-1)^i F( \Sigma(f^n_i)^* )(s) \\
-  &=  \sum_{i=0}^n (-1)^i \Sigma(f^n_i)^*(s)  \\
-  &=  \sum_{i=0}^n (-1)^i s \circ \Sigma(f^n_i) \,.
+  &=  \sum_{i=0}^n (-1)^i (FS)(f^n_i)(s)
+   =  \sum_{i=0}^n (-1)^i (F \circ \Top(-,Y) \circ \Sigma)(f^n_i)(s)  \\
+  &=  \sum_{i=0}^n (-1)^i F( \Sigma(f^n_i)^* )(s)
+   =  \sum_{i=0}^n (-1)^i \Sigma(f^n_i)^*(s)
+   =  \sum_{i=0}^n (-1)^i s \circ \Sigma(f^n_i) \,.
 \end{align*}
-This shows that the two chain complexes~$\Csing$ and~$C_\bullet(FS)$ do have not only the same components but also the same differential, hence that they are the same.
+This shows that the two chain complexes~$\Csing_\bullet$ and~$C_\bullet(FS)$ do have not only the same components but also the same differential, hence that they are the same.
 
 

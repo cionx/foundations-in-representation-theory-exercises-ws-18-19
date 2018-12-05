@@ -1,6 +1,7 @@
 \section{}
-We abbreviate~$H_n \defined \Hl(V_\bullet)$,~$Z_n \defined \Zl(V_\bullet)$ and~$B_n \defined \Bl(V_\bullet)$ for every~$n \in \Integer$.
+We assume that all vector spaces~$V_i$ are {\fd} to ensure that the expression~$\sum_{n \in \Integer} (-1)^n \dim V_n$ is {\welldef}.
 
+We abbreviate~$H_n \defined \Hl_n(V_\bullet)$,~$Z_n \defined \Zl_n(V_\bullet)$ and~$B_n \defined \Bl_n(V_\bullet)$ for every~$n \in \Integer$.
 We have for every~$n \in \Integer$ that
 \[
     \dim H_n
@@ -18,8 +19,8 @@ We hence find that
   &=  \sum_n (-1)^n (\dim Z_n + \dim B_{n-1}) \\
   &=  \sum_n (-1)^n \dim Z_n + \sum_n (-1)^n \dim B_{n-1} \\
   &=  \sum_n (-1)^n \dim Z_n - \sum_n (-1)^n \dim B_n \\
-  &=  \sum_n (-1)^n (\dim Z_n - \dim B_n) \\
-  &=  \sum_n (-1)^n \dim H_n \,.
+  &=  \sum_n (-1)^n (\dim Z_n - \dim B_n)
+   =  \sum_n (-1)^n \dim H_n \,.
 \end{align*}
 
 

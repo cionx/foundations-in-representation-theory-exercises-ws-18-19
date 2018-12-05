@@ -26,7 +26,7 @@
         \end{tikzcd}
       \]
       be a commutative square in~$\Acat$.%
-      \footnote{We may think about this commutative square a morphism~$(\varphi, \varphi') \colon f \to f'$ in the morphism category of~$\Acat$).}
+      \footnote{We may think about this commutative square a morphism~$(\varphi, \varphi') \colon f \to f'$ in the morphism category of~$\Acat$.}
       Let~$k \colon \ker(f) \to X$ and~$k' \colon \ker(f') \to X'$ be kernels of~$f$ and~$f'$.
       Then there exist a unique morphism~$\varphi'' \colon \ker(f) \to \ker(f'')$ that makes the following diagram commute:
       \[
@@ -95,37 +95,57 @@
         = 0 \,.
       \]
     \item
-    We wave the following commutative diagram:
-    \[
+    We have the following commutative diagram:
+      \[
+        \begin{tikzcd}[sep = huge]
+            \ker(f)
+            \arrow{r}[above]{k}
+            \arrow{d}[right]{\varphi'}
+          & X
+            \arrow{r}[above]{f}
+            \arrow{d}[right]{\varphi}
+          & Y
+            \arrow{d}[right]{\varphi''}
+          \\
+            \ker(f')
+            \arrow{r}[above, near start]{k'}
+            \arrow{d}[right]{\psi'}
+          & X'
+            \arrow{r}[above, near start]{f'}
+            \arrow{d}[right]{\psi}
+          & Y'
+            \arrow{d}[right]{\psi''}
+          \\
+            \ker(f'')
+            \arrow{r}[above]{k''}
+            \arrow[from=uu, dashed, bend right = 45, crossing over, "\psi' \varphi'" left, near start]
+          & X''
+            \arrow{r}[above]{f''}
+            \arrow[from=uu, dashed, bend right = 45, crossing over, "\psi \varphi" left, near start]
+          & Y''
+            \arrow[from=uu, dashed, bend right = 45, crossing over, "\psi'' \varphi''" left, near start]
+        \end{tikzcd}
+      \]
+      The commutativity of the subdiagram
+      \[
         \begin{tikzcd}
             \ker(f)
             \arrow{r}[above]{k}
-            \arrow[dashed]{d}[left]{\varphi''}
-            \arrow[dashed, bend right = 70]{dd}[left]{\psi'' \varphi''}
+            \arrow[dashed]{d}[left]{\psi'' \varphi''}
           & X
             \arrow{r}[above]{f}
-            \arrow{d}[left]{\varphi}
+            \arrow{d}[left]{\psi \varphi}
           & Y
-            \arrow{d}[right]{\varphi'}
-            \arrow[bend left = 70]{dd}[right]{\psi' \varphi'}
-          \\
-            \ker(f')
-            \arrow{r}[above]{k'}
-            \arrow[dashed]{d}[left]{\psi''}
-          & X'
-            \arrow{r}[above]{f'}
-            \arrow{d}[left]{\psi}
-          & Y'
-            \arrow{d}[right]{\psi'}
+            \arrow{d}[right]{\psi' \varphi'}
           \\
             \ker(f'')
             \arrow{r}[above]{k''}
           & X''
             \arrow{r}[above]{f''}
-          & Y''
+          & Y'
         \end{tikzcd}
       \]
-      The commutativity of the outer square shows that~$\psi'' \varphi''$ satisfies the defining property of the induced morphism~$\ker(f) \to \ker(f'')$.
+      shows that~$\psi'' \varphi''$ satisfies the defining property of the morphisms~$\ker(f) \to \ker(f'')$ induced by~$(\psi \varphi, \psi' \varphi')$.
     \qedhere
   \end{enumerate}
 \end{proof}
@@ -145,7 +165,7 @@ It follows by \cref{functoriality of kernel} from the commutativity of the squar
     & D_{n-1}
   \end{tikzcd}
 \]
-that there exists a unique morphism~$d'_n \colon \ker(f_n) \to \ker(f_{n-1})$ that makes the follwing square commute:
+that there exists a unique morphism~$d'_n \colon \ker(f_n) \to \ker(f_{n-1})$ that makes the following square commute:
 \begin{equation}
   \label{induced differential}
   \begin{tikzcd}
@@ -181,12 +201,12 @@ The composition~$d'_{n-1} d'_n$ is by \cref{functoriality of kernel} the unique 
     & C_{n-2}
   \end{tikzcd}
 \]
-The zero morphism also makes this diagram commute, hence~$d'_n d'_{n-1} = 0$.
-This shows that~$\ker(f) = ((\ker f_n)_{n \in \Integer}, (d'_n)_{n \in \Integer})$ is a chain complex.
-The commutativity of the square~\eqref{induced differential} tells us that~$k \defined (k_n)_{n \in \Integer}$ is a morphism of chain complexes~$k \colon \ker(f) \to C_\bullet$.
+The zero morphism also makes this diagram commute, hence~$d'_{n-1} d'_n = 0$.
+This shows that~$\ker(f) = ((\ker(f_n))_{n \in \Integer}, (d'_n)_{n \in \Integer})$ is a chain complex.
+The commutativity of the square~\eqref{induced differential} tells us furtheromer that~$k \defined (k_n)_{n \in \Integer}$ is a morphism of chain complexes~$k \colon \ker(f) \to C_\bullet$.
 
 The composition~$f k$ vanishes because~$(fk)_n = f_n k_n = 0$ for every~$n \in \Integer$.
-Suppose that~$g \colon B_\bullet \to C_\bullet$ is another morphism of chain complexs such that~$f g = 0$.
+Suppose that~$g \colon B_\bullet \to C_\bullet$ is another morphism of chain complexs for which~$f g = 0$.
 Then~$0 = (fg)_n = f_n g_n$ for every~$n \in \Integer$, and it follows from the universal property of the kernel~$k_n \colon \ker(f_n) \to C_n$ that there exist a unique morphism~$h_n \colon B_n \to \ker(f_n)$ that makes the following diagram commute:
 \begin{equation}
   \label{constructing triangle}
@@ -207,8 +227,8 @@ Then~$h \defined (h_n)_{n \in \Integer}$ is a morphism of chain complexes: We ha
   \label{cheese block}
   \begin{tikzcd}
       B_n
-      \arrow[dashed, bend left = 40]{rr}[above]{g_n}
-      \arrow{r}[above]{h_n}
+      \arrow[bend left = 40]{rr}[above]{g_n}
+      \arrow[dashed]{r}[above]{h_n}
       \arrow{d}[right]{d_n}
     & \ker(f_n)
       \arrow{r}[above]{k_n}
@@ -217,8 +237,8 @@ Then~$h \defined (h_n)_{n \in \Integer}$ is a morphism of chain complexes: We ha
       \arrow{d}[right]{d_n}
     \\
       B_{n-1}
-      \arrow{r}[above]{h_{n-1}}
-      \arrow[dashed, bend right = 40]{rr}[below]{g_{n-1}}
+      \arrow[dashed]{r}[above]{h_{n-1}}
+      \arrow[bend right = 40]{rr}[below]{g_{n-1}}
     & \ker(f_{n-1})
       \arrow{r}[above]{k_{n-1}}
     & C_{n-1}
@@ -235,7 +255,7 @@ It follows that the left square commutes, because
 \]
 and hence~$d'_n h_n = h_{n-1} d_n$ since~$k_{n-1}$ is a monomorphism.
 
-That the triangle~\eqref{constructing triangle} commutes for every~$n \in \Integer$ means that the following diagram commutes:
+That the morphism~$h_n$ makes for every~$n \in \Integer$ the triangle~\eqref{constructing triangle} commute gives altogether that the morphism of chain complexes~$h \colon B_\bullet \to \ker(f)$ makes the following diagram commute:
 \[
   \begin{tikzcd}
       \ker(f)
@@ -249,7 +269,7 @@ That the triangle~\eqref{constructing triangle} commutes for every~$n \in \Integ
   \end{tikzcd}
 \]
 The morphism~$h$ is unique with this property:
-If~$h' \colon B \to \ker(f)$ is another morphim of chain complexes with~$k h' = g$ then~$k_n h'_n = g_n$ for every~$n \in \Integer$, and hence the triangle
+If~$h' \colon B_\bullet \to \ker(f)$ is another morphim of chain complexes with~$k h' = g$ then~$k_n h'_n = g_n$ for every~$n \in \Integer$, and hence the triangle
 \[
   \begin{tikzcd}
       \ker(f_n)
@@ -263,64 +283,66 @@ If~$h' \colon B \to \ker(f)$ is another morphim of chain complexes with~$k h' = 
   \end{tikzcd}
 \]
 commutes for every~$n \in \Integer$.
-It follows from the uniqueness of~$h_n$ that~$h'_n = h_n$, and hence overall~$h' = h$.
+It then follows for every~$n \in \Integer$ from the uniqueness of~$h_n$ that~$h'_n = h_n$, and hence overall~$h' = h$.
 
-This shows altogether that the morphism~$k \colon \ker(f) \to C_\bullet$ is a kernel of the morphism~$f$.
+This shows altogether that the morphism of chain complexes~$k \colon \ker(f) \to C_\bullet$ is a kernel of~$f$.
 This explicit construction of the kernel also shows that kernels in~$\Ch_\bullet(\Acat)$ can be computed degree-wise.
 
-We similary find the the cokernel of~$f$ is given by a chain complex
-\[
-    \coker(f)
-  = ( (\coker(f_n))_{n \in \Integer}, (d''_n)_{n \in \Integer} )
-\]
-together with a morphism of chain complexes~$c \colon D_\bullet \to \coker(f)$ such that
-\begin{itemize}
-  \item
-    the morphism $c_n \colon D_n \to \coker(f_n)$ is for every~$n \in \Integer$ a cokernel of the morphism~$f_n \colon C_n \to D_n$, and
-  \item
-    the differential~$d''_n \colon \coker(f_n) \to \coker(f_{n-1})$ is for every~$n \in \Integer$ the unique morphism~$\coker(f_n) \to \coker(f_{n-1})$ that makes the following square commute:
-    \[
-      \begin{tikzcd}
-          D_n
-          \arrow{r}[above]{d_n}
-          \arrow{d}[left]{c_n}
-        & D_{n-1}
-          \arrow{d}[right]{c_{n-1}}
-        \\
-          \coker(f_n)
-          \arrow[dashed]{r}[below]{d''_n}
-        & \coker(f_{n-1})
-      \end{tikzcd}
-    \]
-  \item
-    If~$g \colon D_\bullet \to E_\bullet$ is another morphism of chain complexes with~$g f = 0$, then the unique morphism of chain complexes~$h \colon \coker(f) \to E_\bullet$ that makes the triangle
-    \[
-      \begin{tikzcd}
-          D_\bullet
-          \arrow{r}[above]{c}
-          \arrow{dr}[below left]{g}
-        & \coker(f)
-          \arrow[dashed]{d}[right]{h}
-        \\
-          {}
-        & E_\bullet
-      \end{tikzcd}
-    \]
-    commute can be computed degree-wise, i.e.\ the component~$h_n \colon \coker(f_n) \to E_n$ is for every~$n \in \Integer$ the unique morphism~$\coker(f_n) \to E_n$ that makes the following triangle commute:
-    \[
-      \begin{tikzcd}
-          D_n
-          \arrow{r}[above]{c}
-          \arrow{dr}[below left]{g_n}
-        & \coker(f_n)
-          \arrow[dashed]{d}[right]{h_n}
-        \\
-          {}
-        & E_n
-      \end{tikzcd}
-    \]
-\end{itemize}
-We can similarly calculate the image of~$f$ degree-wise
+\begin{remark}
+  We similary find that the cokernel of~$f$ is given by a chain complex
+  \[
+      \coker(f)
+    = ( (\coker(f_n))_{n \in \Integer}, (d''_n)_{n \in \Integer} )
+  \]
+  together with a morphism of chain complexes~$c \colon D_\bullet \to \coker(f)$ such that
+  \begin{itemize}
+    \item
+      the morphism $c_n \colon D_n \to \coker(f_n)$ is for every~$n \in \Integer$ a cokernel of the morphism~$f_n \colon C_n \to D_n$, and
+    \item
+      the differential~$d''_n \colon \coker(f_n) \to \coker(f_{n-1})$ is for every~$n \in \Integer$ the unique morphism~$\coker(f_n) \to \coker(f_{n-1})$ that makes the following square commute:
+      \[
+        \begin{tikzcd}
+            D_n
+            \arrow{r}[above]{d_n}
+            \arrow{d}[left]{c_n}
+          & D_{n-1}
+            \arrow{d}[right]{c_{n-1}}
+          \\
+            \coker(f_n)
+            \arrow[dashed]{r}[below]{d''_n}
+          & \coker(f_{n-1})
+        \end{tikzcd}
+      \]
+    \item
+      If~$g \colon D_\bullet \to E_\bullet$ is another morphism of chain complexes with~$g f = 0$, then the unique morphism of chain complexes~$h \colon \coker(f) \to E_\bullet$ that makes the triangle
+      \[
+        \begin{tikzcd}
+            D_\bullet
+            \arrow{r}[above]{c}
+            \arrow{dr}[below left]{g}
+          & \coker(f)
+            \arrow[dashed]{d}[right]{h}
+          \\
+            {}
+          & E_\bullet
+        \end{tikzcd}
+      \]
+      commute can be computed degree-wise, i.e.\ the component~$h_n \colon \coker(f_n) \to E_n$ is for every~$n \in \Integer$ the unique morphism~$\coker(f_n) \to E_n$ that makes the following triangle commute:
+      \[
+        \begin{tikzcd}
+            D_n
+            \arrow{r}[above]{c}
+            \arrow{dr}[below left]{g_n}
+          & \coker(f_n)
+            \arrow[dashed]{d}[right]{h_n}
+          \\
+            {}
+          & E_n
+        \end{tikzcd}
+      \]
+  \end{itemize}
+  We can similarly calculate the image and coimage of~$f$ degree-wise
+\end{remark}
 
 
 
@@ -364,7 +386,7 @@ Consider the case~$\Acat = \Modl{\Integer}$ and the acylic chain complexes
       ) \,,
 \end{align*}
 where~$i$ denotes the inclusion and~$p$ the canonical projection.
-We have morphism of chain complexes~$f \colon C_\bullet \to D_\bullet$ given by the following commutative ladder:
+We have0a morphism of chain complexes~$f \colon C_\bullet \to D_\bullet$ that is given by the following commutative ladder:
 \[
   \begin{tikzcd}
       \dotsb
@@ -454,7 +476,7 @@ We can compute the kernel, cokernel and image of~$f$ degree-wise, and hence find
         \dotsb
       ) \,.
 \end{align*}
-None of those three chain complexes are acyclic.
+None of those three chain complexes is acyclic.
 
 
 
