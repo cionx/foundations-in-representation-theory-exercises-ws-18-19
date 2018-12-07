@@ -23,7 +23,7 @@ For~$n > 0$ we have that
       \left( \sum_{j=0}^{n+1} (-1)^j A(f^{n+1}_j) \right)
    =  \sum_{i=0}^n \sum_{j=0}^{n+1} (-1)^{i+j} A(f^{n+1}_j f^n_i) \\
   &=    \sum_{0 \leq i < j \leq n+1} (-1)^{i+j} A(f^{n+1}_j f^n_i)
-      + \sum_{0 \leq j \leq i \leq n} (-1)^{i+j} A(f^{n+1}_j f^n_i) \,. \\
+      + \sum_{0 \leq j \leq i \leq n} (-1)^{i+j} A(f^{n+1}_j f^n_i) \,.
 \end{align*}
 By using that~$f^{n+1}_j f^n_i = f^{n+1}_{i+1} f^n_j$ for~$j \leq i$, we can rearrange the second sum as
 \begin{align*}
@@ -52,13 +52,13 @@ For every~$n \geq 0$ let~$e_0, \dotsc, e_n$ be the standard basis of~$\Real^{n+1
   \Real^{n+1}
 \]
 be the standard~\dash{$n$}{simplex}, where~$\conv$ denotes the convex hull operator.%
-\footnote{We avoid the usual notation~$\Delta^n$ for the standard simplex because there are already enough things named~$\Delta$.}
-For all~$0 \leq m \leq n$ and every~$f \in \Delta(m,n)$ let~$\Sigma(f) \colon \Sigma(m) \to \Sigma(n)$ be the unique affine linear map with
+\footnote{We avoid the usual notation~$\Delta^n$ for the standard~\dash{$n$}{simplex} because enough things are named~$\Delta$ already.}
+For all~$0 \leq m \leq n$ and every~$f \in \Delta(m,n)$ let~$\Sigma(f) \colon \Sigma(m) \to \Sigma(n)$ be the unique affine map with
 \[
     \Sigma(f)(e_i)
   = e_{f(i)}
 \]
-for every~$i = 0, \dotsc, m$;
+for every~$i = 0, \dotsc, m$.
 It then holds that~$\Sigma(\id_n) = \id_{\Sigma(n)}$ for every~$n \geq 0$, and that~$\Sigma(gf) = \Sigma(g) \Sigma(f)$ for all composable morphisms~$f \colon k \to m$ and~$g \colon m \to n$ in~$\Delta$.
 We have hence constructed a covariant functor~$\Sigma \colon \Delta \to \Top$, i.e.\ a cosimplical object in the category~$\Top$.
 
