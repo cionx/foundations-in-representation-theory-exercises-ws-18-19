@@ -1,1 +1,65 @@
-\addtocounter{section}{1}
+\section{}
+
+
+We first examine how for an arbitrary morphism of chain complexes~$f \colon \Ccc \to \Dcc$ the morphisms of chain complexes~$\cone(f) \to \Ecc$ look like for any other chain complex~$\Ecc$ in~$\Acat$:
+Such a morphism of chain complexes
+\[
+          g
+  =       (g_n)_{n \in \Integer}
+  \colon  \cone(f)
+  \to     \Ecc
+\]
+is given by morphisms
+\[
+          g_n
+  =       \begin{bmatrix}
+            s_{n-1} & h_n \\
+          \end{bmatrix}
+  \colon  C_{n-1} \oplus D_n
+  \to     E_n
+\]
+for some morphisms~$s_{n-1} \colon C_{n-1} \to E_n$ and~$h_n \colon D_n \to E_n$, that are subject to the relation
+\[
+  \begin{bmatrix}
+    s_{n-2} & h_{n-1} \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    -d_{n-1}  & 0   \\
+    -f_{n-1}  & d_n
+  \end{bmatrix}
+  =
+  d_n
+  \begin{bmatrix}
+    s_{n-1} & h_n \\
+  \end{bmatrix}
+\]
+for every~$n \in \Integer$ (where~$d_n$ denotes the differential of~$\Ccc$,~$\Dcc$ and~$\Ecc$).
+This means that
+\[
+  \begin{bmatrix}
+    - s_{n-2} d_{n-1} - h_{n-1} f_{n-1} & h_{n-1} d_n
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    d_n s_{n-1} & d_n h_h
+  \end{bmatrix}
+\]
+for every~$n \in \Integer$, i.e.\ that
+\[
+  \left\{
+    \begin{array}{rcl}
+      d_n (-s_{n-1}) + (-s_{n-2}) d_{n-1} &=&  h_{n-1} f_{n-1}  \\
+      h_{n-1} d_n                         &=& d_n h_n
+    \end{array}
+  \right.
+\]
+The second condition states that the family~$h \defined (h_n)_{n \in \Integer}$ is a morphism of chain complexes~$h \colon \Dcc \to \Ecc$, whereas the first condition states that~$s \defined (-s_n)_{n \in \Integer}$ defines a null homotopy for~$hf$.
+
+A morphism of chain complexes~$\cone(f) \to \Ecc$ is therefore the same as a morphism of chain complexes~$h \colon \Dcc \to \Ecc$ such that~$hf$ is null homotopic, together with the choice of a null homotopy for~$hf$.
+This entails that a morphism of chain complexes~$h \colon \Dcc \to \Ecc$ can be extended to a morphism of chain complexes~$\cone(f) \to \Ecc$ if and only if~$hf$ is nilpotent.
+
+It follows that a morphism of chain complexes~$f \colon \Ccc \to \Dcc$ can be extended to a morphism of chain complexes~$\cone(\id_{\Ccc}) \to \Dcc$ if and only if the composition~$f \id_{\Ccc} = f$ is null homotopic.
+
+
+
+
