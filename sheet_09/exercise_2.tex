@@ -1,1 +1,180 @@
-\addtocounter{section}{1}
+\section{}
+
+We add another two conditions:
+
+\begin{enumerate}[start=4,label=(\roman*)]
+  \item
+    There exists an isomorphism~$X' \oplus X'' \to X$ that makes the diagram
+    \[
+      \begin{tikzcd}[ampersand replacement = \&, column sep = large]
+            0
+            \arrow{r}
+        \&  X'
+            \arrow{r}[above]{\begin{bsmallmatrix} {\id} \\ 0 \end{bsmallmatrix}}
+            \arrow[equal]{d}
+        \&  X' \oplus X''
+            \arrow{r}[above]{\begin{bsmallmatrix} 0 & {\id} \end{bsmallmatrix}}
+            \arrow{d}
+        \&  X''
+            \arrow{r}
+            \arrow[equal]{d}
+        \&  0
+        \\
+            0
+            \arrow{r}
+        \&  X'
+            \arrow{r}[above]{f}
+        \&  X
+            \arrow{r}[above]{g}
+        \&  X''
+            \arrow{r}
+        \&  0
+      \end{tikzcd}
+    \]
+    commute.
+  \item
+    There exists an isomorphism~$X \to X' \oplus X''$ that makes the diagram
+    \[
+      \begin{tikzcd}[ampersand replacement = \&, column sep = large]
+            0
+            \arrow{r}
+        \&  X'
+            \arrow{r}[above]{f}
+            \arrow[equal]{d}
+        \&  X
+            \arrow{r}[above]{g}
+            \arrow{d}
+        \&  X''
+            \arrow{r}
+            \arrow[equal]{d}
+        \&  0
+        \\
+            0
+            \arrow{r}
+        \&  X'
+            \arrow{r}[above]{\begin{bsmallmatrix} {\id} \\ 0 \end{bsmallmatrix}}
+        \&  X' \oplus X''
+            \arrow{r}[above]{\begin{bsmallmatrix} 0 & {\id} \end{bsmallmatrix}}
+        \&  X''
+            \arrow{r}
+        \&  0
+      \end{tikzcd}
+    \]
+    commute.
+\end{enumerate}
+
+
+
+
+
+\subsection*{(i) $\implies$ (iv)}
+
+Let~$s \colon X'' \to X$ be a morphism with~$gs = \id_{X''}$.
+Then the diagram
+\[
+      \begin{tikzcd}[ampersand replacement = \&, column sep = large]
+            0
+            \arrow{r}
+        \&  X'
+            \arrow{r}[above]{\begin{bsmallmatrix} {\id} \\ 0 \end{bsmallmatrix}}
+            \arrow[equal]{d}
+        \&  X' \oplus X''
+            \arrow{r}[above]{\begin{bsmallmatrix} 0 & {\id} \end{bsmallmatrix}}
+            \arrow{d}[right]{\begin{bsmallmatrix} f & s \end{bsmallmatrix}}
+        \&  X''
+            \arrow{r}
+            \arrow[equal]{d}
+        \&  0
+        \\
+            0
+            \arrow{r}
+        \&  X'
+            \arrow{r}[above]{f}
+        \&  X
+            \arrow{r}[above]{g}
+        \&  X''
+            \arrow{r}
+        \&  0
+      \end{tikzcd}
+    \]
+commutes because
+\begin{gather*}
+  \begin{bmatrix}
+    f & s
+  \end{bmatrix}
+  \begin{bmatrix}
+    \id \\
+    0
+  \end{bmatrix}
+  =
+  f
+\shortintertext{and}
+  g
+  \begin{bmatrix}
+    f & s
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    gf & gs
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 & \id
+  \end{bmatrix} \,.
+\end{gather*}
+It follows from the five~lemma that~$\begin{bmatrix} f & s \end{bmatrix}$ is an isomorphism.
+
+
+
+
+
+\subsection*{(iv) $\implies$ (iii)}
+
+We denote the given isomorphism~$X' \oplus X'' \to X$ by~$\alpha$.
+Through~$\alpha$ we can make~$X$ into a biproduct~$(X,(i,j),(p,q))$ of~$X'$ and~$X''$, with
+\[
+            i
+  \defined  \alpha
+            \begin{bmatrix}
+              \id \\
+              0
+            \end{bmatrix} \,,
+  \quad
+            j
+  \defined  \alpha
+            \begin{bmatrix}
+              0   \\
+              \id
+            \end{bmatrix} \,,
+  \quad
+            p
+  \defined  \begin{bmatrix}
+              \id & 0
+            \end{bmatrix}
+            \alpha^{-1} \,,
+  \quad
+            q
+  \defined  \begin{bmatrix}
+              0 & \id
+            \end{bmatrix}
+            \alpha^{-1} \,.
+\]
+It follows from the commutativity of the given diagram that~$i = f$ and~$q = g$, so we may choose~$r = p$ and~$s = j$.
+
+
+
+
+
+\subsection*{(iii)~$\implies$ (i)}
+
+It holds that~$sg = \id$ by definition of a coproduct.
+
+
+
+
+
+\subsection*{Rest}
+
+We have shown that the conditions~(i),~(iv) and~(iii) are equivalent, and we find dually that the conditions~(ii),~(v) and~(iii) are equivalent.
+
+
