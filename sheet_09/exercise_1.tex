@@ -1,1 +1,132 @@
-\addtocounter{section}{1}
+\section{}
+
+We write~$\Ccc'$ instead of~$\Dcc$.
+
+We first note that for any two parallel morphisms~$f, g \colon X \to Y$ in~$\Acat$, it holds that~$f = g$ if and only if~$fx = gx$ for every point~$x \inA X$.
+Indeed, we may choose~$x = \id_X \colon X \to X$.
+That~$\Hl_n(f) = 0$ is hence~$\Hl_n(f) x = 0$ for every~$x \in \Hl_n(\Ccc)$.
+
+We have for every~$n \in \Integer$ the following commutative diagram:
+\[
+  \begin{tikzcd}[row sep = huge, column sep = 2.7em]
+      C_{n+1}
+      \arrow{rr}[above]{d_{n+1}}
+      \arrow{dd}[left, near start]{f_{n+1}}
+      \arrow[two heads]{dr}[below left]{p}
+    & {}
+    & C_n
+      \arrow{rr}[above]{d_n}
+      \arrow{dd}[right, near start]{f_n}
+    & {}
+    & C_{n-1}
+      \arrow{dd}[right, near start]{f_{n-1}}
+    & {}
+    \\
+      {}
+    & \Bl_n(\Ccc)
+      \arrow[hook]{ur}[above left]{i}
+    & {}
+    & \Zl_n(\Ccc)
+      \arrow[hook']{ul}[above right]{j}
+      \arrow[hook,from=ll, dashed, crossing over, "\lambda", near start]
+    & {}
+    & \Hl_n(\Ccc)
+      \arrow[two heads,from=ll, dashed, crossing over, "q", near end]
+      \arrow[dashed]{dd}[right]{\Hl_n(f)}
+    \\
+      C'_{n+1}
+      \arrow{rr}[above, near start]{d_{n+1}}
+      \arrow[two heads]{dr}[below left]{p'}
+    & {}
+    & C'_n
+      \arrow{rr}[above, near end]{d_n}
+    & {}
+    & C'_{n-1}
+    & {}
+    \\
+      {}
+    & \Bl_n(\Ccc')
+      \arrow[hook]{ur}[above left]{i'}
+      \arrow[hook,dashed]{rr}[above]{\lambda'}
+      \arrow[from=uu, dashed, crossing over, "\Bl_n(f)", near start]
+    & {}
+    & \Zl_n(\Ccc')
+      \arrow[hook']{ul}[above right]{j'}
+      \arrow[two heads,dashed]{rr}[above]{q'}
+      \arrow[from=uu, dashed, crossing over, "\Zl_n(f)", near start]
+    & {}
+    & \Hl_n(\Ccc')
+  \end{tikzcd}
+\]
+Let~$s = (s_n)_{n \in \Integer}$ be a null homotopy, i.e.\ let~$s_n \colon C_n \to C'_{n+1}$ be morphisms with
+\[
+  f_n = d_{n+1} s_n + s_{n-1} d_n
+\]
+for every~$n \in \Integer$.
+
+We now fix~$n \in \Integer$ and consider~$h_n \inA \Hl_n(\Ccc)$.
+There exists~$z_n \inA \Zl_n(\Ccc)$ with~$h_n \equiv q z_n$ because~$q$ is an epimorphism.
+Let
+\begin{align*}
+            c_n
+  &\defined j z_n
+  \inA      C_n \,,
+  \\
+            z'_n
+  &\defined \Zl_n(f) c_n
+  \inA      \Zl_n(\Ccc')  \,,
+  \\
+            c'_n
+  &\defined f_n c_n = f_n j_n z_n = j' \Zl_n(f) c_n = j' z'_n
+  \inA      C'_n \,.
+\end{align*}
+We have that
+\[
+    d_n c_n
+  = d_n j z_n
+  = 0
+\]
+because~$d_n j = 0$.
+It therefore follows from the relation~$f_n = d_{n+1} s_n + s_{n-1} d_n$ that
+\[
+    c'_n
+  = f_n c_n
+  = (d_{n+1} s_n + s_{n-1} d_n) c_n
+  = d_{n+1} s_n c_n + s_{n-1} d_n c_n
+  = d_{n+1} s_n c_n \,.
+\]
+For the points
+\begin{align*}
+  c'_{n+1}  &\defined s_n c_n \inA C'_{n+1} \,, \\
+  b'_n      &\defined p' c'_{n+1} \inA \Bl_n(\Ccc')
+\end{align*}
+we hence have
+\[
+    c'_n
+  = d_{n+1} c'_{n+1}
+  = i' p' c'_{n+1}
+  = i' b'_n \,.
+\]
+It holds that
+\[
+    \lambda' b'_n
+  = z'_n
+\]
+because
+\[
+    j' \lambda' b'_n
+  = i' b'_n
+  = c'_n
+  = j' z'_n
+\]
+and~$j'$ is a monomorphism.
+We find overall that
+\[
+    \Hl_n(f) h_n
+  = \Hl_n(f) q z_n
+  = q' \Zl_n(f) c_n
+  = q' c'_n
+  = q' \lambda' b'_n
+  = 0
+\]
+because~$q' \lambda' = 0$.
