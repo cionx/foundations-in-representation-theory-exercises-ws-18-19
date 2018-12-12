@@ -1,1 +1,137 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+The components of the morphism~$fh \colon \cone(f)[1] \to \Dcc$ are given by
+\[
+    (fh)_n
+  = f_n h_n
+  = f_n
+    \begin{bmatrix}
+      -\id  & 0
+    \end{bmatrix}
+  = \begin{bmatrix}
+      -f_n  & 0
+    \end{bmatrix}
+\]
+for every~$n \in \Integer$.
+The collection~$s = (s_n)_{n \in \Integer}$ of morphisms
+\[
+            s_n
+  \defined  \begin{bmatrix}
+              0 & -\id
+            \end{bmatrix}
+  \colon    C_n \oplus D_{n+1}
+  \to       D_{n+1}
+\]
+are a null homotopy for~$fh$ because
+\begin{align*}
+      d_{n+1} s_n + s_{n-1} d_n
+  &=  d_{n+1}
+      \begin{bmatrix}
+        0 & -\id
+      \end{bmatrix}
+      +
+      \begin{bmatrix}
+        0 & -\id
+      \end{bmatrix}
+      \begin{bmatrix}
+        d_n &           \\
+        f_n & -d_{n+1}
+      \end{bmatrix}
+\\
+  &=  \begin{bmatrix}
+        0 & -d_{n+1}
+      \end{bmatrix}
+      \begin{bmatrix}
+        -f_n  & d_{n+1}
+      \end{bmatrix}
+   =  \begin{bmatrix}
+        -f_n  & 0
+      \end{bmatrix}
+   =  (fh)_n
+\end{align*}
+for every~$n \in \Integer$.
+
+
+
+
+
+\subsection{}
+
+We know from the previous part of the exercise that~$hf$ is null homotpic in~$\Ch(\Acat)$, hence that~$hf = 0$ in~$\Homotopy(\Acat)$.
+It follows that~$h = 0$ in~$\Homotopy(\Acat)$ because~$f$ is a monomorphism in~$\Acat$, hence that~$h$ in null homotopic in~$\Ch(\Acat)$.
+
+
+
+
+
+\subsection{}
+
+Let~$s$ be a null homotopy for the morphism~$h$, i.e.\ let~$s = (s_n)_{n \in \Integer}$  be a family of morphisms~$s_n \colon C_n \oplus D_{n+1} \to C_{n+1}$ with
+\[
+    h_n
+  = d_{n+1} s_n + s_{n-1} d_n
+\]
+for every~$n \in \Integer$.
+We may write every~$s_n$ as
+\[
+    s_n
+  = \begin{bmatrix}
+      t_n & -u_{n+1}
+    \end{bmatrix}
+\]
+for some morphisms~$t_n \colon C_n \to C_{n+1}$ and~$u_n \colon D_{n+1} \to C_{n+1}$.
+Then
+\begin{align*}
+      \begin{bmatrix}
+        -\id  & 0
+      \end{bmatrix}
+  &=  h_n \\
+  &=  d_{n+1} s_n + s_{n-1} d_n \\
+  &=  d_{n+1}
+      \begin{bmatrix}
+        t_n & -u_{n+1}
+      \end{bmatrix}
+      +
+      \begin{bmatrix}
+        t_{n-1} & u_n
+      \end{bmatrix}
+      \begin{bmatrix}
+        d_n &           \\
+        f_n & -d_{n+1}
+      \end{bmatrix} \\
+  &=  \begin{bmatrix}
+        d_{n+1} t_n & -d_{n+1} u_{n+1}
+      \end{bmatrix}
+      \begin{bmatrix}
+        t_{n-1} d_n - u_n f_n & u_n d_{n+1}
+      \end{bmatrix} \\
+  &=  \begin{bmatrix}
+        d_{n+1} t_n + t_{n-1} d_n - u_n f_n & u_n d_{n+1} - d_{n+1} u_{n+1}
+      \end{bmatrix} \,.
+\end{align*}
+We hence have for every~$n \in \Integer$ that
+\[
+  \left\{
+    \begin{array}{rcl}
+        u_n f_n - \id                 &=& d_{n+1} t_n + t_{n-1} d_n \,, \\
+        u_n d_{n+1} - d_{n+1} u_{n+1} &=& 0 \,.
+    \end{array}
+  \right.
+\]
+The second conditions tells us that~$u \defined (u_n)_{n \in \Integer}$ is a morphism of chain complexes~$u \colon \Dcc \to \Ccc$, and the first condition states that~$uf - \id$ is null homotopic in~$\Ch(\Acat)$, i.e.\ that~$uf = \id$ in the category~$\Homotopy(\Acat)$.
+
+
+\subsection{}
+
+Parts~(ii) and~(iii) show that every monomorphism in~$\Homotopy(\Acat)$ splits, hence that every kernel in~$\Homotopy(\Acat)$ splits.
+
+
+
+
+
