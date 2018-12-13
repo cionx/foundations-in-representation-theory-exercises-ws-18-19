@@ -40,7 +40,7 @@ are a null homotopy for~$fh$ because
         0 & -\id
       \end{bmatrix}
       \begin{bmatrix}
-        d_n &           \\
+        d_n & 0         \\
         f_n & -d_{n+1}
       \end{bmatrix}
 \\
@@ -64,7 +64,7 @@ for every~$n \in \Integer$.
 \subsection{}
 
 We know from the previous part of the exercise that~$hf$ is null homotpic in~$\Ch(\Acat)$, hence that~$hf = 0$ in~$\Homotopy(\Acat)$.
-It follows that~$h = 0$ in~$\Homotopy(\Acat)$ because~$f$ is a monomorphism in~$\Acat$, hence that~$h$ in null homotopic in~$\Ch(\Acat)$.
+It follows that~$h = 0$ in~$\Homotopy(\Acat)$ because~$f$ is a monomorphism in~$\Homotopy(\Acat)$, hence that~$h$ in null homotopic in~$\Ch(\Acat)$.
 
 
 
@@ -78,7 +78,7 @@ Let~$s$ be a null homotopy for the morphism~$h$, i.e.\ let~$s = (s_n)_{n \in \In
   = d_{n+1} s_n + s_{n-1} d_n
 \]
 for every~$n \in \Integer$.
-We may write every~$s_n$ as
+We may write every morphism~$s_n$ as
 \[
     s_n
   = \begin{bmatrix}
@@ -99,7 +99,7 @@ Then
       \end{bmatrix}
       +
       \begin{bmatrix}
-        t_{n-1} & u_n
+        t_{n-1} & -u_n
       \end{bmatrix}
       \begin{bmatrix}
         d_n &           \\
@@ -135,7 +135,12 @@ The second conditions tells us that~$u \defined (u_n)_{n \in \Integer}$ is a mor
 Parts~(ii) and~(iii) show that every monomorphism in~$\Homotopy(\Acat)$ splits, hence that every kernel in~$\Homotopy(\Acat)$ splits.
 Suppose that a kernel~$k \colon K \to \Integer/4$ of~$g$ in~$\Homotopy(\Acat)$ exists.
 
-The inclusion~$i \colon \Integer/2 \to \Integer/4$ satisfies~$gi = 0$, hence factors through~$k$ in~$\Homotopy(\Acat)$:
+The induced group homomorphism~$\Hl_0(k) \colon \Hl_0(K) \to \Integer/4$ is a section because~$k$ is a section.
+It follows from~$\Integer/4$ being indecomposable that either~$\Hl_0(k) = 0$ or that~$\Hl_0(k)$ is an isomorphism.
+We now show that neither can happen:
+
+We find that~$\Hl_n(k) \neq 0$:
+The inclusion~$i \colon \Integer/2 \to \Integer/4$ satisfies~$gi = 0$, hence factors through~$k$ in~$\Homotopy(\Acat)$.
 \[
   \begin{tikzcd}
       K
@@ -167,13 +172,10 @@ We get in the zeroeth homology the following induced commutative diagram:
     & {}
   \end{tikzcd}
 \]
-It follows from the commutativity of the triangle that~$\Hl_0(K) \neq 0$.
+Hence~$\Hl_0(K) \neq 0$ because~$i \neq 0$.
 
-We also have that~$\Hl_0(k) \colon \Hl_0(K) \to \Integer/4$ is a section because~$k$ is a section.
-It follows from~$\Integer/4$ being indecomposable that either~$\Hl_0(k) = 0$ or~$\Hl_0(k)$ is an isomorphism.
-We have just seen that~$\Hl_0(k) \neq 0$, so~$\Hl_0(k)$ is an isomorphism.
-
-But we get by taking the zeroeth homology of the commutative diagram
+But we also find that~$\Hl_0(k)$ is not an isomorphism:
+The zeroeth homology of the commutative diagram
 \[
   \begin{tikzcd}
       K
@@ -184,7 +186,7 @@ But we get by taking the zeroeth homology of the commutative diagram
     & \Integer/2
   \end{tikzcd}
 \]
-the following commutative diagram:
+is the following commutive diagram:
 \[
   \begin{tikzcd}[column sep = large]
       \Hl_0(K)
@@ -195,7 +197,7 @@ the following commutative diagram:
     & \Integer/2
   \end{tikzcd}
 \]
-This contradicts~$\Hl_0(k)$ being an isomorphism because~$g \neq 0$.
+It follows from~$g \neq 0$ that~$\Hl_0(k)$ is not an isomorphism.
 
 
 
