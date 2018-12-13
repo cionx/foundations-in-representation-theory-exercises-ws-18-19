@@ -127,9 +127,80 @@ We hence have for every~$n \in \Integer$ that
 The second conditions tells us that~$u \defined (u_n)_{n \in \Integer}$ is a morphism of chain complexes~$u \colon \Dcc \to \Ccc$, and the first condition states that~$uf - \id$ is null homotopic in~$\Ch(\Acat)$, i.e.\ that~$uf = \id$ in the category~$\Homotopy(\Acat)$.
 
 
+
+
+
 \subsection{}
 
 Parts~(ii) and~(iii) show that every monomorphism in~$\Homotopy(\Acat)$ splits, hence that every kernel in~$\Homotopy(\Acat)$ splits.
+Suppose that a kernel~$k \colon K \to \Integer/4$ of~$g$ in~$\Homotopy(\Acat)$ exists.
+
+The inclusion~$i \colon \Integer/2 \to \Integer/4$ satisfies~$gi = 0$, hence factors through~$k$ in~$\Homotopy(\Acat)$:
+\[
+  \begin{tikzcd}
+      K
+      \arrow{r}[above]{k}
+    & \Integer/4
+      \arrow{r}[above]{g}
+    & \Integer/2
+    \\
+      {}
+    & \Integer/2
+      \arrow[dashed]{ul}
+      \arrow{u}[right]{i}
+    & {}
+  \end{tikzcd}
+\]
+We get in the zeroeth homology the following induced commutative diagram:
+\[
+  \begin{tikzcd}[column sep = large]
+      \Hl_0(K)
+      \arrow{r}[above]{\Hl_0(k)}
+    & \Integer/4
+      \arrow{r}[above]{g}
+    & \Integer/2
+    \\
+      {}
+    & \Integer/2
+      \arrow[dashed]{ul}
+      \arrow{u}[right]{i}
+    & {}
+  \end{tikzcd}
+\]
+It follows from the commutativity of the triangle that~$\Hl_0(K) \neq 0$.
+
+We also have that~$\Hl_0(k) \colon \Hl_0(K) \to \Integer/4$ is a section because~$k$ is a section.
+It follows from~$\Integer/4$ being indecomposable that either~$\Hl_0(k) = 0$ or~$\Hl_0(k)$ is an isomorphism.
+We have just seen that~$\Hl_0(k) \neq 0$, so~$\Hl_0(k)$ is an isomorphism.
+
+But we get by taking the zeroeth homology of the commutative diagram
+\[
+  \begin{tikzcd}
+      K
+      \arrow{r}[above]{k}
+      \arrow[bend right]{rr}[below]{0}
+    & \Integer/4
+      \arrow{r}[above]{g}
+    & \Integer/2
+  \end{tikzcd}
+\]
+the following commutative diagram:
+\[
+  \begin{tikzcd}[column sep = large]
+      \Hl_0(K)
+      \arrow{r}[above]{\Hl_0(k)}
+      \arrow[bend right]{rr}[below]{0}
+    & \Integer/4
+      \arrow{r}[above]{g}
+    & \Integer/2
+  \end{tikzcd}
+\]
+This contradicts~$\Hl_0(k)$ being an isomorphism because~$g \neq 0$.
+
+
+
+
+
 
 
 
