@@ -1,19 +1,18 @@
 \section{}
 
-We show the stronger statement that~$P$ is projective if and only if both~$P'$ and~$P''$ are projective:
 We denote by~$i \colon P' \to P$ and~$j \colon P'' \to P$ the canonical morphisms belonging to the coproduct structure of~$P' \oplus P'' = P$.
 We then have for every morphism~$f \colon X \to Y$ in~$\Acat$ the following commutative square:
 \[
-  \begin{tikzcd}[ampersand replacement = \&, column sep = large]
+  \begin{tikzcd}[ampersand replacement = \&, sep = large]
         \Hom_{\Acat}(P, X)
         \arrow{r}[above]{f_*}
+        \arrow{d}[left]{\begin{bsmallmatrix} i^* \\ j^* \end{bsmallmatrix}}
     \&  \Hom_{\Acat}(P, Y)
+        \arrow{d}[right]{\begin{bsmallmatrix} i^* \\ j^* \end{bsmallmatrix}}
     \\
         \Hom_{\Acat}(P', X) \oplus \Hom_{\Acat}(P'', X)
-        \arrow{u}[left]{\begin{bsmallmatrix} i^* & j^* \end{bsmallmatrix}}
         \arrow{r}[below]{\begin{bsmallmatrix} f_* & 0 \\ 0 & f_* \end{bsmallmatrix}}
     \&  \Hom_{\Acat}(P', Y) \oplus \Hom_{\Acat}(P'', Y)
-        \arrow{u}[right]{\begin{bsmallmatrix} i^* & j^* \end{bsmallmatrix}}
   \end{tikzcd}
 \]
 The vertical arrows are isomorphisms by the universal property of the coproduct.
@@ -22,5 +21,5 @@ We have seen in the lecture that the object~$P$ is projective if and only if the
 It follows from the above commutative square with isomorphisms for vertical arrows that this holds if and only if both group homomorphisms~$f_* \colon \Hom_\Acat(P',X) \to \Hom_\Acat(P',Y)$ and~$f_* \colon \Hom_\Acat(P'',X) \to \Hom_\Acat(P'',Y)$ are surjective whenever~$f$ is an epimorphism.
 But this is what it means for both~$P'$ and~$P''$ to be projective.
 
-We find as the dual result that two objects~$I'$ and~$I''$ are injective in~$\Acat$ if and only if their biproduct~$I' \oplus I''$ is injective.
+We find as the dual result that two objects~$I'$ and~$I''$ in~$\Acat$ are injective if and only if their biproduct~$I' \oplus I''$ is injective.
 

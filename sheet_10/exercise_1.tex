@@ -42,10 +42,10 @@ As a counterexample we might consider for~$\Acat = \Modl{\Integer}$ the morphism
     & \dotsb
   \end{tikzcd}
 \]
-Here~$2\Integer \to \Integer$ is the inclusion and~$\Integer \to \Integer$ is the identit, and the vertical identity~$\Integer \to \Integer$ is in degree~$0$.
+Here~$2\Integer \to \Integer$ is the inclusion and~$\Integer \to \Integer$ is the identity, and the vertical identity~$\Integer \to \Integer$ is in degree~$0$.
 This morphism~$f$ is a monomorphism because it is a monomorphism in each degree.
 But the induced morphism~$\Hl_0(f)$ is not a monomorphism because~$\Hl_0(\Ccc) = \Integer/2$ but~$\Hl_0(\Dcc) = 0$.
-This shows that~$\Hl_0 \colon \Ch(\Modl{\Integer}) \to \Modl{\Integer}$ does not preserve monomorphisms, and is hence not left exact.
+This shows that~$\Hl_0 \colon \Ch(\Modl{\Integer}) \to \Modl{\Integer}$ does not preserve monomorphisms, and hence is not left exact.
 
 
 
@@ -78,7 +78,7 @@ The morphism~$\Hl_n(\id) = \id_{\Hl_n(\Ccc)}$ is an isomorphism of every~$n \in 
 
 The statement is \textbf{true}:
 Every~{\kvs}~$V$ is free, and hence projective by Exercise~4.
-We can therefore take the identity~$\id_V \colon V \to V$ to see that the category~$\Modl{k}$ has enough projectives.
+We can therefore use the identity~$\id_V \colon V \to V$ to see that the category~$\Modl{k}$ has enough projectives.
 
 
 
@@ -87,9 +87,9 @@ We can therefore take the identity~$\id_V \colon V \to V$ to see that the catego
 \subsection{}
 
 The statement is \textbf{false}:
-Consider the monomorphism~$\id \colon \Integer \to \Integer$ and the morphism~$g \colon \Integer \to \Integer$ given by~$g(n) = 2n$.
+Consider the morphism~$\id \colon \Integer \to \Integer$ and the monomorphism~$g \colon \Integer \to \Integer$ given by~$g(n) = 2n$.
 (This is a monomorphism because it is injective.)
-Then there does not exist an extension~$g' \colon \Integer \to \Integer$ that makes the triangle
+Then there does not exist an extension~$g' \colon \Integer \to \Integer$ of~$g$ that makes the triangle
 \[
   \begin{tikzcd}
       \Integer
@@ -102,15 +102,15 @@ Then there does not exist an extension~$g' \colon \Integer \to \Integer$ that ma
     & {}
   \end{tikzcd}
 \]
-commute, because then~$g'(1) \in \Integer$ would need to be a group element with
+commute, because~$g'(1) \in \Integer$ would need to be a group element with
 \[
     2 g'(1)
   = g'(2)
   = g'(g(1))
   = \id(1)
-  = 1 \,;
+  = 1 \,.
 \]
-but such an element does not exist.
+But such an element does not exist.
 
 
 
@@ -118,18 +118,18 @@ but such an element does not exist.
 
 \subsection{}
 
-The statement is \textbf{false} in its current form, because~$\Rational$ is not an object in the given category.
+The statement is \textbf{false} in its current form, because~$\Rational$ is not an object in the given category (because~$\Rational$ is not finitely generated as an abelian group).
 The original form of the problem, that~$\Rational$ is injective in the category~$\Ab$, is \textbf{true}:
 
 Let~$A$ be an abelian group, let~$g \colon A \to \Rational$ be a homomorphism and let~$f \colon A \to B$ be a monomorphism, i.e.\ an injective group homomorphism.
 We need to show that~$g$ extends to a group homomorphism~$g' \colon B \to \Rational$ along~$f$.
 For this we may assume w.l.o.g.\ that~$A$ is a subgroup of~$B$ and that~$f \colon A \to B$ is the canonical inclusion.
 
-We find with Zorn’s lemma that there exist a maximal extension~$\tilde{g} \colon \tilde{B} \to \Rational$ of~$g$, i.e.~$A \subseteq \tilde{B} \subseteq B$ is an intermediate group,~$\tilde{g} \colon \tilde{B} \to \Rational$ is an extension of~$g$, and~$\tilde{B}$ is maximal with this property.
+We find with Zorn’s lemma that there exists a maximal extension~$\tilde{g} \colon \tilde{B} \to \Rational$ of~$g$, i.e.~$A \subseteq \tilde{B} \subseteq B$ is an intermediate group,~$\tilde{g} \colon \tilde{B} \to \Rational$ is an extension of~$g$, and~$\tilde{B}$ is maximal with this property.
 
 Suppose that~$\tilde{B} \neq B$.
-Then there exist some~$x \in B$ with~$x \notin \tilde{B}$.
-We show for~$B' \defined \tilde{B} + \Integer x$ the homomorphism~$\tilde{g} \colon \tilde{B} \to \Rational$ can be extended to a homomorphism~$B' \to \Rational$.
+Then there exists some~$x \in B$ with~$x \notin \tilde{B}$.
+We show for~$B' \defined \tilde{B} + \Integer x$ that the homomorphism~$\tilde{g} \colon \tilde{B} \to \Rational$ can be extended to a homomorphism~$B' \to \Rational$.
 We distinguish between two cases:
 \begin{itemize}
   \item
@@ -142,8 +142,10 @@ We distinguish between two cases:
     for all~$\tilde{b} \in \tilde{B}$ and~$n \in \Integer$.
   \item
     Otherwise let~$n > 1$ be minimal such that~$nx \in \tilde{B}$.
+    (We do not have to consider the case~$n = 1$ because~$x \notin \tilde{B}$.)
     Then~$\tilde{B} \cap \Integer x = \Integer nx$, and we hence have a (right) exact sequence
-    \[
+    \begin{equation}
+      \label{right exact}
       \Integer
       \xlongto{\psi}
       \tilde{B} \oplus \Integer
@@ -151,7 +153,7 @@ We distinguish between two cases:
       B'
       \to
       0 \,,
-    \]
+    \end{equation}
     where~$\varphi(\tilde{b},k) = \tilde{b}+kx$ and~$\varphi(k) = k(nx,-n)$.
     It follows for the homomorphism
     \[
@@ -173,9 +175,9 @@ We distinguish between two cases:
       =
       \tilde{g}(nx) - \tilde{g}(nx)
       =
-      0 \,,
+      0 \,.
     \]
-    and hence that~$\tilde{g}'$ factors through a homomorphism~$g' \colon B' \to \Rational$ with
+    It follows from the right exactness of~\eqref{right exact} hat~$\tilde{g}'$ factors through a homomorphism~$g' \colon B' \to \Rational$ with
     \[
       g'(\tilde{b} + kx)
       =
@@ -185,7 +187,7 @@ We distinguish between two cases:
     This is the desired extension of~$\tilde{g}$ to~$B'$.
 \end{itemize}
 
-It follows from the maximality of the extension~$(\tilde{B}, \tilde{g})$ that already~$\tilde{B} = B'$, which contradicts~$x \notin \tilde{B}$.
+It follows from the maximality of the extension~$(\tilde{B}, \tilde{g})$ that already~$\tilde{B} = B'$, which contradicts~$x \notin \tilde{B}$ (but~$x \in B'$).
 We hence find that already~$\tilde{B} = B$, and hence that~$\tilde{g}$ is the desired extension of~$g$ onto~$B$.
 
 
@@ -196,5 +198,7 @@ We hence find that already~$\tilde{B} = B$, and hence that~$\tilde{g}$ is the de
 
 The statement ist \textbf{false}.
 We see in Exercise~4 that an abelian group (i.e.~{\module{$\Integer$}}) is projective if and only if it is a direct summand of a free abelian group.
-But free abelian groups are \dash{torsion}{free}, and hence also projective abelian groups are \dash{torsion}{free}, whereas~$\Integer/2$ is a nontrivial torsion group.
-This shows that~$\Integer/2$ is not projective.
+Free abelian groups are \dash{torsion}{free}, and hence projective abelian groups are also \dash{torsion}{free}. But~$\Integer/2$ is a nontrivial torsion group, and hence not projective.
+
+
+

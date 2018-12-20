@@ -6,7 +6,7 @@
 
 \subsection{}
 
-For an object~$X \in \Ob(\Acat)$ and any bounded chain complex~$\Ccc \in \Chh_{\geq 0}(\Acat)$, a morphism of chain complexes~$f \colon \Ccc \to I_0(X)$ corresponds to a choice of a morphism~$f_0 \colon C_0 \to X$ that makes the diagram
+For an object~$X \in \Ob(\Acat)$ and any bounded chain complex~$\Ccc \in \Ob(\Chh_{\geq 0}(\Acat))$, a morphism of chain complexes~$f \colon \Ccc \to I_0(X)$ corresponds to the choice of a morphism~$f_0 \colon C_0 \to X$ that makes the diagram
 \[
   \begin{tikzcd}
       {}
@@ -31,8 +31,8 @@ For an object~$X \in \Ob(\Acat)$ and any bounded chain complex~$\Ccc \in \Chh_{\
 \]
 commute.
 The commutativity of this diagram means that~$f_0 d_1 = 0$.
-Such morphisms are in~{\onetoone} correspondence to morphism~$\induced{f_0} \colon \coker(d_1) \to X$;
-the morphisms~$f_0$ and~$\induced{f_0}$ are related by the commutativity of the following triangle:
+Such morphisms are in~{\onetoone} correspondence to morphism~$\induced{f_0} \colon \coker(d_1) \to X$ through the universal property of the cokernel.
+The morphisms~$f_0$ and~$\induced{f_0}$ are more specifically related by the commutativity of the following triangle:
 \[
   \begin{tikzcd}
       C_0
@@ -45,13 +45,13 @@ the morphisms~$f_0$ and~$\induced{f_0}$ are related by the commutativity of the 
     & {}
   \end{tikzcd}
 \]
-We hence define the functor~$L \colon \Chh_{\geq }(\Acat)$ on objects by
+We hence define the functor~$L \colon \Chh_{\geq 0}(\Acat)$ on objects by
 \[
   L(\Ccc)
   =
-  \coker(d^{\,C}_1) \,,
+  \coker(d^{\,C}_1) \,.
 \]
-and for every morphism of chain complexes~$f \colon \Ccc \to \Dcc$ we let
+For every morphism of chain complexes~$f \colon \Ccc \to \Dcc$ we let
 \[
   L(f)
   \colon
@@ -63,13 +63,13 @@ be the unique morphism in~$\Acat$ that makes the square
 \[
   \begin{tikzcd}
       C_0
-      \arrow{r}
+      \arrow{r}[above]{p_{\Ccc}}
       \arrow{d}[left]{f_0}
     & L(\Ccc)
       \arrow[dashed]{d}[right]{L(f)}
     \\
       D_0
-      \arrow{r}
+      \arrow{r}[below]{p_{\Dcc}}
     & L(\Dcc)
   \end{tikzcd}
 \]
@@ -90,7 +90,7 @@ We have argued above as to why the map
 \end{align*}
 is a bijection.
 This bijection in natural in both~$\Ccc$ and~$X$:
-Let~$g \colon \Dcc \to \Ccc$ be a morphism of~\dash{$\Acat$}{valued} chain complexes and let~$h \colon X \to Y$ be a morphism in~$\Acat$.
+Let~$g \colon \Dcc \to \Ccc$ be a morphism of~\dash{$\Acat$}{valued} bounded chain complexes and let~$h \colon X \to Y$ be a morphism in~$\Acat$.
 Then the diagram
 \begin{equation}
   \label{equation: naturality square}
@@ -171,7 +171,7 @@ We may extend this commutative square to the following diagram:
     & Y
   \end{tikzcd}
 \]
-The four trapezoids commute by the construction of~$L$ and~$\induced{(-)}$.
+The four added trapezoids commute by the constructions of both~$L$ and~$\induced{(-)}$.
 It follows that the outer square commutes, because the morphism~$p_{\Dcc}$ is an epimorphsm and
 \begin{align*}
       \induced{ (I(h) \circ f \circ g)_0 } \circ p_{\Dcc}
@@ -185,7 +185,7 @@ This shows that
     \induced{ (I(h) \circ f \circ g)_0 }
   = h \circ \induced{f_0} \circ L(g) \,.
 \]
-This shows the desired commutativity of the square~\eqref{equation: naturality square}, and whence that the functor~$L$ is left adjoint to the functor~$I_0$.
+This proves the desired commutativity of the square~\eqref{equation: naturality square}, and whence that the functor~$L$ is left adjoint to the functor~$I_0$.
 
 \begin{remark}
   We have for every bounded chain complex~$\Ccc \in \Chh_{\geq 0}(\Acat)$ that
@@ -195,7 +195,7 @@ This shows the desired commutativity of the square~\eqref{equation: naturality s
     \Hl_0(\Ccc) \,.
   \]
   The desired left adjoint can therefore also be described as the zeroeth homology~$H_0$.
-  But the above explicit description of~$L(\Ccc)$ as~$\coker(d_1)$ works also for unbouded chain complexes, and hence gives a left adjoint~$\Ch(\Acat) \to \Acat$ of~$I_0 \colon \Acat \to \Ch(\Acat)$.
+  But the above explicit description of~$L(\Ccc)$ as~$\coker(d_1)$ works also for unbouded chain complexes, and hence also gives a left adjoint~$\Ch(\Acat) \to \Acat$ of~$I_0 \colon \Acat \to \Ch(\Acat)$.
 \end{remark}
 
 

@@ -16,14 +16,14 @@ This follows from part~\ref{characterization of projective modules} because~$A$ 
 \subsection{}
 \label{characterization of projective modules}
 
-Suppose first that~$F$ is a free~{\module{$A$}}.
-Let~$f \colon M \to N$ is an epimorphism of~{\modules{$A$}} and let~$g \colon F \to N$ be any homomorphism of~{\modules{$A$}}.
+We start by showing that every free~{\module{$A$}}~$F$ is projective:
+Let~$f \colon M \to N$ be an epimorphism of~{\modules{$A$}} and let~$g \colon F \to N$ be any homomorphism of~{\modules{$A$}}.
 There exists by assumption a basis~$(b_i)_{i \in I}$ of~$F$, and for every~$i \in I$ an element~$m_i \in M$ with~$f(m_i) = g(b_i)$.
 It follows for the unique homomorphism of~{\modules{$A$}}~$g' \colon F \to M$ with~$g'(b_i) = m_i$ for every~$i \in I$ that
 \[
     f(g'(b_i))
   = f(m_i)
-  = g(m_i)
+  = g(b_i)
 \]
 for every~$i \in I$, and hence that~$f \circ g' = g$.
 This means that the triangle
@@ -40,10 +40,10 @@ This means that the triangle
   \end{tikzcd}
 \]
 commutes.
-This shows that~$F$ is projective, and hence that every free module is projective.
+This shows that~$F$ is projective.
 
 It follows that direct summands of free modules are again projective, because direct summands of projective modules are again projective.
-(As known from the lecture and shown in Exercise~2.)
+(As known from Exercise~2.)
 
 Suppose on the other hand that~$P$ is a projective~{\module{$A$}}.
 Then there exists for the free~{\module{$A$}~$F$ with basis~$(b_p)_{p \in P}$ a unique homomorphism of~{\modules{$A$}}~$f \colon F \to P$ with~$f(b_p) = p$ for every~$p \in P$.
