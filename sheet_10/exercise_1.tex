@@ -88,6 +88,7 @@ We can therefore take the identity~$\id_V \colon V \to V$ to see that the catego
 
 The statement is \textbf{false}:
 Consider the monomorphism~$\id \colon \Integer \to \Integer$ and the morphism~$g \colon \Integer \to \Integer$ given by~$g(n) = 2n$.
+(This is a monomorphism because it is injective.)
 Then there does not exist an extension~$g' \colon \Integer \to \Integer$ that makes the triangle
 \[
   \begin{tikzcd}
@@ -107,7 +108,7 @@ commute, because then~$g'(1) \in \Integer$ would need to be a group element with
   = g'(2)
   = g'(g(1))
   = \id(1)
-  = 1 \,,
+  = 1 \,;
 \]
 but such an element does not exist.
 
@@ -115,8 +116,77 @@ but such an element does not exist.
 
 
 
-\addtocounter{subsection}{1}
-% TODO: Type this part after the next lecture.
+\subsection{}
+
+The statement is \textbf{false} in its current form, because~$\Rational$ is not an object in the given category.
+The original form of the problem, that~$\Rational$ is injective in the category~$\Ab$, is \textbf{true}:
+
+Let~$A$ be an abelian group, let~$g \colon A \to \Rational$ be a homomorphism and let~$f \colon A \to B$ be a monomorphism, i.e.\ an injective group homomorphism.
+We need to show that~$g$ extends to a group homomorphism~$g' \colon B \to \Rational$ along~$f$.
+For this we may assume w.l.o.g.\ that~$A$ is a subgroup of~$B$ and that~$f \colon A \to B$ is the canonical inclusion.
+
+We find with Zorn’s lemma that there exist a maximal extension~$\tilde{g} \colon \tilde{B} \to \Rational$ of~$g$, i.e.~$A \subseteq \tilde{B} \subseteq B$ is an intermediate group,~$\tilde{g} \colon \tilde{B} \to \Rational$ is an extension of~$g$, and~$\tilde{B}$ is maximal with this property.
+
+Suppose that~$\tilde{B} \neq B$.
+Then there exist some~$x \in B$ with~$x \notin \tilde{B}$.
+We show for~$B' \defined \tilde{B} + \Integer x$ the homomorphism~$\tilde{g} \colon \tilde{B} \to \Rational$ can be extended to a homomorphism~$B' \to \Rational$.
+We distinguish between two cases:
+\begin{itemize}
+  \item
+    If~$\tilde{B} \cap \Integer x = 0$ then~$B' = \tilde{B} \oplus \Integer x$.
+    We can then choose the extension~$g'$ as
+    \[
+        g'(\tilde{b} + nx)
+      = \tilde{g}(\tilde{b})
+    \]
+    for all~$\tilde{b} \in \tilde{B}$ and~$n \in \Integer$.
+  \item
+    Otherwise let~$n > 1$ be minimal such that~$nx \in \tilde{B}$.
+    Then~$\tilde{B} \cap \Integer x = \Integer nx$, and we hence have a (right) exact sequence
+    \[
+      \Integer
+      \xlongto{\psi}
+      \tilde{B} \oplus \Integer
+      \xlongto{\varphi}
+      B'
+      \to
+      0 \,,
+    \]
+    where~$\varphi(\tilde{b},k) = \tilde{b}+kx$ and~$\varphi(k) = k(nx,-n)$.
+    It follows for the homomorphism
+    \[
+      \tilde{g}'
+      \colon
+      \tilde{B} \oplus \Integer
+      \to
+      \Rational \,,
+      \quad
+      (\tilde{b},k)
+      \mapsto
+      \tilde{g}(\tilde{b}) + k \frac{\tilde{g}(nx)}{n}
+    \]
+    that~$\tilde{g}' \circ \psi = 0$ because
+    \[
+      \tilde{g}'(nx,-n)
+      =
+      \tilde{g}(nx) - n \frac{\tilde{g}(nx)}{n}
+      =
+      \tilde{g}(nx) - \tilde{g}(nx)
+      =
+      0 \,,
+    \]
+    and hence that~$\tilde{g}'$ factors through a homomorphism~$g' \colon B' \to \Rational$ with
+    \[
+      g'(\tilde{b} + kx)
+      =
+      \tilde{g}(\tilde{b}) + k \frac{\tilde{g}(nx)}{n}
+    \]
+    for all~$\tilde{b} \in \tilde{B}$ and~$k \in \Integer$.
+    This is the desired extension of~$\tilde{g}$ to~$B'$.
+\end{itemize}
+
+It follows from the maximality of the extension~$(\tilde{B}, \tilde{g})$ that already~$\tilde{B} = B'$, which contradicts~$x \notin \tilde{B}$.
+We hence find that already~$\tilde{B} = B$, and hence that~$\tilde{g}$ is the desired extension of~$g$ onto~$B$.
 
 
 
