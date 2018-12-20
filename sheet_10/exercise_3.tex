@@ -1,1 +1,230 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+For an object~$X \in \Ob(\Acat)$ and any bounded chain complex~$\Ccc \in \Chh_{\geq 0}(\Acat)$, a morphism of chain complexes~$f \colon \Ccc \to I_0(X)$ corresponds to a choice of a morphism~$f_0 \colon C_0 \to X$ that makes the diagram
+\[
+  \begin{tikzcd}
+      {}
+      \arrow{r}
+    & C_2
+      \arrow{r}[above]{d_2}
+      \arrow[dashed]{d}
+    & C_1
+      \arrow{r}[above]{d_1}
+      \arrow[dashed]{d}
+    & C_0
+      \arrow[dashed]{d}[right]{f_0}
+    \\
+      {}
+      \arrow{r}
+    & 0
+      \arrow{r}
+    & 0
+      \arrow{r}
+    & X
+  \end{tikzcd}
+\]
+commute.
+The commutativity of this diagram means that~$f_0 d_1 = 0$.
+Such morphisms are in~{\onetoone} correspondence to morphism~$\induced{f_0} \colon \coker(d_1) \to X$;
+the morphisms~$f_0$ and~$\induced{f_0}$ are related by the commutativity of the following triangle:
+\[
+  \begin{tikzcd}
+      C_0
+      \arrow{r}[above]{f_0}
+      \arrow{d}[left]{p_{\Ccc}}
+    & X
+      \\
+      \coker(d_1)
+      \arrow[dashed]{ur}[below right]{\induced{f_0}}
+    & {}
+  \end{tikzcd}
+\]
+We hence define the functor~$L \colon \Chh_{\geq }(\Acat)$ on objects by
+\[
+  L(\Ccc)
+  =
+  \coker(d^{\,C}_1) \,,
+\]
+and for every morphism of chain complexes~$f \colon \Ccc \to \Dcc$ we let
+\[
+  L(f)
+  \colon
+  \coker(d^{\,C}_1)
+  \to
+  \coker(d^{\,C}_1)
+\]
+be the unique morphism in~$\Acat$ that makes the square
+\[
+  \begin{tikzcd}
+      C_0
+      \arrow{r}
+      \arrow{d}[left]{f_0}
+    & L(\Ccc)
+      \arrow[dashed]{d}[right]{L(f)}
+    \\
+      D_0
+      \arrow{r}
+    & L(\Dcc)
+  \end{tikzcd}
+\]
+commute.
+(That this defines a functor follows from the functoriality of the cokernel.)
+
+We have argued above as to why the map
+\begin{align*}
+  \varphi_{\Ccc,X}
+  \colon
+  \Hom_{\Chh_{\geq 0}(\Acat)}(\Ccc, I_0(X))
+  &\to
+  \Hom_{\Acat}(L(\Ccc), X)  \,,
+  \\
+  f
+  &\mapsto
+  \induced{f_0}
+\end{align*}
+is a bijection.
+This bijection in natural in both~$\Ccc$ and~$X$:
+Let~$g \colon \Dcc \to \Ccc$ be a morphism of~\dash{$\Acat$}{valued} chain complexes and let~$h \colon X \to Y$ be a morphism in~$\Acat$.
+Then the diagram
+\begin{equation}
+  \label{equation: naturality square}
+  \begin{tikzcd}[column sep = 6em]
+      \Hom_{\Chh_{\geq 0}(\Acat)}(\Ccc, I_0(X))
+      \arrow{r}[above]{I_0(h) \circ (-) \circ g}
+      \arrow{d}[left]{\varphi_{\Ccc,X}}
+    & \Hom_{\Chh_{\geq 0}(\Acat)}(\Dcc, I_0(Y))
+      \arrow{d}[right]{\varphi_{\Dcc,Y}}
+    \\
+      \Hom_{\Acat}(L(\Ccc), X)
+      \arrow{r}[below]{h \circ (-) \circ L(g)}
+    & \Hom_{\Acat}(L(\Dcc), Y)
+  \end{tikzcd}
+\end{equation}
+commutes.
+Indeed, it follows for every morphism~$f \in \Hom_{\Chh_{\geq 0}(\Acat)}(\Ccc, I_0(X))$ from the commutativity of the square
+\[
+  \begin{tikzcd}[column sep = huge]
+      \Ccc
+      \arrow{r}[above]{f}
+    & I_0(X)
+      \arrow{d}[right]{I_0(h)}
+    \\
+      \Dcc
+      \arrow{u}[left]{g}
+      \arrow{r}[below]{I_0(h) \circ f \circ g}
+    & I_0(Y)
+  \end{tikzcd}
+\]
+that in degree~$0$ the following square commutes:
+\[
+  \begin{tikzcd}[column sep = huge]
+      C_0
+      \arrow{r}[above]{f_0}
+    & X
+      \arrow{d}[right]{h}
+    \\
+      D_0
+      \arrow{u}[left]{g_0}
+      \arrow{r}[below]{(I(h) \circ f \circ g)_0}
+    & Y
+  \end{tikzcd}
+\]
+We may extend this commutative square to the following diagram:
+\[
+  \begin{tikzcd}[column sep = huge]
+      L(\Ccc)
+      \arrow{rrr}[above]{\induced{f_0}}
+    & {}
+    & {}
+    & X
+      \arrow{ddd}[right]{h}
+    \\
+      {}
+    & C_0
+      \arrow{ul}[below left]{p_{\Ccc}}
+      \arrow{r}[above]{f_0}
+    & X
+      \arrow[equal]{ur}
+      \arrow{d}[right]{h}
+    & {}
+    \\
+      {}
+    & D_0
+      \arrow{dl}[above left]{p_{\Dcc}}
+      \arrow{u}[left]{g_0}
+      \arrow{r}[below]{(I(h) \circ f \circ g)_0}
+    & Y
+      \arrow[equal]{dr}
+    & {}
+    \\
+      L(\Dcc)
+      \arrow{uuu}[left]{L(g)}
+      \arrow{rrr}[below]{\induced{(I(h) \circ f \circ g)_0}}
+    & {}
+    & {}
+    & Y
+  \end{tikzcd}
+\]
+The four trapezoids commute by the construction of~$L$ and~$\induced{(-)}$.
+It follows that the outer square commutes, because the morphism~$p_{\Dcc}$ is an epimorphsm and
+\begin{align*}
+      \induced{ (I(h) \circ f \circ g)_0 } \circ p_{\Dcc}
+   =  (I(h) \circ f \circ g)_0
+  &=  h \circ f_0 \circ g_0 \\
+  &=  h \circ \induced{f_0} \circ p_{\Ccc} \circ g_0
+   =  h \circ \induced{f_0} \circ L(g) \circ p_{\Dcc}
+\end{align*}
+This shows that
+\[
+    \induced{ (I(h) \circ f \circ g)_0 }
+  = h \circ \induced{f_0} \circ L(g) \,.
+\]
+This shows the desired commutativity of the square~\eqref{equation: naturality square}, and whence that the functor~$L$ is left adjoint to the functor~$I_0$.
+
+\begin{remark}
+  We have for every bounded chain complex~$\Ccc \in \Chh_{\geq 0}(\Acat)$ that
+  \[
+    \coker(d_1)
+    =
+    \Hl_0(\Ccc) \,.
+  \]
+  The desired left adjoint can therefore also be described as the zeroeth homology~$H_0$.
+  But the above explicit description of~$L(\Ccc)$ as~$\coker(d_1)$ works also for unbouded chain complexes, and hence gives a left adjoint~$\Ch(\Acat) \to \Acat$ of~$I_0 \colon \Acat \to \Ch(\Acat)$.
+\end{remark}
+
+
+
+
+
+\subsection{}
+
+This follows from part~(i) by duality.
+The right adjoint~$R \colon \CChh^{\geq 0}(\Acat)$ of the functor~$I^0$ is given on objects by
+\[
+    R(\Cccc)
+  = \ker(d_C^0) \,,
+\]
+and assigns to every morphism~$f \colon \Cccc \to \Dccc$ of (bounded) cochain complexes the unique morphism~$\ker(d_C^0) \to \ker(d_D^0)$ that makes the square
+\[
+  \begin{tikzcd}
+      \ker(d_C^0)
+      \arrow{r}
+      \arrow[dashed]{d}[left]{R(f)}
+    & C^0
+      \arrow{d}[right]{f^0}
+    \\
+      \ker(d_D^0)
+      \arrow{r}
+    & D^0
+  \end{tikzcd}
+\]
+commute.
+
+
+
