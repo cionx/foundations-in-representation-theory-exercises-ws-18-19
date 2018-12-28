@@ -1,4 +1,196 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\addtocounter{subsection}{1}
+
+
+
+
+
+\subsection{}
+
+We have the following commutative diagram with (short) exact columns, in which the first two rows are (long) exact:
+\[
+  \begin{tikzcd}
+      {}
+    & 0
+      \arrow{d}
+    & 0
+      \arrow{d}
+    & 0
+      \arrow{d}
+    & 0
+      \arrow{d}
+    & {}
+    \\
+      \dotsb
+      \arrow{r}
+    & 0
+      \arrow{r}
+      \arrow{d}
+    & X
+      \arrow{r}[above]{a^0}
+      \arrow{d}[left]{\id_X}
+    & A^0
+      \arrow{r}
+      \arrow{d}
+    & A^1
+      \arrow{r}
+      \arrow{d}
+    & \dotsb
+    \\
+      \dotsb
+      \arrow{r}
+    & 0
+      \arrow{r}
+      \arrow{d}
+    & X
+      \arrow{r}[above]{i^0}
+      \arrow{d}
+    & I^0
+      \arrow{r}
+      \arrow{d}
+    & I^1
+      \arrow{r}
+      \arrow{d}
+    & \dotsb
+    \\
+      \dotsb
+      \arrow{r}
+    & 0
+      \arrow{r}
+      \arrow{d}
+    & 0
+      \arrow{r}
+      \arrow{d}
+    & B^0
+      \arrow{r}
+      \arrow{d}
+    & B^1
+      \arrow{r}
+      \arrow{d}
+    & \dotsb
+    \\
+      {}
+    & 0
+    & 0
+    & 0
+    & 0
+    & {}
+  \end{tikzcd}
+\]
+We regard the rows of this diagram as chain complexes and the overall diagram as a short exact sequence of these chain complexes.
+The upper two rows are acyclic, hence the third row is acyclic by part~(i) of Exercise~2 of Exercise~sheet~8.
+
+
+
+
+
+\subsection{}
+
+We have for every~$n \geq 0$ a short exact sequence
+\[
+  0
+  \to
+  A^n
+  \to
+  I^n
+  \to
+  B^n
+  \to
+  0 \,.
+\]
+The object~$A^n$ is~\dash{$F$}{acyclic} and the object~$I^n$ is injective, and hence also~\dash{$F$}{acyclic}.
+It follows from part~(i) of Exercise~5 that~$B^n$ is also~\dash{$F$}{acyclic}.
+
+
+
+
+
+\subsection{}
+
+We have for every~$n \geq 0$ the short exact sequence
+\[
+  0
+  \to
+  A^n
+  \to
+  I^n
+  \to
+  B^n
+  \to
+  0
+\]
+of~\dash{$F$}{acyclic} objects.
+It follows from part~(i) of Exercise~5 that the sequence
+\[
+  0
+  \to
+  F(A^n)
+  \to
+  F(I^n)
+  \to
+  F(B^n)
+  \to
+  0
+\]
+is again (short) exact for every~$n \geq 0$.
+This shows the exactness of the sequence
+\[
+  0 
+  \to
+  F(\Accc)
+  \to
+  F(\Iccc)
+  \to
+  F(\Bccc)
+  \to
+  0
+\]
+because this exactness is computed degreewise.
+
+
+
+
+
+\subsection{}
+
+We get from the short exact sequence~$0 \to F(\Accc) \to F(\Iccc) \to F(\Bccc) \to 0$ the long exact cohomology sequence
+\[
+  \dotsb
+  \to
+  \Hl^{n-1}(F(\Bccc))
+  \to
+  \Hl^n(F(\Accc))
+  \to
+  \Hl^n(F(\Iccc))
+  \to
+  \Hl^n(F(\Bccc))
+  \to
+  \dotsb
+\]
+The chain complex~$\Bccc$ is exact and consists of~\dash{$F$}{acyclic} objects, hence the chain complex~$F(\Bccc)$ is again exact by part~(iii) of Exercise~5.
+We therefore have~$\Hl^n(F(\Bccc)) = 0$ for every~$n$.
+We therefore have for every~$n \geq 0$ an exact sequence
+\[
+  0
+  \to
+  \Hl^n(F(\Accc))
+  \to
+  \Hl^n(F(\Iccc))
+  \to
+  0 \,,
+\]
+which tells us that the morphism~$\Hl^n(F(\Accc)) \to \Hl^n(F(\Iccc))$ is an isomorphism.
+We have that~$\Hl^n(F(\Iccc)) \cong (\Right^n F)(X)$ for every~$n \geq 0$ by the explicit computation of~$(\Right^n F)(X)$ via an injective resolution of~$X$.
+
+
+
+
+
 
 
 
