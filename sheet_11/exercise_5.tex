@@ -1,4 +1,91 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+The short exact sequence~$0 \to A' \to A \to A'' \to 0$ results in a long exact sequence
+\[
+  0
+  \to
+  F(A')
+  \to
+  F(A)
+  \to
+  F(A'')
+  \to
+  (\Right^1 F)(A')
+  \to
+  (\Right^1 F)(A'')
+  \to
+  \dotsb
+\]
+We have for every~$n \geq 1$ that~$(\Right^n F)(A') = 0$ and~$(\Right^n F)(A) = 0$ because the objects~$A'$ and~$A$ are~\dash{$F$}{acyclic}.
+We find for every~$n \geq 1$ from the exactness of the sequence
+\[
+  0
+  \to
+  \Right^n(A'')
+  \to
+  0
+\]
+that~$\Right^n(A'') = 0$, which shows that~$A''$ is also~\dash{$F$}{acyclic}.
+We also find that the sequence
+\[
+  0
+  \to
+  F(A')
+  \to
+  F(A)
+  \to
+  F(A'')
+  \to
+  0
+\]
+is again exact.
+
+
+
+
+
+\subsection{}
+
+We set~$A^n \defined 0$ for every~$n < 0$.
+It follows from the exactness of the sequence
+\[
+  \dotsb
+  \to
+  A^{n-1}
+  \to
+  A^n
+  \to
+  A^{n+1}
+  \to
+  \dotsb
+\]
+that we have for every~$n \in \Integer$ a short exact sequence
+\[
+  0
+  \to
+  Z^n
+  \to
+  A^n
+  \to
+  Z^{n+1}
+  \to
+  0 \,.
+\]
+We have for every~$n < 0$ that~$Z^n = 0$, and hence that~$Z^n$ is~\dash{$F$}{acyclic}.
+If~$Z^n$ is acyclic then we get from the above short exact sequence and part~(i) of this exercise that~$Z^{n+1}$ is also~\dash{$F$}{acyclic}, since then both~$Z^n$ and~$A^n$ are~\dash{$F$}{acyclic}.
+Whence we find inductively that~$Z^n$ is~\dash{$F$}{acyclic} for every~$n \in \Integer$.
+
+
+
+
+
+\addtocounter{subsection}{1}
 
 
 
