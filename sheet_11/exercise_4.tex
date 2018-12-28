@@ -1,4 +1,206 @@
-\addtocounter{section}{1}
+\section{}
+
+We assume that the given quiver~$Q$ has only finitely many vertices and arrows.
+We abbreviate~$A \defined kQ$.
+Instead of representations of~$Q$ over~$k$ we will work with~{\modules{$A$}}.
+Then~$X_i = \varepsilon_i X$ for every~{\module{$A$}}~$X$.
+
+
+
+
+
+\addtocounter{subsection}{1}
+
+
+
+
+
+\subsection{}
+
+We have for every vertex~$i \in Q_0$ that~$P(i) = A \varepsilon_i$
+It follows that
+\[
+    A
+  = \bigoplus_{i \in Q_0} A \varepsilon_i
+  = \bigoplus_{i \in Q_0} P(i)
+\]
+because~$Q_* = \coprod_{i \in Q_0} Q_* \varepsilon_i$, as~$Q_* \varepsilon_i$ is the set of all paths in~$Q$ starting in the vertex~$i$.
+This shows that the~{\modules{$A$}} are direct summands of the free~{\module{$A$}}~$A$, and hence projective.
+
+
+
+
+
+\addtocounter{subsection}{-2}
+\subsection{}
+
+We have for every~{\module{$A$}} an isomorphism of~{\kvss}
+\[
+  \Phi_2
+  \colon
+  \Hom_A(A, X)
+  \to
+  X \,,
+  \quad
+  f
+  \mapsto
+  f(1) \,.
+\]
+The~{\module{$A$}[$A$]} structure of~$A$ leads to a left~{\module{$A$}} structure on~$\Hom_A(A,X)$ given by
+\[
+    (a.f)(a')
+  = f(a'a)
+\]
+for all~$a \in A$,~$f \in \Hom_A(A,X)$ and~$a' \in A$.
+The above isomorphism of~{\kvs} is then an isomorphism of (left)~{\modules{$A$}} because
+\[
+    (a \cdot f)(1)
+  = f(1 \cdot a)
+  = f(a \cdot 1)
+  = a \cdot f(1)
+\]
+for all~$a \in A$ and~$f \in \Hom_A(A,X)$.
+
+The decomposition~$A = \bigoplus_{i \in Q_0} P(i)$ of~{\modules{$A$}} results in a decomposition
+\[
+  \Hom_A(A,X)
+  =
+  \Hom_A\left( \bigoplus_{i \in Q_0} P(i), X \right)
+  \cong
+  \bigoplus_{i \in Q_0} \Hom_A(P(i), X)
+\]
+of~{\kvss}.
+The isomorphism
+\[
+  \Phi_1
+  \colon
+  \bigoplus_{i \in Q_0} \Hom_A(P(i), X)
+  \to
+  \Hom_A(A,X)
+\]
+is explicitely given by
+\[
+  \Phi_1((f_i)_{i \in Q_0})
+  =
+  \sum_{i \in Q_0} (f_i \circ \pi_i)
+  =
+  \sum_{i \in Q_0} \pi_i^*(f_i)
+\]
+where~$\pi_i \colon A \to P(i)$ denotes the projection along the decomposition~$A = \bigoplus_{i \in I}$.
+This projection~$\pi_i$ is given by right multiplication with the idempotent~$\varepsilon_i$.
+The complete isomorphism of~{\kvss}
+\[
+  \Phi
+  \defined
+  \Phi_2 \circ \Phi_1
+  \colon
+  \bigoplus_{i \in Q_0} \Hom_A(P(i), X)
+  \to
+  X
+\]
+is therefore given by
+\[
+    \Phi((f_i)_{i \in I})
+  = \Phi_2(\Phi_1( (f_i)_{i \in I} ) )
+  = \left( \sum_{i \in Q_0} \pi_i^*(f_i) \right)(1)
+  = \sum_{i \in Q_0} f(\pi_i(1))
+  = \sum_{i \in Q_0} f_i(\varepsilon_i)
+\]
+for every~$(f_i)_{i \in I} \in \bigoplus_{i \in I} \Hom_A(P(i), X)$.
+The restriction
+\[
+  \Hom_A(P(j), X)
+  \inclusion
+  \bigoplus_{i \in Q_0} \Hom_A(P(i), X)
+  \xlongto{\Phi}
+  X
+\]
+is therefore given by
+\[
+  f
+  \mapsto
+  f(\varepsilon_i) \,.
+\]
+We note that
+\[
+  f(\varepsilon_i)
+  =
+  f(\varepsilon_i^2)
+  =
+  \varepsilon_i f(\varepsilon_i)
+  \in
+  \varepsilon_i X
+  =
+  X_i
+\]
+for every~$f \in \Hom_A(P(i), X)$.
+This means that the isomorphism~$\Phi$ maps the direct summand~$\Hom_A(P(i), X)$ into the direct summand~$X_i$ of~$X$.
+It follows that the resulting restriction
+\[
+  \Hom_A(P(i), X)
+  \to
+  X_i \,,
+  \quad
+  f
+  \mapsto
+  f(\varepsilon_i)
+\]
+is an isomorphism.
+
+
+
+
+
+\addtocounter{subsection}{1}
+\subsection{}
+
+The quiver~$Q$ admits only finitely many paths because~$Q$ has only finitely many arrows and no oriented cycles.
+It follows that~$kQ$ is {\fd}, and hence that every~$P(i)$ (which is a direct summand of~$kQ$) is {\fd}.
+We also find that
+\[
+    \End_A(P(i))
+  = \Hom_A(P(i),P(i))
+  = P(i)_i
+\]
+has as a basis the set
+\[
+    Q_*(i,i)
+  = \{
+      p \in Q_*
+    \suchthat
+      s(p) = i = t(p)
+    \}
+  = \{
+      \text{oriented cycles at~$i$}
+    \}
+    \cup
+    \{ \varepsilon_i \}
+  = \{
+      \varepsilon_i
+    \} \,.
+\]
+This shows that the~{\kalg}~$\End_A(P(i))$ is \dash{one}{dimensional}, which reveals to us that~$\End_A(P(i)) \cong k$ as~{\kalgs}.%
+\footnote{Here we use that for every \dash{one}{dimensional}~{\kalg}~$B$ the map~$k \to B$,~$\lambda \to \lambda \cdot 1_B$ is an isomorphism of~{\kalgs}, and hence that~$B \cong k$ as~{\kalgs}. }
+
+
+
+
+
+\subsection{}
+
+If~$M$ is a decomposable~{\module{$A$}} then there exists a decomposition~$M = N \oplus P$ into two nonzero submodules~$N$ and~$P$ of~$M$.
+The projection~$e \colon M \to M$ onto~$N$ along the decomposition~$M = N \oplus P$ is then an idempotent in~$\End_A(M)$ with
+\[
+  \im(e) = N
+  \quad\text{and}\quad
+  \ker(e) = P \,.
+\]
+It follows from~$N \neq 0$ that~$e \neq 0$, and from~$P \neq M$ that~$e \neq \id_M$.
+We hence see that~$\End_A(M)$ contains a \dash{non}{trivial} idempotent if~$M$ is decomposable.%
+\footnote{This construction does in fact give a bijection between the direct sum decompositions~$M = N \oplus P$ of~$M$ and the idempotents in the endomorphism ring~$\End_A(M)$.}
+
+We have seen in the previous part of the exercise that~$\End_A(P(i)) = k$ as~{\kalgs}.
+The field~$k$ contains no \dash{non}{trivial} idemponents, and hence~$P(i)$ is indecomposable.
 
 
 
