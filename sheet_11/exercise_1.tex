@@ -1,4 +1,97 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\begin{lemma}
+  Let~$F \colon \Acat \to \Bcat$ be an exact functor between abelian categories~$\Acat$ and~$\Bcat$.
+  Then~$F$ respects exact sequences, i.e.\ if
+  \[
+    X'
+    \xlongto{f}
+    X
+    \xlongto{g}
+    X''
+  \]
+  is an exact sequence in~$\Acat$, then the resulting sequence
+  \[
+    F(X')
+    \xlongto{F(f)}
+    F(X)
+    \xlongto{F(g)}
+    F(X'')
+  \]
+  in~$\Bcat$ is again exact.
+\end{lemma}
+
+
+\begin{proof}
+  It follows from the exactness of the functor~$F$ that it is both left exact and right exact.
+  Hence~$F$ respects both kernels and cokernels.
+  Therefore~$F$ respect both images and coimages.
+  We have that
+  \[
+      F(g) \circ F(f)
+    = F(g \circ f)
+    = F(0)
+    = 0
+  \]
+  because~$F$ is additive, and we find from the above discussion that the induced canonical morphism~$\im(F(f)) \to \ker(F(g))$ in~$\Bcat$ is the image of the canonical morphism~$\im(f) \to \ker(g)$ in~$\Acat$ under the functor~$F$.
+  Since~$\im(f) \to \ker(g)$ is an isomorphism the same holds for~$\im(F(f)) \to \ker(F(g))$ (because the functor~$F$ respects isomorphisms).
+\end{proof}
+
+
+\begin{corollary}
+  If~$F \colon \Acat \to \Bcat$ is an exact functor between abelian categories~$\Acat$ and~$\Bcat$, then for every long exact sequence
+  \[
+    \dotsb
+    \to
+    X_{i-1}
+    \to
+    X_i
+    \to
+    X_{i+1}
+    \to
+    \dotsb
+  \]
+  in~$\Acat$, the resulting sequence
+  \[
+    \dotsb
+    \to
+    F(X_{i-1})
+    \to
+    F(X_i)
+    \to
+    F(X_{i+1})
+    \to
+    \dotsb
+  \]
+  in~$\Bcat$ is again exact.
+  \qed
+\end{corollary}
+
+We find that if~$\Tdeltac \colon \Acat \to \Bcat$ is a (cohomological)~{\deltafun} given by
+\[
+  \Tdeltac
+  =
+  ( (T^n)_{n \geq 0}, (\delta^n_\xi)_{n \geq 0, \xi} )
+\]
+and~$F \colon \Bcat \to \Ccat$ is an exact functor, where~$\Acat$,~$\Bcat$ and~$\Ccat$ are abelian categories, then
+\[
+  F \circ \Tdeltac
+  \defined
+  ( (F \circ T^n)_{n \geq 0}, (F(\delta^n_\xi))_{n \geq 0, \xi} )
+\]
+is a~{\deltafun}~$\Acat \to \Ccat$.
+
+We are now prepared for the exercise:
+The functor~$G \circ F$ is again left exact because both~$G$ and~$F$ are left exact.
+We find that~$G \circ (\Rightdelta F)$ is a cohomological~{\deltafun}~$\Acat \to \Ccat$ with~$G \circ T^0 \cong G \circ F$ because~$T^0 \cong F$.
+The functors~$T^n$ with~$n \geq 1$ annihilate the injective objects of~$\Acat$, hence the functors~$G \circ T^n$ annihilate these injectives.
+This means (as seen in the lecture) that~$G \circ (\Rightdelta F)$ is a universal~{\deltafun}.
+This shows that~$G \circ (\Rightdelta F)$ is a right derived functor of~$G \circ F$.
+
 
 
 
