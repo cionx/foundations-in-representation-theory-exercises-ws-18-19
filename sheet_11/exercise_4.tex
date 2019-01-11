@@ -1,6 +1,6 @@
 \section{}
 
-We assume that the given quiver~$Q$ has only finitely many vertices and arrows.
+We assume that the given quiver~$Q$ has only finitely many vertices (so that the path algebra~$kQ$ is unital) and finitely many arrows (which is needed in part~(iii) for~$P(i)$ to be finite).
 We abbreviate~$A \defined kQ$.
 Instead of representations of~$Q$ over~$k$ we will work with~{\modules{$A$}}.
 Then~$X_i = \varepsilon_i X$ for every~{\module{$A$}}~$X$.
@@ -24,8 +24,8 @@ It follows that
   = \bigoplus_{i \in Q_0} A \varepsilon_i
   = \bigoplus_{i \in Q_0} P(i)
 \]
-because~$Q_* = \coprod_{i \in Q_0} Q_* \varepsilon_i$, as~$Q_* \varepsilon_i$ is the set of all paths in~$Q$ starting in the vertex~$i$.
-This shows that the~{\modules{$A$}} are direct summands of the free~{\module{$A$}}~$A$, and hence projective.
+because the basis~$Q_*$ of~$A$ decomposes as~$Q_* = \coprod_{i \in Q_0} Q_* \varepsilon_i$, with~$Q_* \varepsilon_i$ being a basis of~$P(i)$.
+This shows that the~{\modules{$A$}}~$P(i)$ are direct summands of the free~{\module{$A$}}~$A$, and hence projective.
 
 
 
@@ -154,13 +154,13 @@ is an isomorphism.
 \addtocounter{subsection}{1}
 \subsection{}
 
-The quiver~$Q$ admits only finitely many paths because~$Q$ has only finitely many arrows and no oriented cycles.
-It follows that~$kQ$ is {\fd}, and hence that every~$P(i)$ (which is a direct summand of~$kQ$) is {\fd}.
+The quiver~$Q$ admits only finitely many paths because~$Q$ contains only finitely many arrows and no oriented cycles.
+It follows that the path algebra~$A$ is {\fd}, and hence that every module~$P(i)$ (which is a direct summand of~$A$) is {\fd}.
 We also find that
 \[
-    \End_A(P(i))
-  = \Hom_A(P(i),P(i))
-  = P(i)_i
+        \End_A(P(i))
+  =     \Hom_A(P(i),P(i))
+  \cong P(i)_i
 \]
 has as a basis the set
 \[
@@ -179,8 +179,8 @@ has as a basis the set
       \varepsilon_i
     \} \,.
 \]
-This shows that the~{\kalg}~$\End_A(P(i))$ is \dash{one}{dimensional}, which reveals to us that~$\End_A(P(i)) \cong k$ as~{\kalgs}.%
-\footnote{Here we use that for every \dash{one}{dimensional}~{\kalg}~$B$ the map~$k \to B$,~$\lambda \to \lambda \cdot 1_B$ is an isomorphism of~{\kalgs}, and hence that~$B \cong k$ as~{\kalgs}. }
+This shows that the~{\kalg}~$\End_A(P(i))$ is \dash{one}{dimensional}, which reveals to us that~$\End_A(P(i)) = k$ as~{\kalgs}.%
+\footnote{Here we use that for every \dash{one}{dimensional}~{\kalg}~$B$ the unique morphism of~{\kalgs}~$k \to B$, that is given by~$\lambda \to \lambda \cdot 1_B$, is an isomorphism of~{\kalgs}.}
 
 
 
@@ -189,15 +189,15 @@ This shows that the~{\kalg}~$\End_A(P(i))$ is \dash{one}{dimensional}, which rev
 \subsection{}
 
 If~$M$ is a decomposable~{\module{$A$}} then there exists a decomposition~$M = N \oplus P$ into two nonzero submodules~$N$ and~$P$ of~$M$.
-The projection~$e \colon M \to M$ onto~$N$ along the decomposition~$M = N \oplus P$ is then an idempotent in~$\End_A(M)$ with
+The projection~$e \colon M \to M$ onto~$N$ along the decomposition~$M = N \oplus P$ is then an idempotent in the~{\kalg}~$\End_A(M)$ with
 \[
   \im(e) = N
   \quad\text{and}\quad
   \ker(e) = P \,.
 \]
 It follows from~$N \neq 0$ that~$e \neq 0$, and from~$P \neq M$ that~$e \neq \id_M$.
-We hence see that~$\End_A(M)$ contains a \dash{non}{trivial} idempotent if~$M$ is decomposable.%
-\footnote{This construction does in fact give a bijection between the direct sum decompositions~$M = N \oplus P$ of~$M$ and the idempotents in the endomorphism ring~$\End_A(M)$.}
+We hence see that the endomorphism algebra~$\End_A(M)$ contains a \dash{non}{trivial} idempotent if the module~$M$ is decomposable.%
+\footnote{This construction does in fact give a bijection between the direct sum decompositions~$M = N \oplus P$ of~$M$ and the idempotents in the endomorphism algebra~$\End_A(M)$.}
 
 We have seen in the previous part of the exercise that~$\End_A(P(i)) = k$ as~{\kalgs}.
 The field~$k$ contains no \dash{non}{trivial} idemponents, and hence~$P(i)$ is indecomposable.

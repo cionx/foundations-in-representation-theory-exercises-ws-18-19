@@ -37,8 +37,8 @@
     = F(0)
     = 0
   \]
-  because~$F$ is additive, and we find from the above discussion that the induced canonical morphism~$\im(F(f)) \to \ker(F(g))$ in~$\Bcat$ is the image of the canonical morphism~$\im(f) \to \ker(g)$ in~$\Acat$ under the functor~$F$.
-  Since~$\im(f) \to \ker(g)$ is an isomorphism the same holds for~$\im(F(f)) \to \ker(F(g))$ (because the functor~$F$ respects isomorphisms).
+  because~$F$ is additive, and we find from the above discussion that the induced canonical morphism~$\im(F(f)) \to \ker(F(g))$ in~$\Bcat$ is given by the image of the canonical morphism~$\im(f) \to \ker(g)$ in~$\Acat$ under the functor~$F$.
+  Since~$\im(f) \to \ker(g)$ is an isomorphism the same follows for~$\im(F(f)) \to \ker(F(g))$ (because the functor~$F$ respects isomorphisms).
 \end{proof}
 
 
@@ -55,7 +55,7 @@
     \to
     \dotsb
   \]
-  in~$\Acat$, the resulting sequence
+  in~$\Acat$ the resulting sequence
   \[
     \dotsb
     \to
@@ -71,26 +71,26 @@
   \qed
 \end{corollary}
 
-We find that if~$\Tdeltac \colon \Acat \to \Bcat$ is a (cohomological)~{\deltafun} given by
+We find that if~$\Tdeltac \colon \Acat \to \Bcat$ is a cohomological~{\deltafun} given by
 \[
   \Tdeltac
   =
   ( (T^n)_{n \geq 0}, (\delta^n_\xi)_{n \geq 0, \xi} )
 \]
-and~$F \colon \Bcat \to \Ccat$ is an exact functor, where~$\Acat$,~$\Bcat$ and~$\Ccat$ are abelian categories, then
+and if~$F \colon \Bcat \to \Ccat$ is an exact functor, where~$\Acat$,~$\Bcat$ and~$\Ccat$ are abelian categories, then
 \[
   F \circ \Tdeltac
   \defined
   ( (F \circ T^n)_{n \geq 0}, (F(\delta^n_\xi))_{n \geq 0, \xi} )
 \]
 is a~{\deltafun}~$\Acat \to \Ccat$.
+If the category~$\Acat$ has enough injectives and~$\Tdeltac$ is universal, then~$F \circ \Tdeltac$ is again universal.
+This holds because the~{\deltafuns}~$\Tdeltac$ and~$F \circ \Tdeltac$ are universal if and only if the functors~$T^n$ (resp.~$F \circ T^n$) annihilate all injective objects for every~$n \geq 1$.
 
 We are now prepared for the exercise:
 The functor~$G \circ F$ is again left exact because both~$G$ and~$F$ are left exact.
 We find that~$G \circ (\Rightdelta F)$ is a cohomological~{\deltafun}~$\Acat \to \Ccat$ with~$G \circ T^0 \cong G \circ F$ because~$T^0 \cong F$.
-The functors~$T^n$ with~$n \geq 1$ annihilate the injective objects of~$\Acat$, hence the functors~$G \circ T^n$ annihilate these injectives.
-This means (as seen in the lecture) that~$G \circ (\Rightdelta F)$ is a universal~{\deltafun}.
-This shows that~$G \circ (\Rightdelta F)$ is a right derived functor of~$G \circ F$.
+The~{\deltafun}~$\Rightdelta F$ is universal, and hence~$G \circ (\Rightdelta F)$ are universal as seen above.
 
 
 
