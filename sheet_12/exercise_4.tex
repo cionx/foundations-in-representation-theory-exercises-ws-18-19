@@ -1,5 +1,112 @@
-\addtocounter{section}{1}
+\section{}
 
 
+
+
+
+\subsection{}
+
+We can use the standard projective resolution (from Theorem~6.11 in the lecture).
+
+
+
+
+
+\subsection{}
+
+The short exact sequence
+\[
+  0
+  \to
+  P(2)^{\oplus 2}
+  \to
+  P(1) \oplus P(2)^{\oplus 2}
+  \to
+  M
+  \to
+  0
+\]
+results in a long exact sequence
+\[
+  \begin{tikzcd}[column sep = 0.9em, cramped]
+      0
+      \arrow{r}
+    & \End(M)
+      \arrow{r}
+      \arrow[d, phantom, ""{coordinate, name=Z}]
+    & \Hom(P(1) \oplus P(2)^{\oplus 2}, M)
+      \arrow{r}
+    & \Hom(P(2)^{\oplus 2}, M)
+      \arrow[ dll,
+              rounded corners,
+              to path={ -- ([xshift=2ex]\tikztostart.east)
+                        |- (Z) \tikztonodes
+                        -| ([xshift=-2ex]\tikztotarget.west)
+                        -- (\tikztotarget)}
+            ]
+    \\
+      {}
+    & (\Right^1 \Hom(-,M))(M)
+      \arrow{r}
+    & (\Right^1 \Hom(-,M))(P(1) \oplus P(2)^{\oplus 2})
+      \arrow{r}
+    & \cdots
+  \end{tikzcd}
+\]
+The representation~$P(1) \oplus P(2)^{\oplus 2}$ is again projective, whence
+\[
+  (\Right^1 \Hom(-,M))(P(1) \oplus P(2)^{\oplus 2})
+  =
+  0 \,.
+\]
+We therefore have the exact sequence
+\[
+  \begin{tikzcd}[column sep = 1em, row sep = small]
+      0
+      \arrow{r}
+    & \End(M)
+      \arrow{r}
+      \arrow[d, phantom, ""{coordinate, name=Z1}]
+    & \Hom(P(1) \oplus P(2)^{\oplus 2}, M)
+      \arrow{r}
+    & \Hom(P(2)^{\oplus 2}, M)
+      \arrow[ dll,
+              rounded corners,
+              to path={ -- ([xshift=2ex]\tikztostart.east)
+                        |- (Z1) \tikztonodes
+                        -| ([xshift=-2ex]\tikztotarget.west)
+                        -- (\tikztotarget)}
+            ]
+    \\
+      {}
+    & (\Right^1 \Hom(-,M))(M)
+      \arrow{r}
+    & 0
+    & {}
+  \end{tikzcd}
+\]
+It follows that
+\begin{align*}
+  {}&
+  \dim (\Right^1 \Hom(-,M))(M)
+  \\
+  ={}&
+  \dim \Hom(P(2)^{\oplus 2}, M)
+  -
+  \dim \Hom(P(1) \oplus P(2)^{\oplus 2}, M)
+  +
+  \dim
+  \End(M)
+  \\
+  ={}&
+  2 \dim M_2
+  -
+  (\dim M_1 + 2 \dim M_2)
+  +
+  \dim \End(M)
+  \\
+  ={}&
+  \dim \End(M) - 1 \,.
+\end{align*}
 
 
