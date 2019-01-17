@@ -1,5 +1,203 @@
-\addtocounter{section}{1}
+\section{}
+
+
+We observe that~$A \cong \Integer[\Integer/n]$ is a free~\dash{$\Integer$}{module} with basis~$1, t, \dotsc, t^{n-1}$.
+We will denote the powers of~$t$ in~$A$ both as~$t^i$ with~$i \in \Natural$ and~$t^i$ with~$i \in \Integer/n$, where~$t^{[i]} \defined t^i$ for every~$[i] \in \Integer/n$.
+For such a linear combination~$\sum_{i=0}^{n-1} a_i t^i$ with~$a_i \in \Integer$ we also set~$a_{[i]} \defined a_i$ for every~$[i] \in \Integer/n$, so that
+\[
+  \sum_{i=0}^{n-1} a_i t^i
+  =
+  \sum_{i \in \Integer/n} a_i t^i \,.
+\]
 
 
 
 
+
+\subsection{}
+
+We have
+\[
+  q (1-t)
+  =
+  (1 + t + \dotsb + t^{n-1}) (1-t)
+  =
+  1 - t^n
+  =
+  0
+\]
+which shows that
+\[
+  \dotsb
+  \to
+  A
+  \xlongto{1-t}
+  A
+  \xlongto{q}
+  A
+  \xlongto{1-t}
+  A
+\]
+is a complex.
+The~{\module{$A$}}~$A$ is free and hence projective.
+
+
+
+
+
+\subsection{}
+
+We have for every~$a \in A$ with~$x = \sum_{i=0}^{n-1} a_i t^i$ that
+\begin{align*}
+  qx
+  =
+  \left( \sum_{i \in \Integer/n} t^i \right)
+  \left( \sum_{j \in \Integer/n} a_j t^j \right)
+  &=
+  \sum_{i,j \in \Integer/n} a_j t^{i+j}
+  =
+  \sum_{i',j \in \Integer/n} a_j t^{i'}
+  \\
+  &=
+  \left( \sum_{ j \in \Integer/n } a_j \right)
+  \left( \sum_{ k \in \Integer/n } t^k \right)
+  =
+  \left( \sum_{ j \in \Integer/n } a_j \right)
+  q \,.
+\end{align*}
+It follows that
+\[
+  qx = 0
+  \iff
+  \sum_{i=0}^{n-1} a_i = 0 \,.
+\]
+This means that for~$qx = 0$ we may write the tupel~$(a_0, \dotsc, a_{n-1}) \in \Integer^n$ is a linear combination of~$e_0 - e_1, \dotsc, e_{n-2} - e_{n-1})$, say
+\[
+  (a_0, \dotsc, a_{n-1})
+  =
+  b_0 (e_0 - e_1) + \dotsb + b_{n-2} (e_{n-2} - e_{n-1}) \,.
+\]
+It follows that
+\[
+  x
+  =
+  \sum_{i=0}^{n-1} a_i t^i
+  =
+  \sum_{j=0}^{n-2} b_j (t^j - t^{j+1})
+  =
+  \sum_{j=0}^{n-2} b_j t^j (1-t)
+  =
+  \left( \sum_{j=0}^{n-2} b_j t^j \right) (1 - t) \,.
+\]
+This shows the exactness at~$P_{2n}$ for~$n > 0$.
+
+We also have that
+\begin{align*}
+  (1-t)x
+  &=
+  (1-t) \sum_{i \in \Integer/n} a_i t^i
+  =
+  \sum_{i \in \Integer/n} a_i t^i - \sum_{i \in \Integer/n} a_i t^{i+1}
+  \\
+  &=
+  \sum_{i \in \Integer/n} a_i t^i - \sum_{i \in \Integer/n} a_{i-1} t^i
+  =
+  \sum_{i \in \Integer/n} (a_i - a_{i-1}) t^i
+\end{align*}
+and therefore that
+\[
+  (1-t)x = 0
+  \iff
+  a_0 = \dotsb = a_{n-1} \,.
+\]
+This shows that for~$(1-t)x = 0$ there exists some~$a \in \Integer$ with~$x = a q$, which gives the exactness at~$P_{2n+1}$ for~$n \geq 0$.
+
+
+
+
+
+\subsection{}
+
+The map~$p_0$ is surjective because~$p_0(n) = n$ for every~$n \in \Integer$.
+It is also~\dash{$A$}{linear} because it is additive (i.e.~\dash{$\Integer$}{linear}) with
+\[
+  p_0(tx)
+  =
+  p_0(x)
+  =
+  t p_0(x)
+\]
+for every~$x \in A$.
+
+We have for~$x = \sum_{i \in \Integer/n} a_i t^i \in A$ that~$x \in \ker(p_0)$ if and only if~$\sum_{i \in \Integer/n} a_i = 0$.
+We have seen above that this is equivalent to~$qx = 0$.
+The exactness at~$P_0$ does therefore follow from the exactness of~$A \xto{1-t} A \xto{q} A$.
+
+
+
+
+
+\subsection{}
+
+We use the constructed projective resolution
+\[
+  \underbrace{
+  \dotsb
+  \to
+  A
+  \xlongto{q}
+  A
+  \xlongto{1-t}
+  A
+  \xlongto{q}
+  A
+  \xlongto{1-t}
+  A
+  }_{\Pcc}
+  \xlongto{p_0}
+  \Integer
+  \to
+  0 \,.
+\]
+By applying the functor~$- \otimes_A \Integer$ we get the chain complex
+\[
+  \Pcc \otimes_A \Integer
+  =
+  \bigl(
+  \dotsb
+  \to
+  A \otimes_A \Integer
+  \xlongto{q}
+  A \otimes_A \Integer
+  \xlongto{1-t}  
+  A \otimes_A \Integer
+  \xlongto{q}
+  A \otimes_A \Integer
+  \xlongto{1-t}
+  A \otimes_A \Integer
+  \bigr)  \,,
+\]
+which is isomorphic to the chain complex
+\[
+  \dotsb
+  \to
+  \Integer
+  \xlongto{n}
+  \Integer
+  \xlongto{0}
+  \Integer
+  \xlongto{n}
+  \Integer
+  \xlongto{0}
+  \Integer \,.
+\]
+By taking the homology of this chain complex we find that
+\[
+  (\Left^i (- \otimes_A \Integer))(\Integer)
+  \cong
+  \begin{cases}
+    \Integer    & \text{for~$i = 0$}  \,, \\
+    \Integer/n  & \text{for~$i \geq 1$ odd} \,, \\
+    0           & \text{for~$i \geq 2$ even}  \,.
+  \end{cases}
+\]
