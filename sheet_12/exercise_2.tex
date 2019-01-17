@@ -1,4 +1,312 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+Let~$A$ be an abelian group.
+Then there exists for any sufficiently large index set~$I$ a surjective group homomorphism~$p_0 \colon \Integer^{\oplus I} \to A$.
+The kernel~$\ker(p_0) \subseteq \Integer^{\oplus I}$ is again free abelian (because subgroups of free abelian groups are again free abelian).
+Hence~$\ker(p_0) \cong \Integer^{\oplus J}$ for some suitable index set~$J$.
+We get an exact sequence
+\begin{equation}
+  \label{short projective resolution for ab}
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer^{\oplus J}
+  \to
+  \Integer^{\oplus I}
+  \xlongto{p_0}
+  A
+  \to
+  0 \,.
+\end{equation}
+The abelian groups~$P_0 \defined \Integer^{\oplus I}$ and~$P_1 \defined \Integer^{\oplus J}$ are projective since they are free abelian.
+The exact sequence~\eqref{short projective resolution for ab} is therefore a projective resolution for~$A$ as desired.
+
+
+
+
+
+\subsection{}
+
+For~$n = 0$ the abelian group~$\Integer/n = \Integer$ has the projective resolution
+\[
+  \underbrace{
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer
+  }_{\Pcc}
+  \xlongto{\id}
+  \Integer
+  \to
+  0 \,.
+\]
+The resulting chain complex
+\[
+  \Hom_\Integer(\Pcc, \Integer/m)
+  =
+  \bigl(
+    \Hom_\Integer(\Integer,\Integer/m)
+    \to
+    0
+    \to
+    0
+    \to
+    \dotsb
+  \bigr)
+\]
+is isomorphic to the chain complex
+\[
+  \Integer/m
+  \to
+  0
+  \to
+  0
+  \to
+  \dotsb
+\]
+By taking the cohomology of this cochain complex we find that
+\[
+  ( \Right^i \Hom_\Integer(-,\Integer/m) )(\Integer)
+  \cong
+  \begin{cases}
+    \Integer/m  & \text{for~$i = 0$}  \,, \\
+    0           & \text{for~$i > 0$}  \,.
+  \end{cases}
+\]
+
+For~$n \neq 0$ the abelian group~$\Integer/n$ has the projective resolution
+\[
+  \underbrace{
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer
+  \xlongto{n}
+  \Integer
+  }_{\Pcc}
+  \xlongto{p_0}
+  \Integer/n
+  \to
+  0 \,.
+\]
+The resulting chain complex
+\[
+  \Hom_\Integer(\Pcc, \Integer/m)
+  =
+  \bigl(
+    \Hom_\Integer(\Integer,\Integer/m)
+    \xlongto{n}
+    \Hom_\Integer(\Integer,\Integer/m)
+    \to
+    0
+    \to
+    0
+    \to
+    \dotsb
+  \bigr)
+\]
+is isomorphic to the chain complex
+\[
+  \Integer/m
+  \xlongto{n}
+  \Integer/m
+  \to
+  0
+  \to
+  0
+  \to
+  \dotsb
+\]
+By taking the zeroeth cohomology of this cochain complex we find that
+\begin{align*}
+  ( \Right^0 \Hom_\Integer(-,\Integer/m) )(\Integer/n)
+  &\cong
+  \{
+  x \in \Integer/m
+  \suchthat
+  nx = 0  
+  \}
+  \\
+  &=
+  \text{\dash{$n$}{torsion} of~$\Integer/m$}
+  \\
+  &=
+  \text{\dash{$\gcd(n,m)$}{torsion} of~$\Integer/m$}
+  \cong
+  \begin{cases}
+    \Integer/\gcd(n,m)  & \text{if~$m \neq 0$}  \,, \\
+    0                   & \text{if~$m = 0$}     \,.
+  \end{cases}
+\end{align*}
+By taking the first cohomology we find that
+\[
+  ( \Right^1 \Hom_\Integer(-,\Integer/m) )(\Integer/n)
+  \cong
+  n \cdot \Integer/m
+  =
+  \gcd(n,m) \cdot \Integer/m
+  \cong
+  \Integer/\lcm(n,m) \,.
+\]
+We also find that
+\[
+  ( \Right^i \Hom_\Integer(-,\Integer/m) )(\Integer/n)
+  = 0
+\]
+for every~$i \geq 2$.
+
+
+
+
+
+\subsection{}
+
+For~$n = 0$ the abelian group~$\Integer/n = \Integer$ has the projective resolution
+\[
+  \underbrace{
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer
+  }_{\Pcc}
+  \xlongto{\id}
+  \Integer
+  \to
+  0 \,.
+\]
+The resulting chain complex
+\[
+  \Pcc \tensor_\Integer (\Integer/m)
+  =
+  \bigl(
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer \tensor_\Integer (\Integer/m)
+  \bigr)
+\]
+is isomophic to the chain complex
+\[
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer/m \,.
+\]
+By taking the homology of this chain complex we find that
+\[
+  ( \Left^i (- \tensor_\Integer (\Integer/m)) )(\Integer)
+  \cong
+  \begin{cases}
+    \Integer/m  & \text{for~$i = 0$}  \,, \\
+    0           & \text{for~$i > 0$}  \,.
+  \end{cases}
+\]
+
+For~$n \neq 0$ the abelian group~$\Integer/n$ has the projective resolution
+\[
+  \underbrace{
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer
+  \xlongto{n}
+  \Integer
+  }_{\Pcc}
+  \xlongto{p_0}
+  \Integer/n
+  \to
+  0 \,.
+\]
+The resulting chain complex
+\[
+  \Pcc \tensor_\Integer (\Integer/m)
+  =
+  \bigl(
+    \dotsb
+    \to
+    0
+    \to
+    0
+    \to
+    \Integer \tensor_\Integer (\Integer/m)
+    \xlongto{n}
+    \Integer \tensor_\Integer (\Integer/m)
+  \bigr)
+\]
+is isomorphic to the chain complex
+\[
+  \dotsb
+  \to
+  0
+  \to
+  0
+  \to
+  \Integer/m
+  \xlongto{n}
+  \Integer/m \,.
+\]
+We find as before that
+\[
+  ( \Left^0 (- \tensor_\Integer (\Integer/m)) )(\Integer/n)
+  \cong
+  n \cdot \Integer/m
+  =
+  \gcd(n,m) \cdot \Integer/m
+  \cong
+  \Integer/\lcm(n,m)
+\]
+and
+\begin{align*}
+  ( \Left^1 (- \tensor_\Integer (\Integer/m)) )(\Integer/n)
+  &\cong
+  \{
+  x \in \Integer/m
+  \suchthat
+  nx = 0  
+  \}
+  \\
+  &=
+  \text{\dash{$n$}{torsion} of~$\Integer/m$}
+  \\
+  &\cong
+  \begin{cases}
+    \Integer/\gcd(n,m)  & \text{if~$m \neq 0$}  \,, \\
+    0                   & \text{if~$m = 0$}     \,,
+  \end{cases}
+\end{align*}
+as well as
+\[
+  ( \Right^i \Hom_\Integer(-,\Integer/m) )(\Integer/n)
+  = 0
+\]
+for every~$i \geq 2$.
 
 
 
