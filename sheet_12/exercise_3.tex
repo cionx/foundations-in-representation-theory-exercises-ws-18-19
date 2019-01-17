@@ -2,7 +2,7 @@
 
 
 We observe that~$A \cong \Integer[\Integer/n]$ is a free~\dash{$\Integer$}{module} with basis~$1, t, \dotsc, t^{n-1}$.
-We will denote the powers of~$t$ in~$A$ both as~$t^i$ with~$i \in \Natural$ and~$t^i$ with~$i \in \Integer/n$, where~$t^{[i]} \defined t^i$ for every~$[i] \in \Integer/n$.
+We will denote the powers of~$t$ in~$A$ as both~$t^i$ with~$i \in \Natural$ and~$t^i$ with~$i \in \Integer/n$, where~$t^{[i]} \defined t^i$ for every~$[i] \in \Integer/n$.
 For such a linear combination~$\sum_{i=0}^{n-1} a_i t^i$ with~$a_i \in \Integer$ we also set~$a_{[i]} \defined a_i$ for every~$[i] \in \Integer/n$, so that
 \[
   \sum_{i=0}^{n-1} a_i t^i
@@ -31,6 +31,8 @@ which shows that
   \dotsb
   \to
   A
+  \xlongto{q}
+  A
   \xlongto{1-t}
   A
   \xlongto{q}
@@ -47,20 +49,20 @@ The~{\module{$A$}}~$A$ is free and hence projective.
 
 \subsection{}
 
-We have for every~$a \in A$ with~$x = \sum_{i=0}^{n-1} a_i t^i$ that
+We have for every~$x \in A$ with~$x = \sum_{i=0}^{n-1} a_i t^i$ that
 \begin{align*}
   qx
   =
-  \left( \sum_{i \in \Integer/n} t^i \right)
-  \left( \sum_{j \in \Integer/n} a_j t^j \right)
+  \sum_{i \in \Integer/n} t^i
+  \sum_{j \in \Integer/n} a_j t^j
   &=
   \sum_{i,j \in \Integer/n} a_j t^{i+j}
   =
-  \sum_{i',j \in \Integer/n} a_j t^{i'}
+  \sum_{j \in \Integer/n} a_j \sum_{i \in \Integer/n} t^{i+j}
   \\
   &=
-  \left( \sum_{ j \in \Integer/n } a_j \right)
-  \left( \sum_{ k \in \Integer/n } t^k \right)
+  \sum_{ j \in \Integer/n } a_j
+  \sum_{ k \in \Integer/n } t^k
   =
   \left( \sum_{ j \in \Integer/n } a_j \right)
   q \,.
@@ -71,7 +73,7 @@ It follows that
   \iff
   \sum_{i=0}^{n-1} a_i = 0 \,.
 \]
-This means that for~$qx = 0$ we may write the tupel~$(a_0, \dotsc, a_{n-1}) \in \Integer^n$ is a linear combination of~$e_0 - e_1, \dotsc, e_{n-2} - e_{n-1})$, say
+This means that for~$qx = 0$ we may write the tupel~$(a_0, \dotsc, a_{n-1}) \in \Integer^n$ as a linear combination of~$e_0 - e_1, \dotsc, e_{n-2} - e_{n-1}$, say
 \[
   (a_0, \dotsc, a_{n-1})
   =
@@ -85,9 +87,7 @@ It follows that
   =
   \sum_{j=0}^{n-2} b_j (t^j - t^{j+1})
   =
-  \sum_{j=0}^{n-2} b_j t^j (1-t)
-  =
-  \left( \sum_{j=0}^{n-2} b_j t^j \right) (1 - t) \,.
+  \sum_{j=0}^{n-2} b_j t^j (1-t)  \,.
 \]
 This shows the exactness at~$P_{2n}$ for~$n > 0$.
 

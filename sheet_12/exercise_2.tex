@@ -10,7 +10,7 @@ Let~$A$ be an abelian group.
 Then there exists for any sufficiently large index set~$I$ a surjective group homomorphism~$p_0 \colon \Integer^{\oplus I} \to A$.
 The kernel~$\ker(p_0) \subseteq \Integer^{\oplus I}$ is again free abelian (because subgroups of free abelian groups are again free abelian).
 Hence~$\ker(p_0) \cong \Integer^{\oplus J}$ for some suitable index set~$J$.
-We get an exact sequence
+This gives an exact sequence
 \begin{equation}
   \label{short projective resolution for ab}
   \dotsb
@@ -85,6 +85,7 @@ By taking the cohomology of this cochain complex we find that
     0           & \text{for~$i > 0$}  \,.
   \end{cases}
 \]
+(One can also see this by using that~$\Right^0 \Hom_\Integer(-,\Integer/m) \cong \Hom_\Integer(-,\Integer/m)$, and also that~$(\Right^i \Hom_\Integer(-,\Integer/m))(\Integer) = 0$ for~$i > 0$ because~$\Integer$ is free abelian and hence projective in~$\Ab$.)
 
 For~$n \neq 0$ the abelian group~$\Integer/n$ has the projective resolution
 \[
@@ -225,6 +226,7 @@ By taking the homology of this chain complex we find that
     0           & \text{for~$i > 0$}  \,.
   \end{cases}
 \]
+(One can also proceed as above, using that~$\Left^0 (- \tensor_\Integer (\Integer/m)) \cong (- \tensor_\Integer (\Integer/m))$ and that~$(\Left^i (- \tensor_\Integer (\Integer/m)))(\Integer) = 0$ for~$i > 0$ because~$\Integer$ is free abelian and hence projective in~$\Ab$.
 
 For~$n \neq 0$ the abelian group~$\Integer/n$ has the projective resolution
 \[

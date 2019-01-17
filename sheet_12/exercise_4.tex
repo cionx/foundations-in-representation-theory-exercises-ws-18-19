@@ -6,7 +6,7 @@
 
 \subsection{}
 
-We can use the standard projective resolution (from Theorem~6.11 in the lecture).
+We can use the (very explicit) standard projective resolution (from Theorem~6.11).
 
 
 
@@ -88,7 +88,7 @@ We therefore have the exact sequence
 It follows that
 \begin{align*}
   {}&
-  \dim (\Right^1 \Hom(-,M))(M)
+  \dim {(\Right^1 \Hom(-,M))(M)}
   \\
   ={}&
   \dim \Hom(P(2)^{\oplus 2}, M)
@@ -106,7 +106,21 @@ It follows that
   \dim \End(M)
   \\
   ={}&
-  \dim \End(M) - 1 \,.
+  \dim \End(M) - 1 \,,
 \end{align*}
+where we use that
+\[
+  \Hom(N_1 \oplus N_2, M)
+  \cong
+  \Hom(N_1, M) \oplus \Hom(N_2, M)
+\]
+for any two representations~$N_1$ and~$N_2$, and
+\[
+  \Hom(P(i), M)
+  \cong
+  M_i
+\]
+for every~$i \in Q_0$.
+
 
 
