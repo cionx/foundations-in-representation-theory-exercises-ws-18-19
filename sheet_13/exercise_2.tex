@@ -1,4 +1,118 @@
-\addtocounter{section}{1}
+\section{}
+
+
+
+
+
+\subsection{}
+
+The abelian groups~$\Rational$ and~$\Rational/\Integer$ are divisible and hence injective (by Baer’s criterion).
+We find that
+\[
+  \Integer
+  \to
+  \underbrace{
+  \Rational
+  \to
+  \Rational/\Integer
+  \to
+  0
+  \to
+  0
+  \to
+  \dotsb
+  }_{\Iccc}
+\]
+is an injective resolution of~$\Integer$ in~$\Ab$.
+
+
+
+
+
+\subsection{}
+
+For~$n = 0$ the functor
+\[
+  \Hom_\Integer(\Integer, -)
+  \cong
+  \Id_{\Ab}
+\]
+is exact, hence
+\[
+  \Right^i \Hom_\Integer(\Integer, -)
+  \cong
+  \begin{cases}
+    \Id_{\Ab} & \text{for~$i = 0$}  \,, \\
+    0         & \text{for~$i > 0$}  \,.
+  \end{cases}
+\]
+We have in particular that
+\[
+  ( \Right^i \Hom_\Integer(\Integer, -) )(\Integer)
+  \cong
+  \begin{cases}
+    \Integer  & \text{for~$i = 0$}  \,, \\
+    0         & \text{for~$i > 0$}  \,.
+  \end{cases}
+\]
+
+Now let~$n > 0$.
+The cochain complex
+\[
+  \Hom_\Integer(\Integer/n, \Iccc)
+  =
+  \bigl(
+  \Hom_\Integer(\Integer/n, \Rational)
+  \to
+  \Hom_\Integer(\Integer/n, \Rational/\Integer)
+  \to
+  0
+  \to
+  0
+  \to
+  \dotsb
+  \bigr)
+\]
+is isomorphic to the cochain complex
+\begin{equation}
+  \label{induced cochain complex}
+  0
+  \to
+  \Integer/n
+  \to
+  0
+  \to
+  0
+  \to
+  \dotsb
+\end{equation}
+Here we used that
+\[
+  \Hom_\Integer(\Integer/n, \Rational)
+  \cong
+  \text{\dash{$n$}{torsion} of~$\Rational$}
+  =
+  0 \,;
+\]
+we also think about~$\Rational/\Integer$ as a subgroup of the circle group~$\mathbb{S}^1$ via the exponential map, and find for the subgroup~$\mu_n \subseteq \mathbb{S}^1$ of~\dash{$n$}{th} root of unity that
+\[
+  \Hom_\Integer(\Integer/n, \Rational/\Integer)
+  =
+  \text{\dash{$n$}{torsion} of~$\Rational/\Integer$}
+  \cong
+  \mu_n
+  \cong
+  \Integer/n \,.
+\]
+By taking the cohomology of the cochain complex~\eqref{induced cochain complex} we find that
+\[
+  ( \Right^i \Hom_\Integer(\Integer/n, -) )(\Integer)
+  \cong
+  \begin{cases}
+    \Integer/n  & \text{if~$n = 1$} \,, \\
+    0           & \text{otherwise}  \,.
+  \end{cases}
+\]
 
 
 
