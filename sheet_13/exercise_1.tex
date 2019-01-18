@@ -1,4 +1,46 @@
-\addtocounter{section}{1}
+\section{}
+
+Let~$f \colon X \to I$ be a morphism and let~$m \colon X \to Y$ be a monomorphism.
+For every~$\beta \in B$ the composition~$f_\beta \defined p_\beta \circ f \colon X \to I_\beta$ has an extension~$g_\beta \colon Y \to I_\beta$, i.e.\ a morphism with~$g_\beta \circ m = f_\beta$, because~$I_\beta$ is injective.
+There exists a unique morphism~$g \colon Y \to I$ with~$g_\beta = p_\beta \circ g$ for every~$\beta \in B$ by the universal property of the product.
+It holds that
+\[
+  p_\beta \circ (g \circ m)
+  =
+  (p_\beta \circ g) \circ m
+  =
+  g_\beta \circ m
+  =
+  f_\beta
+  =
+  p_\beta \circ f
+\]
+for every~$\beta \in B$, and hence
+\[
+  g \circ m
+  =
+  f
+\]
+by the universal property of the product.
+This shows that~$I$ is indeed injective.
+\[
+  \begin{tikzcd}
+      X
+      \arrow{r}[above]{m}
+      \arrow{d}[left]{f}
+      \arrow[bend right = 65]{dd}[left]{f_\beta}
+    & Y
+      \arrow[dashed]{dl}[below right]{g}
+      \arrow[dashed, bend left]{ddl}[below right]{g_\beta}
+    \\
+      I
+      \arrow{d}[left]{p_\beta}
+    & {}
+    \\
+      I_\beta
+    & {}
+  \end{tikzcd}
+\]
 
 
 
