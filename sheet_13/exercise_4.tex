@@ -14,7 +14,7 @@ The sequence
   \xlongto{h^X(g)}
   \Hom_\Acat(X, Y'')
 \]
-is the sequence
+is precisely the sequence
 \[
   Y'(X)
   \xlongto{f}
@@ -23,7 +23,7 @@ is the sequence
   Y''(X)
 \]
 of~\dash{$X$}{valued} points.
-The statement follows from the computation of exactness on generalized points (see Theorem~3.42).
+The statement follows from this observation because exactness can be computed on (generalized) points (see Theorem~3.42).
 
 
 
@@ -31,10 +31,10 @@ The statement follows from the computation of exactness on generalized points (s
 
 \subsection{}
 
-We show that~$F$ respects finite coproducts; that~$F$ is additive then follows from Theorem~3.24.
-It can then also be shown dually that the functor~$G$ respects finite products, which also shows that~$G$ is additive.
+We show that the functor~$F$ respects finite coproducts; that~$F$ is additive then follows from Theorem~3.24.
+It can then also be shown dually that the functor~$G$ respects finite products, which then also shows that~$G$ is additive.
 
-Let~$(C, (c_1, \dotsc, c_n))$ be a coproduct of objects~$X_1, \dotsc, X_n$ of~$\Acat$.
+Let~$(C, (c_1, \dotsc, c_n))$ be a coproduct of finitely many objects~$X_1, \dotsc, X_n$ of~$\Acat$.
 Then
 \[
   \Hom_\Bcat(F(C), -)
@@ -46,21 +46,21 @@ Then
   \prod_{i=1}^n \Hom_\Bcat(F(X_i), -) \,.
 \]
 This shows that the object~$F(C)$ represents the functor~$\prod_{i=1}^n \Hom_\Bcat(F(X_i), -)$.
-This means that this object becomes a coproduct of~$F(X_1), \dotsc, F(X_n)$ when combined with suitable morphisms~$c'_i \colon F(X_i) \to F(C)$.
-Such morphisms~$c'_1, \dotsc, c'_n$ can be determined via the above isomorphism of \dash{$\Hom$}{functors}:
-The tupel
-\[
-  (c'_1, \dotsc, c'_n)
-  \in
-  \prod_{i=1}^n \Hom_\Bcat(F(X_i), F(X))
-\]
-corresponds under the above isomorphism to the identity
+This means that the object~$F(C)$ becomes a coproduct of the objects~$F(X_1), \dotsc, F(X_n)$ with respect to suitable morphisms~$c'_i \colon F(X_i) \to F(C)$.
+Such morphisms~$c'_1, \dotsc, c'_n$ can be determined via the above isomorphism of functors:
+The identity
 \[
   \id_{F(C)}
   \in
   \Hom_\Bcat(F(C), F(C))  \,.
 \]
-Under the above isomorphisms we have that
+corresponds under the above isomorphism to the one such tupel
+\[
+  (c'_1, \dotsc, c'_n)
+  \in
+  \prod_{i=1}^n \Hom_\Bcat(F(X_i), F(X))  \,.
+\]
+Under the above isomorphisms we have
 \[
   \id_{F(C)}
   \mapsto
@@ -113,7 +113,7 @@ in~$\Acat$ we have the identity
   =
   \varphi^{-1}(g) \circ F(f) \,.
 \]
-We find with this the desired equality
+We find with this second identity the desired equality
 \[
   \varphi^{-1}(\varphi(\id_{F(C)}) \circ c_i)
   =
@@ -121,7 +121,7 @@ We find with this the desired equality
   =
   \id_{F(C)} \circ F(c_i)
   =
-  = F(c_i) \,.
+  F(c_i) \,.
 \]
 
 
@@ -130,7 +130,9 @@ We find with this the desired equality
 
 \subsection{}
 
-We show that the right adjoint~$G$ is left exact, the right exactness of~$F$ then follows by duality.
+We show that the right adjoint functor~$G$ is left exact.
+The right exactness of~$F$ then follows by duality.
+
 We need to show that for every short exact sequence
 \[
   0
@@ -158,13 +160,13 @@ We use part~(i) of this exercise, and show that for every object~$X$ of~$\Acat$ 
 \[
   \Hom_\Acat(X,0)
   \to
-  \Hom_\Acat(X,G(Y')
+  \Hom_\Acat(X,G(Y'))
   \to
   \Hom_\Acat(X,G(Y))
   \to
   \Hom_\Acat(X,G(Y''))
 \]
-is exact (we used implicitely that~$\Hom(X,0) = 0$.)
+is exact.
 We have that~$0 = G(0)$ because the functor~$G$ is additive, and hence need to show that the sequence
 \[
   \Hom_\Acat(X,G(0))
@@ -196,7 +198,7 @@ which is the same as the sequence
   \to
   \Hom_\Bcat(F(X),Y'') \,.
 \]
-This sequence is exact---as desired---by the left exactness of the functor~$\Hom_\Bcat(F(X),-)$.
+This sequence is indeed (left) exact---as desired---by the left exactness of the functor~$\Hom_\Bcat(F(X),-)$.
 
 
 

@@ -1,13 +1,11 @@
 \section{}
 
 Let~$f \colon X \to I$ be a morphism and let~$m \colon X \to Y$ be a monomorphism.
-For every~$\beta \in B$ the composition~$f_\beta \defined p_\beta \circ f \colon X \to I_\beta$ has an extension~$g_\beta \colon Y \to I_\beta$, i.e.\ a morphism with~$g_\beta \circ m = f_\beta$, because~$I_\beta$ is injective.
-There exists a unique morphism~$g \colon Y \to I$ with~$g_\beta = p_\beta \circ g$ for every~$\beta \in B$ by the universal property of the product.
+For every~$\beta \in B$ the composition~$f_\beta \defined p_\beta \circ f \colon X \to I_\beta$ has an extension~$g_\beta \colon Y \to I_\beta$, i.e.\ there exists a morphism~$g_\beta$ with~$g_\beta \circ m = f_\beta$, because~$I_\beta$ is injective.
+There exists a unique morphism~$g \colon Y \to I$ with~$g_\beta = p_\beta \circ g$ for every~$\beta \in B$ by the universal property of the product~$(I, (p_\beta)_{\beta \in B})$.
 It holds that
 \[
-  p_\beta \circ (g \circ m)
-  =
-  (p_\beta \circ g) \circ m
+  p_\beta \circ g \circ m
   =
   g_\beta \circ m
   =
@@ -21,12 +19,12 @@ for every~$\beta \in B$, and hence
   =
   f
 \]
-by the universal property of the product.
+by the universal property of the product of the product~$(I, (p_\beta)_{\beta \in B})$.
 This shows that~$I$ is indeed injective.
 \[
   \begin{tikzcd}
       X
-      \arrow{r}[above]{m}
+      \arrow[hook]{r}[above]{m}
       \arrow{d}[left]{f}
       \arrow[bend right = 65]{dd}[left]{f_\beta}
     & Y
